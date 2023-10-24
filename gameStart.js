@@ -1,38 +1,45 @@
 import fs from 'fs';
 import Box from 'cli-box';
 import readline from 'readline-sync';
+import { Console } from 'console';
 
 const jsonData = fs.readFileSync('./config.json', 'utf8');
 const fullStory = JSON.parse(jsonData);
 
+let player = {
+    hp: 100,
+    karma: 5,
+};
 
+let continueStory = true;
 
 class StoryPage {
-    constructor(id, storyText, optionA, optionB) {
+    constructor(id, storyText, optionIds, question) {
         this.id = id,
             this.storyText = storyText,
-            this.optionA = optionA,
-            this.optionB = optionB
+            this.optionIds = optionIds,
+            this.question = question
     }
     generateText() {
         generateBox(`
-        ${breakExpression(quickStory.storyText)}
+        ${this.storyText}
         
         
-        Was wollt ihr tun?
+        ${this.question}
         `);
 
-        let optis = [quickStory.optionA, quickStory.optionB]
-        let labels = optis.map(option => option.optionText);
+
+        let labels = this.optionIds.map(option => option.optionText);
         let pathOption = readline.keyInSelect(labels, '-->', { cancel: false })
         console.clear();
 
         let snippet = new Option();
-        Object.assign(snippet,optis[pathOption] )
+        Object.assign(snippet, this.optionIds[pathOption])
         snippet.geneateFollowUp();
 
     }
 }
+
 class Option {
     constructor(id, optionText, event, effectText, nextStep) {
         this.id = id,
@@ -41,16 +48,22 @@ class Option {
             this.effectText = effectText, // text was wirklich passiert bei deiner Option, konsequenzen sozusagen 
             this.nextStep = nextStep // folge der storyPage id
     }
-    geneateFollowUp(){
-        generateBox(breakExpression(this.effectText));
-        readline.question('Weiter...', {hideEchoBack: true, mask: ''});
-        console.clear();
-        let nextStory =  generateStory(this.nextStep);
-        console.clear();
+    geneateFollowUp() {
+        if (this.event !== "default") {
+            continueStory = false;
+            eval(this.event)
+            continueStory = true;       
+        }
+        if (this.effectText) {
+            generateBox(this.effectText);
+            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            console.clear();
+        }
+        if(continueStory){
+        let nextStory = generateStory(this.nextStep);
         nextStory.generateText();
+        }
 
-
-       
     }
 }
 
@@ -77,7 +90,7 @@ function generateBox(text) {
         hAlign: 'center',
         stretch: true,
         autoEOL: true,
-    }, text,
+    }, breakExpression(text) + player.karma,
     );
     console.log(storyBox.stringify());
 }
@@ -86,15 +99,34 @@ function generateStory(pageId) {
     let snippet = new StoryPage()
     Object.assign(snippet, fullStory.storyPages.find(x => x.id === pageId))
 
-    snippet.optionA = fullStory.options.find(x => x.id === snippet.optionA)
-    snippet.optionB = fullStory.options.find(x => x.id === snippet.optionB)
-
-    //onsole.log(snippet)
+    //check if optionIds are already objects or still Numbers
+    if (!isNaN(snippet.optionIds[0])) {
+        for (let [index, option] of snippet.optionIds.entries()) {
+            snippet.optionIds[index] = fullStory.options.find(x => x.id === snippet.optionIds[index])
+        }
+    }
+    //console.log(snippet)
     return snippet;
 }
 
 
 let quickStory = generateStory(1);
-
+//console.log(quickStory)
 
 quickStory.generateText();
+
+// story Functions
+
+function karma(int) {
+    player.karma += int;
+
+    
+}
+
+function shop(id) {
+    let shoppingAt = fullStory.shops.find(x => x.id === id)
+    console.log("i have this items: " + shoppingAt.itemIds)
+
+    readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+  
+}
