@@ -10,4 +10,4 @@
 10. Buffs (temporär oder ständig)
 11. grundlegende UI
 12. Database (Char, Gegner, Items (regulär und selten), Buffs)
-
+13. Markt/Händler (Schmied, Gemischtwaren, Tränke)
