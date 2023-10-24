@@ -8,4 +8,13 @@ Leise Stimmen flüstern in der Dunkelheit das dieses Kind nun erwachsen sei und 
 
 
 
-Es ist mittlerweile tiefste Nacht geworden. 
+Es ist mittlerweile tiefste Nacht geworden. Ihr sitzt an eurem Lagerfeuer und wärmt euch auf. Auf dem Feuer bruzelt ein Hase den ihr zu vor erlegt habt.
+
+Plötzlich hört ihr ein Geräusch in einem Busch nicht weit entfernt von eurem Lager. "Wer ist da?", ruft ihr laut. Ihr seht wie der Busch sich bewegt und greift instinktiv zu eurer Waffe.
+
+Plötzlich erscheinen zwei Kinder die sich in dem Busch versteckt haben. Der Geruch vom gebratenen Fleisch scheint sie angezogen zu haben. Ihr könnt deutlich erkennen das die beiden Kinder ausgehungert sind. 
+Was wollt ihr tun?
+
+1. Ruft die Kinder herbei damit sie sich an das Feuer setzen (+ Karma)
+2. Verscheucht die beiden (- Karma)
+
