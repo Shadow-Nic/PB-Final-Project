@@ -87,3 +87,37 @@ Der Kobold ist sichtlich erfreut das ihr sein Rätsel gelöst habt. Er springt f
 Wütend fläscht der Kobold seine Zähne, zückt seinen Dolch und springt auf euch zu. Er hinterlässt einen tiefen Schnitt an eurem linken Oberarm. Während ihr noch am begreifen seid was gerade passiert ist, zieht der Kobold fluchend von dannen (-x auf HP)
 
 Der Morgen bricht heran. Nach einem ausgiebigen Frühstück macht ihr euch auf und setzt euren Weg Richtung Süden fort.
+
+Auf einen Hügel vor euch erspäht ihr einen zerfallenen Turm. Da sich eh gerade ein Sturm über euch zusammen braut, beschließt ihr in den Ruinen des Turmes schutz zu suchen. Schnellen Schrittes nähert ihr euch den Turm.
+
+Gerade noch rechtzeitig erreicht ihr den Turm und sucht in seinen Mauern Schutz vor dem Unwetter. Ihr nutzt die Gelegenheit und macht ein Feuer. Das Unwetter wütet draußen als würde es kein Morgen geben.
+
+Plötzlich wird die Tür des Turmes durch ein lauten Knall aufgeschlagen. Es blitzt und ihr seht die Umrisse eines Menschen in der Tür stehen. Sofort macht ihr euch kampfbereit. "Lass deine Waffe stecken, Connor" ruft der Mann in der Tür während er hinein kommt. Etwas verwirrt lasst ihr den Griff eurer Waffe los.
+
+"Woher wisst ihr meinen Namen?" fragt ihr iritiert. Der Mann kommt näher und setzt sich an das Feuer. Er ist, seines Aussehens nach, ein sehr alter Mann mit zerzausten Haar und einem langen grauen Bart.
+
+Es blitzt erneut und ihr erkennt in den Augen des alten Mannes ein seltsames Glimmen. "Ich kenne dich schon seit du ein kleines Kind warst, Conner" entgegnet der Alte.
+Ihr versucht eucht krampfhaft jede Erinnerung die ihr an eure Kindheit habt abzurufen, doch ihr könnt den alten Zausel einfach nicht einordnen.
+
+"Du kannst dich nicht erinnern, richtig?" Ihr nickt einfach stumm. Der Alte holt tief Luft und erzählt euch wie er euch aus den Fängen einer Hexe befreit hatte. "Diese alte Schrulle hat deine Eltern getötet, mein Junge" raunte er während er in die Flammen des Feuers blickt.
+
+Die Geschichte die euch der alte Mann erzählt klingt völlig unglaubwürdig aber gleichzeitig auch sehr vertraut. Dies scheint der Alte bemerkt zu haben "Pah kann sich nicht erinnern der Jungspund. Aber ich bin der alte Sack der alltägliche Sachen vergisst", blafft er euch an.
+
+Ihr werft etwas mehr Holz ins Feuer. Es ist mittlerweile Nacht geworden. Der Alte erzählt über längst Vergessene Zeiten und Helden. Schwadroniert über die Vergangenheit als hätte er die letzten tausend Jahre selbst erlebt. In seinen Erzählungen geht es um Götter und die Wesen der Unterwelt und ihren schier nie aufhörenden Kampf wer die Menschheit beherrschen darf.
+
+Die ersten Sonnenstrahlen kommen raus. Der alte Sack hat die ganze Nacht durch geredet. Als ihr ihm gerade zu verstehen zu geben das ihr nun aufbrechen müsst, fällt er euch ins Wort als wüsste er was ihr sagen wolltet. "Nix da, los mach uns Frühstück wir haben viel zu tun!"
+
+"Wir?" fragt ihr völlig durcheinander von den Informationen die euch der Alte die ganze Nacht in euren Kopf geklopft hat. 
+
+"Ja, WIR Connor, oder glaubst du wirklich unsere Wege haben sich durch Zufall gekreuzt?" 
+Was wollt ihr tun?
+
+1. Ihr lasst euch auf das Spiel des alten Mannes ein
+2. Ihr pakt unbeirrt eure Sachen und seid im Begriff zu gehen
+
+(Wahl 1)
+Ihr seid viel zu Müde um den Alten zu widersprechen. Außerdem sagt etwas in eurem inneren das man dem alten Sack vertrauen kann. Also bereitet ihr das Frühstück vor und wartet ab was der Alte mit euch vor hat.
+
+(Wahl 2)
+"Wer bist du dass du mir Befehle gebt" denkt ihr euch während ihr eure Sachen zusammen packt. Plötzlich spürt ihr einen Schlag auf euren Hinterkopf und sofort wird alles dunkel um euch herum (zurück zu "Die ersten Sonnstrahlen" Endlosschleife)
+
