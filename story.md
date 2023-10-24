@@ -26,3 +26,22 @@ Ihr greift zu einem Stein und werft nach den beiden. "Haut ab, hier gibt es nich
 
 Ihr werdet von den ersten Sonnenstrahlen geweckt, noch im Halbschlaf packt ihr eure Sachen zusammen und begebt euch auf euren Weg.
 
+Seit Stunden lauft ihr nun schon durch einen dichten Wald. Die Luft wird immer stickiger und das Atmen fällt euch immer schwerer. Plötzlich hört ihr in der Ferne lautes gebrüll. Was Wollt ihr tun?
+
+1. Eure Neugier siegt und ihr folgt dem Gebrüll (weiter zu Kamof I)
+2. Ihr setzt unbeirrt euren Weg fort (weiter mit Story)
+
+(Wahl 1 Kampf I)
+Ihr seht eine Lichtung vor euch von der das Gebrüll her kommt. Vorsichtig versteckt ihr euch hinter einen Baum und beobachtet das Geschehen. Auf der Lichtung scheinen sich drei Trolle über ihre Beute zu streiten.
+
+Kühn und etwas leichtsinnig zückt ihr eure Waffe und stürmt auf die drei Streithähne zu. (Kampf bei Sieg weiter zu Loot I, bei Niederlage weiter zu Tod I)
+
+(Loot I)
+Was ein Gemetzel! Absolut gnadenlos streckt ihr eure Feinde nieder. Ihr durchsucht die toten Körper und findet (Itemdrop)
+
+(Tod I)
+Vielleicht habt ihr euch etwas unterschätzt. Ihr streckt einen Troll nieder doch in dem Moment wo der Troll Körper zusammensackt, zieht euch der zweite Troll euch seine Keule über den Kopf. Es gibt einen dumpfen Schlag und das letzte was ihr mitbekommt ist das hämische Lachen der beiden übrig geblieben Trolle.
+Was möchten Sie tun?
+
+1. Spiel vom letzten Punkt laden
+2. Spiel beenden
