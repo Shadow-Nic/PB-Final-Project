@@ -23,3 +23,6 @@ Was wollt ihr tun?
 
 (Wahl 2)
 Ihr greift zu einem Stein und werft nach den beiden. "Haut ab, hier gibt es nichts für" brüllt ihr den Kindern hinterher während diese schnell das weite suchen. (moralisch schlecht gehandelt -x Karma)
+
+Ihr werdet von den ersten Sonnenstrahlen geweckt, noch im Halbschlaf packt ihr eure Sachen zusammen und begebt euch auf euren Weg.
+
