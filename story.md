@@ -57,3 +57,33 @@ Auf dem Marktplatz des Dorfes findet ihr verschiedene Stände. Zu welchen wollt 
 
 (nach dem jeweiligen kauf kommt man immer wieder auf den Marktplatz zurück bis Option 4 gewählt wird)
 
+Vollgepackt und gestärkt verlasst ihr das Dorf gen Süden und setzt euren Weg fort.
+
+Die Sonne geht langsam unter und ihr beschließt euch einen Platz zum übernachten zu finden. Als ihr gerade dabei seid ein Feuer zu entfachen, springt plötzlich ein Kleiner Kobold in euer Sichtfeld.
+
+Er starrt euch direkt in eure Augen. Iritiert bewegt Ihr eure Hand in Zeitlupe an den Griff eurer Waffe. Da fängt der Kobold plötzlich an zu sprechen.
+Mit piepsiger Stimme spricht der Kobold:
+
+"Ich fließe, ich rausche, ich bin nie still,
+Obwohl ich kein Herz und keine Lungen füll.
+Ich bin klar und rein, doch manchmal auch trüb,
+Ich bin überall, doch nirgends zu lieb.
+Ich spiegle das Licht, das auf mich fällt,
+Und form' ein Bild von dieser Welt.
+Ich kann sanft sein, doch auch gewaltig und wild,
+Ich trage das Leben, bin Mutter und Kind.
+Ich bin in der Luft, ich bin in der See,
+Ich bin in dir und auch in der Klee.
+Ohne mich, wäre das Leben ein Graus,
+Sage mir nun, wer bin ich bloß?"
+
+(Rätsel)
+Was antwortet Ihr dem Kobold?
+
+(Richtige Antwort Wasser)
+Der Kobold ist sichtlich erfreut das ihr sein Rätsel gelöst habt. Er springt freudig herum und lacht. Dann spricht er in einer Sprache die ihr nicht versteht einen Satz. Ihr fühlt euch plötzlich frisch und ausgeruht (+x auf HP)
+
+(Falsche Antwort)
+Wütend fläscht der Kobold seine Zähne, zückt seinen Dolch und springt auf euch zu. Er hinterlässt einen tiefen Schnitt an eurem linken Oberarm. Während ihr noch am begreifen seid was gerade passiert ist, zieht der Kobold fluchend von dannen (-x auf HP)
+
+Der Morgen bricht heran. Nach einem ausgiebigen Frühstück macht ihr euch auf und setzt euren Weg Richtung Süden fort.
