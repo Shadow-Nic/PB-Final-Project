@@ -46,7 +46,7 @@ Was möchten Sie tun?
 1. Spiel vom letzten Punkt laden
 2. Spiel beenden
 
-Motiviert durch den Sieg setzt ihr eure Reise fort. Ihr findet eine Weg raus aus dem Wald. In der ferne seht Ihr ein Dorf. Da eure Vorräte zur Neige gehen beschließt ihr euch in dem Dorf einzudecken
+Ihr irrt weiter durch den dichten Wald doch findet letztendlich einen Weg raus aus dem Wald. In der ferne seht Ihr ein Dorf. Da eure Vorräte zur Neige gehen beschließt ihr euch in dem Dorf einzudecken
 
 Auf dem Marktplatz des Dorfes findet ihr verschiedene Stände. Zu welchen wollt ihr gehen?
 
