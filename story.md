@@ -57,3 +57,8 @@ Auf dem Marktplatz des Dorfes findet ihr verschiedene Stände. Zu welchen wollt 
 
 (nach dem jeweiligen kauf kommt man immer wieder auf den Marktplatz zurück bis Option 4 gewählt wird)
 
+Vollgepackt und gestärkt verlasst ihr das Dorf gen Süden und setzt euren Weg fort.
+
+Die Sonne geht langsam unter und ihr beschließt euch einen Platz zum übernachten zu finden. Als ihr gerade dabei seid ein Feuer zu entfachen, springt plötzlich ein Kleiner Kobold in euer Sichtfeld.
+
+Er starrt euch direkt in eure Augen. Iritiert bewegt Ihr eure Hand in Zeitlupe an den Griff eurer Waffe. Da fängt der Kobold plötzlich an zu sprechen.
