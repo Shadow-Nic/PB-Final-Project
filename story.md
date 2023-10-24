@@ -121,3 +121,31 @@ Ihr seid viel zu Müde um den Alten zu widersprechen. Außerdem sagt etwas in eu
 (Wahl 2)
 "Wer bist du dass du mir Befehle gebt" denkt ihr euch während ihr eure Sachen zusammen packt. Plötzlich spürt ihr einen Schlag auf euren Hinterkopf und sofort wird alles dunkel um euch herum (zurück zu "Die ersten Sonnstrahlen" Endlosschleife)
 
+Gestärkt durch das Essen wartet ihr ab was der alte Mann nun mit euch vor hat. Nach einer Weile des Schweigens, steht er auf. "Los komm raus lass uns dein Training beginnen" Ihr verlasst beide den Turm. Plötzlich fängt der Alte an in einer euch nicht bekannten Sprache etwas in seinen Bart zu murmeln.
+
+Ihr beobachtet wie auf ein mal sich alle Steine und lose Erde in eurer Nähe an einem Punkt zu einem großen Haufen sammeln. Dieser Haufen transformiert sich plötzlich zu einem Erdgolem der mindestens drei Köpfe größer als ihr selbst seid. "Dann zeig mal was du kannst junger Grashüpfer" ruft euch der Alte zu während er sich in Deckung begibt
+
+(Kampf II Elite Gegner Erdgolem LvL 1)
+
+(Sieg I)
+Der Golem setzt euch hart zu doch am Ende geht ihr siegreich aus dem Kampf hervor. Von dem Golem bleibt nix mehr als ein Haufen Erde übrig. "Sehr gut! Gleich nochmal und diesmal mit mehr Power!" der Alte schnippt mit seinen Fingern und plötzlich steht der Golem wieder (weiter zu Kampf III Elite Gegner Erdgolem Lvl 2)
+
+(Niederlage I)
+Ihr gebt alles doch der Golem scheint stärker. Ihr sackt kraftlos zusammen und wartet auf den Gnadenstoß durch den Golem. Dieser setzt zum Finalen Angriff an doch in dem Moment wo der Golem zuschlagen will, zerfällt der Golem in seine Einzelteile. "Du musst dich mehr anstregen!!" brüllt der alte Mann. Er schnippst mit seinen Fingern und der Golem sammelt sich wieder zusammen. (weiter zu Kampf II Elite Gegner Erdgolem LvL 1)
+
+(Kampf III Elite Gegner Erdgolem Lvl 2)
+
+(Sieg II)
+Auch dieses Mal geht ihr als Sieger aus dem Kampf. Völlig erschöpft setzt ihr euch hin um eine Pause zu machen. Da fliegt euch plötzlich von hinten ein Kieselstein an den Kopf. "Hab ich was von Pause gesagt" brüllt der alte Mann aus seiner Deckung. "Los weiter gehts!" er schnippst erneut mit seinem Fingern und der Golem steht wieder auf. (weiter zu Kampf IV Elite Gegner Erdgolem Lvl 3)
+
+(Niederlage II)
+Der erste Kampf hat euch so erschöpft das ihr es nicht schafft den Golem zu bezwingen. Bevor der Golem euch zerschmettert zerfällt dieser zu Staub. "Los noch mal von Anfang an!" brüllt der Alte und schon erwacht der Golem zu neuen Leben. (weiter zu Kampf II Elite Gegner Erdgolem LvL 1)
+
+(Kampf IV Elite Gegner Erdgolem Lvl 3)
+
+(Sieg III)
+Mit letzter Kraft zerschlagt ihr den Golem und fallt sofort ohnmächtig um. Als ihr wieder zu euch kommt seid ihr wieder im Turm. "Sehr sehr gut" grummelt der alte Mann. "Du hast sehr viel Kraft in dir". (neuer Angriff für Char)
+
+(Niederlage III)
+Diese ganze Kämpferei ist einfach zu viel für euch gewesen. Der Golem stürmt auf euch zu doch bevor er euch überrennen kann, zerfällt der Golem in seine Einzelteile.
+"Nochmal!" hört ihr es nur von hinten rufen. Der Golem erscheint erneut und das Spiel beginnt von vorne (weiter zu Kampf II Elite Gegner Erdgolem LvL 1)
