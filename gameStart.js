@@ -1,7 +1,11 @@
 import fs from 'fs';
+import Box from 'cli-box';
+import readline from 'readline-sync';
 
 const jsonData = fs.readFileSync('./config.json', 'utf8');
 const fullStory = JSON.parse(jsonData);
+
+
 
 class StoryPage {
     constructor(id, storyText, optionA, optionB) {
@@ -9,6 +13,24 @@ class StoryPage {
             this.storyText = storyText,
             this.optionA = optionA,
             this.optionB = optionB
+    }
+    generateText() {
+        generateBox(`
+        ${breakExpression(quickStory.storyText)}
+        
+        
+        Was wollt ihr tun?
+        `);
+
+        let optis = [quickStory.optionA, quickStory.optionB]
+        let labels = optis.map(option => option.optionText);
+        let pathOption = readline.keyInSelect(labels, '-->', { cancel: false })
+        console.clear();
+
+        let snippet = new Option();
+        Object.assign(snippet,optis[pathOption] )
+        snippet.geneateFollowUp();
+
     }
 }
 class Option {
@@ -19,35 +41,60 @@ class Option {
             this.effectText = effectText, // text was wirklich passiert bei deiner Option, konsequenzen sozusagen 
             this.nextStep = nextStep // folge der storyPage id
     }
-}
-/*
-class Player {
-    constructor(level, hp, mp, gold, item, progress) {
-        this.level = level,
-            this.hp = hp,
-            this.mp = mp,
-            this.gold = gold,
-            this.item = item,
-            this.progres = progress
-    }
-    attack(defense) {
-        return (this.level * 0.2 + this.item.attack) - defense
-    }
-    defend(attack) {
-        let dmg = attack - (this.level * 0.3 + this.item.defense)
-        if (dmg < 0) {
-            return 0;
-        } else {
-            return dmg;
-        }
+    geneateFollowUp(){
+        generateBox(breakExpression(this.effectText));
+        readline.question('Weiter...', {hideEchoBack: true, mask: ''});
+        console.clear();
+        let nextStory =  generateStory(this.nextStep);
+        console.clear();
+        nextStory.generateText();
+
+
+       
     }
 }
-*/
+
+function breakExpression(text) {
+    //"\$1\n" is the replacement string. \$1 is a special replacement pattern that inserts the text that was matched by the first
+    return text.replace(/([.?!;,"])/g, "\$1\n");
+}
+function generateBox(text) {
+    let storyBox = new Box({
+        w: 100,
+        h: 20,
+        stringify: false,
+        marks: {
+            nw: '╭',
+            n: '─',
+            ne: '╮',
+            e: '│',
+            se: '╯',
+            s: '─',
+            sw: '╰',
+            w: '│'
+        },
+
+        hAlign: 'center',
+        stretch: true,
+        autoEOL: true,
+    }, text,
+    );
+    console.log(storyBox.stringify());
+}
+
 function generateStory(pageId) {
-    let snippet = new StoryPage() 
+    let snippet = new StoryPage()
     Object.assign(snippet, fullStory.storyPages.find(x => x.id === pageId))
-   
-    console.log(snippet)
-    // return snippet;
+
+    snippet.optionA = fullStory.options.find(x => x.id === snippet.optionA)
+    snippet.optionB = fullStory.options.find(x => x.id === snippet.optionB)
+
+    //onsole.log(snippet)
+    return snippet;
 }
-generateStory(1);
+
+
+let quickStory = generateStory(1);
+
+
+quickStory.generateText();
