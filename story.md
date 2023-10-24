@@ -85,3 +85,5 @@ Der Kobold ist sichtlich erfreut das ihr sein Rätsel gelöst habt. Er springt f
 
 (Falsche Antwort)
 Wütend fläscht der Kobold seine Zähne, zückt seinen Dolch und springt auf euch zu. Er hinterlässt einen tiefen Schnitt an eurem linken Oberarm. Während ihr noch am begreifen seid was gerade passiert ist, zieht der Kobold fluchend von dannen (-x auf HP)
+
+Der Morgen bricht heran. Nach einem ausgiebigen Frühstück macht ihr euch auf und setzt euren Weg Richtung Süden fort.
