@@ -1,0 +1,28 @@
+{
+    "storyPages": [
+        {
+            "id": 1,
+             "storyText": "du triffst nen kobold",
+              "optionA": 1, 
+              "optionB": 2
+        }
+    ],
+    "options": [
+        {
+            "id": 1,
+            "optionText": "greif es an",
+            "event": "ATTACK", 
+            "effectText": "du stürmst vorran zum angriff...", 
+            "nextStep" : 2
+
+        },
+        {
+            "id": 2,
+            "optionText": "lauf davon",
+            "event": "FLEE", 
+            "effectText": "du haust ab...", 
+            "nextStep" : 2
+
+        }
+    ]
+}
