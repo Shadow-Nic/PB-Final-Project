@@ -20,6 +20,7 @@ const npc1 = new Player('NPC', 1000, 100, 10);
 fight(player1, npc1);
 
 function fight(player, npc) {
+    console.clear();
     console.log(
         `${player.name}         ${npc.name}\nHP: ${player.hp}         HP: ${npc.hp}\nMP: ${player.mp}          \nStr: ${player.str}            \n`
     );
