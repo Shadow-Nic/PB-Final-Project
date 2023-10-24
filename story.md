@@ -18,3 +18,8 @@ Was wollt ihr tun?
 1. Ruft die Kinder herbei damit sie sich an das Feuer setzen (+ Karma)
 2. Verscheucht die beiden (- Karma)
 
+(Wahl 1)
+"Kommt her ihr zwei" ruft ihr den beiden zu. Die beiden treten zögerlich an das Feuer heran. Ihr merkt wie verängstigt die beiden sind. Ihr zerteilt den Hasen und gebt beiden ein großen Fetzen Fleisch. Die beiden sind so ausgehungert das sie das Fleisch quasi inhalieren. (Gute Tat vollbracht +x Karma)
+
+(Wahl 2)
+Ihr greift zu einem Stein und werft nach den beiden. "Haut ab, hier gibt es nichts für" brüllt ihr den Kindern hinterher während diese schnell das weite suchen. (moralisch schlecht gehandelt -x Karma)
