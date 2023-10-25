@@ -149,3 +149,35 @@ Mit letzter Kraft zerschlagt ihr den Golem und fallt sofort ohnmächtig um. Als 
 (Niederlage III)
 Diese ganze Kämpferei ist einfach zu viel für euch gewesen. Der Golem stürmt auf euch zu doch bevor er euch überrennen kann, zerfällt der Golem in seine Einzelteile.
 "Nochmal!" hört ihr es nur von hinten rufen. Der Golem erscheint erneut und das Spiel beginnt von vorne (weiter zu Kampf II Elite Gegner Erdgolem LvL 1)
+
+Der Tag neigt sich seinem Ende. Ihr versorgt eure Wunden die ihr von dem harten Training mit dem alten Mann davon getragen habt. "Warum passiert das alles?" fragt ihr den Alten. "Es gibt eine uralte Prophezeihung die besagt das irgendwann ein Kind geboren wird, welches das Gleichgewicht der Mächte wieder herstellen wird. Dieses Kind bist du Connor"
+
+"Prophezeihung hin oder her. Ich will das alles nicht" entgegnet ihr dem Alten. "Keiner von uns hat eine Wahl, oder glaubst du das die Millionen von Opfern die dieser Krieg bis jetzt gefordert hat, sich ihr Schicksal ausgesucht haben? Nein, wir haben alle eine Bestimmung und deine ist es diesen Krieg ein für alle Mal zu beenden"
+
+Ihr seid viel zu erschöpft um dieser Ansprache noch etwas entgegen zu setzen. Ihr macht euer Lager bereit und legt euch schlafen.
+
+Am nächsten Morgen spürt ihr immer noch das harte Training in euren Knochen. Ihr bemerkt das ihr alleine in dem Turm seid. "Wo ist der alte Sack?" fragt ihr euch selbst während ihr euch ein Stück Brot rein quält.
+
+Der alte Mann ist nirgends zu sehen. Ihr beschließt noch eine Weile zu warten in der Hoffnung das er wieder auftaucht, doch als die Sonne am höchsten steht entschließt ihr euch aufzubrechen. Ihr setzt euren Weg fort.
+
+Die Landschaft verändert sich von grünen Wiesen hin zu verbrannter Erde. Überall sind Zeichen einer großen Schlacht zu finden. Ihr lauft an völlig zerstörten Bauernhäusern vorbei bis ihr plötzlich vor einem noch komplett intakten Haus steht.
+Was wollt ihr tun?
+
+1. Betretet das Haus
+2. Ihr lasst euch nicht beirren und lauft weiter euren Weg
+
+(Wahl 1)
+Ihr betretet das Haus und euch fällt sofort auf das hier etwas nicht stimmt. Vielleicht liegt das an dem Gnom der mitten im Raum gerade die letzten Reste des Hausbesitzers von dessen Wade schmatzt. Ihr zieht eure Waffe um dieses Ungeheuer in die Hölle zu schicken.
+
+(Kampf V)
+
+(Sieg IV)
+Der Gnom ist ein sehr hartnäckiger Genosse. Es dauert eine Zeit bis ihr ihn erschöpft und nun in einer guten Position seid ihm seinen hässlichen Kopf von seinen Schultern zu trennen. Gesagt getan und der kopflose Körper des Gnom sackt vor euch zusammen. "Was ein räudiger Bastard" denkt ihr euch während ihr das Haus durchsucht und eine Truhe findet.
+
+(Schloss knacken I)
+
+(Schloss knacken Erfolg I)
+Natürlich ist für euch so ein einfach Truhenschloß keine Herausforderung, so das ihr in handumdrehen die Truhe öffnet. In ihr befindet sich eine alte verstaubte Rüstung. Als ihr sie sauber macht stellt ihr fest das diese Rüstung von den alten Weisen der Horadrim geschmiedet worden sein muss. (erhalten von item id 12)
+
+(Schloss knacken kein Erfolg I)
+Seid Stunden nun versucht ihr dieses verdammte Schloß zu knacken...ohne Erfolg. Frustriert verlasst ihr das Haus und setzt euren Weg fort
