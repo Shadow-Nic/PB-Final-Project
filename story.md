@@ -41,7 +41,7 @@ Was ein Gemetzel! Absolut gnadenlos streckt ihr eure Feinde nieder. Ihr durchsuc
 
 (Tod I)
 Vielleicht habt ihr euch etwas unterschätzt. Ihr streckt einen Troll nieder doch in dem Moment wo der Troll Körper zusammensackt, zieht euch der zweite Troll euch seine Keule über den Kopf. Es gibt einen dumpfen Schlag und das letzte was ihr mitbekommt ist das hämische Lachen der beiden übrig geblieben Trolle.
-Was möchten Sie tun?
+Was möchtet ihr tun?
 
 1. Spiel vom letzten Punkt laden
 2. Spiel beenden
@@ -164,7 +164,7 @@ Die Landschaft verändert sich von grünen Wiesen hin zu verbrannter Erde. Über
 Was wollt ihr tun?
 
 1. Betretet das Haus
-2. Ihr lasst euch nicht beirren und lauft weiter euren Weg
+2. Ihr lasst euch nicht beirren und lauft weiter euren Weg (weiter mit Story)
 
 (Wahl 1)
 Ihr betretet das Haus und euch fällt sofort auf das hier etwas nicht stimmt. Vielleicht liegt das an dem Gnom der mitten im Raum gerade die letzten Reste des Hausbesitzers von dessen Wade schmatzt. Ihr zieht eure Waffe um dieses Ungeheuer in die Hölle zu schicken.
@@ -180,4 +180,45 @@ Der Gnom ist ein sehr hartnäckiger Genosse. Es dauert eine Zeit bis ihr ihn ers
 Natürlich ist für euch so ein einfach Truhenschloß keine Herausforderung, so das ihr in handumdrehen die Truhe öffnet. In ihr befindet sich eine alte verstaubte Rüstung. Als ihr sie sauber macht stellt ihr fest das diese Rüstung von den alten Weisen der Horadrim geschmiedet worden sein muss. (erhalten von item id 12)
 
 (Schloss knacken kein Erfolg I)
-Seid Stunden nun versucht ihr dieses verdammte Schloß zu knacken...ohne Erfolg. Frustriert verlasst ihr das Haus und setzt euren Weg fort
+Seid Stunden nun versucht ihr dieses verdammte Schloß zu knacken...ohne Erfolg. Frustriert verlasst ihr das Haus und setzt euren Weg fort.
+
+(Tod II)
+Es hat den Anschein als hätte der Gnom noch mehr Hunger. Er überwältigt euch und schlägt euch K.O. Das letzte was ihr spürt ist ein beißender Schmerz an eurem Arm.
+Was möchtet ihr tun?
+
+1. Spiel vom letzten Punkt laden
+2. Spiel beenden
+
+Die Gegend in der ihr euch befindet wird immer trostloser. Ihr lauft einen Hügel hoch und seht schon in der Ferne eine Festung. Irgendetwas in euch zieht euch genau zu dieser Festung. Also macht ihr euch auf den Weg.
+
+An der Festung angekommen, fallen euch direkt die aufgespießten Köpfe auf die die Festungsmauern zieren. Das lässt nichts gutes erahnen. Ihr zückt eure Waffe und schärft eure Sinne während ihr die Festung betretet.
+
+Ihr läuft durch endlose Gänge vorbei an Knochen und Schädeln von gefallenen Soldaten. Es riecht nach Tod. Ein eiskalter Schauer läuft euch den Rücken herunter. Dies ist kein Ort an dem man sich gerne aufhalten möchte.
+
+Plötzlich steht ihr vor einer massiven Holztür die verschlossen ist. Es bleibt euch nichts anderes übrig als das Schloß zu knacken oder zurück zu gehen. Mit fingerspitzen Gefühl fangt ihr an das Schloss zu knacken.
+
+(Erfolg)
+Mit Fingerspitzengefühl knackt ihr das Schloß. Die Tür öffnet sich mit einem lauten knarren. Mit gezückter Waffe betretet ihr den dahinter liegenden Raum.
+
+(kein Erfolg)
+Ihr Holzkopf! Ihr schafft es einfach nicht das Schloß zu knacken. Es hat den Anschein als seid ihr nur fürs grobe gut. Also nehmt ihr Anlauf und stürmt mit voller Kraft auf die Tür zu.
+
+(eintreten)
+Mit Fingerspitzengefühl rennt ihr die Tür ein. Ihr steht mitten im Raum und zückt sicherheitshalber erst mal eure Waffe.
+
+Vor euch befindet sich ein Thron der offensichtlich nur aus Knochen und Schädeln besteht. Auf dem Thron sitzt ein äußerst hässlicher Zwerg, der sich durch euer eindringen sichtlich gestört fühlt. 
+
+Plötzlich scheint der Zwerg seine Statur zu verändern. Unter ätzen und Schreien transformiert sich der abgrundtief hässliche Zwerg in einen Drachen. "I hau di korz u klein" brüllt er noch bevor seine Verwandlung komplett ist. Macht euch bereit für den alles entscheidenen Kampf!
+
+(Finalkampf Elite Gegner Drache)
+
+(Sieg)
+Seit Stunden kämpft ihr nun gegen den Drachen. Es scheint so das alles was ihr versucht nicht ausreicht um ihn zu besiegen. Ihr sammelt eure letzten Kräfte zusammen und bündelt diese für eine alles entscheidende Attacke. Der Drache hat keine Chance, getroffen von euren Schlag, sackt er und lauten gebrüll zusammen.
+
+(Tod III)
+Der Kampf dauert nun schon eine Ewigkeit und eure Konzentration lässt nach. Natürlich nutzt der Drache die Gelegenheit. Als ihr auf ihn zu stürmt stößt er eine Feuersalve auf euch. Ihr spürt die Flammen auf eurer Haut. In dem selben Moment seid Drachenfutter.
+Was möchtet ihr tun?
+
+1. Spiel vom letzten Punkt laden
+2. Spiel beenden
+
