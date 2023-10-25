@@ -4,11 +4,11 @@ import readline from 'readline-sync';
 import { Console } from 'console';
 import { fight } from './FightALT.js'
 
-readline.setDefaultOptions({encoding: 'utf8'});
+readline.setDefaultOptions({ encoding: 'utf8' });
 const jsonData = fs.readFileSync('./config.json', 'utf8');
 const fullStory = JSON.parse(jsonData);
 
-console.log(fullStory.intro)
+
 /// tests
 
 class Player {
@@ -18,6 +18,7 @@ class Player {
         this.hp = hp;
         this.mp = mp;
         this.kp = 50;
+        this.alive = 1;
         this.Inventory = [
             { name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
             { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
@@ -40,7 +41,7 @@ class NPC {
     }
 }
 const player = new Player('Champ', 100, 100, 20);
-const npc1 = new NPC('Org', 30, 10);
+const npc1 = new NPC('Org', 30, 100);
 /// ^ tests
 
 let continueStory = true;
@@ -54,9 +55,9 @@ class StoryPage {
             this.question = question
     }
     generateText() {
-       returnStats();
+        returnStats();
 
-        generateBox('center',100,18,breakExpression(`
+        generateBox('center', 100, 18, breakExpression(`
         ${this.storyText}
         
         
@@ -65,7 +66,7 @@ class StoryPage {
 
 
         let labels = this.optionIds.map(option => option.optionText);
-        let pathOption = readline.keyInSelect(labels, '', { guide: false,cancel: false})
+        let pathOption = readline.keyInSelect(labels, '', { guide: false, cancel: false })
         console.clear();
 
         let snippet = new Option();
@@ -74,6 +75,7 @@ class StoryPage {
 
     }
 }
+
 
 class Option {
     constructor(id, optionText, event, effectText, nextStep) {
@@ -84,33 +86,39 @@ class Option {
             this.nextStep = nextStep // folge der storyPage id
     }
     geneateFollowUp() {
-      
+       
         if (this.event !== "default") {
             continueStory = false;
             eval(this.event)
-            continueStory = true;       
+            continueStory = true;
         }
-        if (this.effectText) {
+      
+        if (this.effectText && continueStory) {
             returnStats();
-            generateBox('center',100,18,breakExpression(this.effectText));
+            generateBox('center', 100, 18, breakExpression(player.alive === 1 ? this.effectText : this.looseText));
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
         }
-       
-        if(continueStory){
-        let nextStory = generateStory(this.nextStep);
-        nextStory.generateText();
+        if (player.alive === 0) {
+            this.nextStep -= 1;
+            player.alive++;
+            player.hp = 100;
         }
-        
+
+        if (continueStory) {
+            let nextStory = generateStory(this.nextStep);
+            nextStory.generateText();
+        }
+
     }
 }
 
-function intro(){
-    
+function intro() {
+
 }
 
-export function returnStats(){
-    return  generateBox('left',20,3,` [HP: ${player.hp}][MP: ${player.mp}]
+export function returnStats() {
+    return generateBox('left', 20, 3, ` [HP: ${player.hp}][MP: ${player.mp}]
         
     [KP: ${player.kp}][STR: ${player.str}]
     `);
@@ -120,7 +128,7 @@ function breakExpression(text) {
     //"\$1\n" is the replacement string. \$1 is a special replacement pattern that inserts the text that was matched by the first
     return text.replace(/([.?!;,"])/g, "\$1\n");
 }
-export function generateBox(direction,w,h,text) {
+export function generateBox(direction, w, h, text) {
     let storyBox = new Box({
         w: w,
         h: h,
@@ -168,7 +176,7 @@ quickStory.generateText();
 
 function karma(int) {
     player.kp += int;
-    
+
 }
 
 function shop(id) {
@@ -176,5 +184,6 @@ function shop(id) {
     console.log("i have this items: " + shoppingAt.itemIds)
 
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
-  
+
 }
+
