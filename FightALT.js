@@ -1,4 +1,6 @@
 import readline from 'readline-sync';
+import { generateBox, returnStats } from './gameStart.js'
+
 const randomNumber = () => Math.random() * (1 - 0.5) + 0.5; // Multiplier Player attack
 const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier NPC attack
 
@@ -36,12 +38,14 @@ const npc1 = new NPC('Org', 100, 10);
 
 function printTop(player, npc) {
     console.clear();
-    console.log(
-        `${player.name}          ${npc.name}\nHP: ${player.hp}         HP: ${npc.hp}\nMP: ${player.mp}          \nStr: ${player.str}            \n`
-    );
+   
+        generateBox('center',20,3,`        ${npc.name}
+        HP: ${npc.hp}`)
+    
+    returnStats();
 }
 
-fight(player1, npc1);
+//fight(player1, npc1);
 
 export function fight(player, npc) {
     printTop(player, npc);
@@ -50,13 +54,13 @@ export function fight(player, npc) {
 
     switch (Choice) {
         case '1':
-            console.clear();
+           
             printTop(player, npc);
             playerAttack(player, npc);
             break;
 
         case '2':
-            console.clear();
+            
             printTop(player, npc);
             playerUseInventory(player, npc);
 
@@ -73,7 +77,8 @@ function playerAttack(player, npc) {
 
     const playerChoice = readline.keyIn('Wähle deine Attacke: ', { limit: `$<1-${player.Attacks.length}>` });
     const selectedAttack = player.Attacks[playerChoice - 1];
-
+    
+    printTop(player, npc);
     if (selectedAttack.mpCost > player.mp) {
         console.log('Dein Mana reicht nicht aus, wähle einen anderen Angriff.');
 
@@ -105,6 +110,7 @@ function NPCAttack(player, npc) {
         console.log(`${npc.name} Gewinnt!`);
         readline.question('Weiter...', { hideEchoBack: true, mask: '' });
         console.clear();
+        player.alive = 0;
         return;
     }
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
@@ -118,7 +124,7 @@ function playerUseInventory(player, npc) {
         console.log(`${index + 1}. ${item.name} - ${item.typ}: +${item.Points} - Qty: ${item.quantity} `);
     });
 
-    let playerChoice = readline.keyIn('Select your item: ', { guide: false, limit: `$<1-${player.Inventory.length}>` });
+    let playerChoice = readline.keyIn('Select your item: ', { limit: `$<1-${player.Inventory.length}>` });
     const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
 
     switch (playerChoice) {
