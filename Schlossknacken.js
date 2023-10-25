@@ -1,27 +1,24 @@
-let karma = 0;
+let karma = 50;
 
-const schloss = [
-    { type: 'tuer', chance : 0.5 },
-    { type: 'truhe', chance : 0.5 }
-]
+const tuer = { type: 'tuer', chance: 0.5 };
+const truhe = { type: 'truhe', chance: 0.5 };
 
-function schlossKnacken(){
+function schlossKnacken(schloss) {
     const zufall = Math.random();
-    const karmaEinfluss = karma / 100;
+    const karmaEinfluss = karma / 200;
     const wahrscheinlichkeit = schloss.chance + karmaEinfluss;
 
-    if (wahrscheinlichkeit > zufall){
+    if (wahrscheinlichkeit > zufall) {
         console.log('Das Schloss wurde erfolgreich geknackt');
     } else {
         console.log('Dietrich abgebrochen. Zugang bleibt verschlossen!');
-        if (schloss.type === 'tuer'){
+        if (schloss.type === 'tuer') {
             console.log('Tür eintreten');
         } else {
-            console.log('Dietrich abgebrochen. Truhe bleibt verschloßen.');
+            console.log('Dietrich abgebrochen. Truhe bleibt verschlossen.');
         }
     }
-};
+}
 
-
-
-schlossKnacken();
+schlossKnacken(tuer); 
+schlossKnacken(truhe); 
