@@ -32,7 +32,7 @@ class NPC {
 }
 
 const player1 = new Player('Champ', 100, 100, 20);
-const npc1 = new NPC('Org', 30000, 10);
+const npc1 = new NPC('Org', 350, 10);
 
 function printTop(player, npc) {
     console.clear();
@@ -78,15 +78,15 @@ function playerAttack(player, npc) {
     } else {
         const damage = Math.floor(player.str * selectedAttack.multiplier * randomNumber());
         npc.hp -= damage;
-        console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
-        player.mp -= selectedAttack.mpCost;
-
         if (npc.hp <= 0) {
             console.log('Player Gewinnt!');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
             return;
         }
+        console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
+
+        player.mp -= selectedAttack.mpCost;
 
         NPCAttack(player, npc);
     }
@@ -124,6 +124,7 @@ function playerUseInventory(player, npc) {
                     player.mp += selectedItem.Points;
                     selectedItem.quantity--;
                     console.log('Mana potion has been used.');
+                    fight(player, npc);
                 } else {
                     console.log('No more mana potions available.');
                 }
@@ -133,6 +134,7 @@ function playerUseInventory(player, npc) {
                     player.hp += selectedItem.Points;
                     selectedItem.quantity--;
                     console.log('Health potion has been used.');
+                    fight(player, npc);
                 } else {
                     console.log('No more health potions available.');
                 }
