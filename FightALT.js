@@ -73,7 +73,7 @@ function playerAttack(player, npc) {
     if (selectedAttack.mpCost > player.mp) {
         console.log('Your mana is insufficient, choose another attack.');
 
-        readline.keyIn('Continue...', { limit: ' ' });
+        readline.question('Weiter...', { hideEchoBack: true, mask: '' });
         fight(player, npc);
     } else {
         const damage = Math.floor(player.str * selectedAttack.multiplier * randomNumber());
@@ -83,7 +83,7 @@ function playerAttack(player, npc) {
 
         if (npc.hp <= 0) {
             console.log('Player wins!');
-            readline.keyIn('Continue...', { limit: ' ' });
+            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
             return;
         }
@@ -143,6 +143,6 @@ function playerUseInventory(player, npc) {
         }
     }
 
-    readline.keyIn('Continue...', { limit: ' ' });
+    readline.question('Weiter...', { hideEchoBack: true, mask: '' });
     fight(player, npc);
 }
