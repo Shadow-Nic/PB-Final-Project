@@ -5,9 +5,22 @@ const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier
 class Player {
     constructor(name, hp, mp, str) {
         this.name = name;
+        this.str = str;
         this.hp = hp;
         this.mp = mp;
+        this.kp = 50;
+        this.Inventory = [];
+        this.Attacks = [];
+        this.equipped = [];
+    }
+}
+
+class NPC {
+    constructor(name, hp, str) {
+        this.name = name;
+        this.hp = hp;
         this.str = str;
+        this.droptable = [];
     }
 }
 const playerAttacks = [
@@ -20,9 +33,12 @@ const playerInventory = [
     { name: 'HP Potion', Points: 100, typ: 2 },
 ];
 
-const player1 = new Player('Player 1', 1000, 100, 20);
-const npc1 = new Player('NPC', 1000, 100, 10);
+const player1 = new Player('Champ', 100, 100, 20);
+const npc1 = new NPC('Org', 250, 10);
 
+console.log(player1);
+100;
+console.log(npc1);
 function printTop(player, npc) {
     console.clear();
     console.log(
@@ -30,7 +46,7 @@ function printTop(player, npc) {
     );
 }
 
-fight(player1, npc1);
+// fight(player1, npc1);
 
 function fight(player, npc) {
     printTop(player, npc);
@@ -58,7 +74,6 @@ function fight(player, npc) {
             break;
     }
 }
-
 function playerAttack(player, npc) {
     const playerChoice = parseInt(readline.question('\nWähle deine Attacke: '));
     const selectedAttack = playerAttacks[playerChoice - 1];
@@ -104,7 +119,6 @@ function NPCAttack(player, npc) {
         fight(player, npc);
     }, 1000);
 }
-
 function playerUseInventory(player, npc) {
     let playerChoice = readline.question('\nWähle dein Item: ');
     const selectedItem = playerInventory[parseInt(playerChoice) - 1];
