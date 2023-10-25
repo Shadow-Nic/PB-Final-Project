@@ -1,0 +1,34 @@
+{
+    "usables": [
+        {
+            "id": 1,
+            "name": "einfacher Lebenstrank",
+            "event": "hp(+2)"
+        },
+        {
+            "id": 2,
+            "name": "einfacher Stärketrank",
+            "event": "str(+2)"
+        },
+        {
+            "id": 3,
+            "name": "einfacher Manatrank",
+            "event": "mp(+2)"
+        },
+        {
+            "id": 4,
+            "name": "großer Lebenstrank",
+            "event": "hp(+20)"
+        },
+        {
+            "id": 5,
+            "name": "großer Stärketrank",
+            "event": "str(+20)"
+        },
+        {
+            "id": 6,
+            "name": "großer Manatrank",
+            "event": "mp(+20)"
+        }
+    ]
+}
