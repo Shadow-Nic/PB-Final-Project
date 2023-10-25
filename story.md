@@ -46,7 +46,7 @@ Was möchten Sie tun?
 1. Spiel vom letzten Punkt laden
 2. Spiel beenden
 
-Motiviert durch den Sieg setzt ihr eure Reise fort. Ihr findet eine Weg raus aus dem Wald. In der ferne seht Ihr ein Dorf. Da eure Vorräte zur Neige gehen beschließt ihr euch in dem Dorf einzudecken
+Ihr irrt weiter durch den dichten Wald doch findet letztendlich einen Weg raus aus dem Wald. In der ferne seht Ihr ein Dorf. Da eure Vorräte zur Neige gehen beschließt ihr euch in dem Dorf einzudecken
 
 Auf dem Marktplatz des Dorfes findet ihr verschiedene Stände. Zu welchen wollt ihr gehen?
 
@@ -87,3 +87,97 @@ Der Kobold ist sichtlich erfreut das ihr sein Rätsel gelöst habt. Er springt f
 Wütend fläscht der Kobold seine Zähne, zückt seinen Dolch und springt auf euch zu. Er hinterlässt einen tiefen Schnitt an eurem linken Oberarm. Während ihr noch am begreifen seid was gerade passiert ist, zieht der Kobold fluchend von dannen (-x auf HP)
 
 Der Morgen bricht heran. Nach einem ausgiebigen Frühstück macht ihr euch auf und setzt euren Weg Richtung Süden fort.
+
+Auf einen Hügel vor euch erspäht ihr einen zerfallenen Turm. Da sich eh gerade ein Sturm über euch zusammen braut, beschließt ihr in den Ruinen des Turmes schutz zu suchen. Schnellen Schrittes nähert ihr euch den Turm.
+
+Gerade noch rechtzeitig erreicht ihr den Turm und sucht in seinen Mauern Schutz vor dem Unwetter. Ihr nutzt die Gelegenheit und macht ein Feuer. Das Unwetter wütet draußen als würde es kein Morgen geben.
+
+Plötzlich wird die Tür des Turmes durch ein lauten Knall aufgeschlagen. Es blitzt und ihr seht die Umrisse eines Menschen in der Tür stehen. Sofort macht ihr euch kampfbereit. "Lass deine Waffe stecken, Connor" ruft der Mann in der Tür während er hinein kommt. Etwas verwirrt lasst ihr den Griff eurer Waffe los.
+
+"Woher wisst ihr meinen Namen?" fragt ihr iritiert. Der Mann kommt näher und setzt sich an das Feuer. Er ist, seines Aussehens nach, ein sehr alter Mann mit zerzausten Haar und einem langen grauen Bart.
+
+Es blitzt erneut und ihr erkennt in den Augen des alten Mannes ein seltsames Glimmen. "Ich kenne dich schon seit du ein kleines Kind warst, Conner" entgegnet der Alte.
+Ihr versucht eucht krampfhaft jede Erinnerung die ihr an eure Kindheit habt abzurufen, doch ihr könnt den alten Zausel einfach nicht einordnen.
+
+"Du kannst dich nicht erinnern, richtig?" Ihr nickt einfach stumm. Der Alte holt tief Luft und erzählt euch wie er euch aus den Fängen einer Hexe befreit hatte. "Diese alte Schrulle hat deine Eltern getötet, mein Junge" raunte er während er in die Flammen des Feuers blickt.
+
+Die Geschichte die euch der alte Mann erzählt klingt völlig unglaubwürdig aber gleichzeitig auch sehr vertraut. Dies scheint der Alte bemerkt zu haben "Pah kann sich nicht erinnern der Jungspund. Aber ich bin der alte Sack der alltägliche Sachen vergisst", blafft er euch an.
+
+Ihr werft etwas mehr Holz ins Feuer. Es ist mittlerweile Nacht geworden. Der Alte erzählt über längst Vergessene Zeiten und Helden. Schwadroniert über die Vergangenheit als hätte er die letzten tausend Jahre selbst erlebt. In seinen Erzählungen geht es um Götter und die Wesen der Unterwelt und ihren schier nie aufhörenden Kampf wer die Menschheit beherrschen darf.
+
+Die ersten Sonnenstrahlen kommen raus. Der alte Sack hat die ganze Nacht durch geredet. Als ihr ihm gerade zu verstehen zu geben das ihr nun aufbrechen müsst, fällt er euch ins Wort als wüsste er was ihr sagen wolltet. "Nix da, los mach uns Frühstück wir haben viel zu tun!"
+
+"Wir?" fragt ihr völlig durcheinander von den Informationen die euch der Alte die ganze Nacht in euren Kopf geklopft hat. 
+
+"Ja, WIR Connor, oder glaubst du wirklich unsere Wege haben sich durch Zufall gekreuzt?" 
+Was wollt ihr tun?
+
+1. Ihr lasst euch auf das Spiel des alten Mannes ein
+2. Ihr pakt unbeirrt eure Sachen und seid im Begriff zu gehen
+
+(Wahl 1)
+Ihr seid viel zu Müde um den Alten zu widersprechen. Außerdem sagt etwas in eurem inneren das man dem alten Sack vertrauen kann. Also bereitet ihr das Frühstück vor und wartet ab was der Alte mit euch vor hat.
+
+(Wahl 2)
+"Wer bist du dass du mir Befehle gebt" denkt ihr euch während ihr eure Sachen zusammen packt. Plötzlich spürt ihr einen Schlag auf euren Hinterkopf und sofort wird alles dunkel um euch herum (zurück zu "Die ersten Sonnstrahlen" Endlosschleife)
+
+Gestärkt durch das Essen wartet ihr ab was der alte Mann nun mit euch vor hat. Nach einer Weile des Schweigens, steht er auf. "Los komm raus lass uns dein Training beginnen" Ihr verlasst beide den Turm. Plötzlich fängt der Alte an in einer euch nicht bekannten Sprache etwas in seinen Bart zu murmeln.
+
+Ihr beobachtet wie auf ein mal sich alle Steine und lose Erde in eurer Nähe an einem Punkt zu einem großen Haufen sammeln. Dieser Haufen transformiert sich plötzlich zu einem Erdgolem der mindestens drei Köpfe größer als ihr selbst seid. "Dann zeig mal was du kannst junger Grashüpfer" ruft euch der Alte zu während er sich in Deckung begibt
+
+(Kampf II Elite Gegner Erdgolem LvL 1)
+
+(Sieg I)
+Der Golem setzt euch hart zu doch am Ende geht ihr siegreich aus dem Kampf hervor. Von dem Golem bleibt nix mehr als ein Haufen Erde übrig. "Sehr gut! Gleich nochmal und diesmal mit mehr Power!" der Alte schnippt mit seinen Fingern und plötzlich steht der Golem wieder (weiter zu Kampf III Elite Gegner Erdgolem Lvl 2)
+
+(Niederlage I)
+Ihr gebt alles doch der Golem scheint stärker. Ihr sackt kraftlos zusammen und wartet auf den Gnadenstoß durch den Golem. Dieser setzt zum Finalen Angriff an doch in dem Moment wo der Golem zuschlagen will, zerfällt der Golem in seine Einzelteile. "Du musst dich mehr anstregen!!" brüllt der alte Mann. Er schnippst mit seinen Fingern und der Golem sammelt sich wieder zusammen. (weiter zu Kampf II Elite Gegner Erdgolem LvL 1)
+
+(Kampf III Elite Gegner Erdgolem Lvl 2)
+
+(Sieg II)
+Auch dieses Mal geht ihr als Sieger aus dem Kampf. Völlig erschöpft setzt ihr euch hin um eine Pause zu machen. Da fliegt euch plötzlich von hinten ein Kieselstein an den Kopf. "Hab ich was von Pause gesagt" brüllt der alte Mann aus seiner Deckung. "Los weiter gehts!" er schnippst erneut mit seinem Fingern und der Golem steht wieder auf. (weiter zu Kampf IV Elite Gegner Erdgolem Lvl 3)
+
+(Niederlage II)
+Der erste Kampf hat euch so erschöpft das ihr es nicht schafft den Golem zu bezwingen. Bevor der Golem euch zerschmettert zerfällt dieser zu Staub. "Los noch mal von Anfang an!" brüllt der Alte und schon erwacht der Golem zu neuen Leben. (weiter zu Kampf II Elite Gegner Erdgolem LvL 1)
+
+(Kampf IV Elite Gegner Erdgolem Lvl 3)
+
+(Sieg III)
+Mit letzter Kraft zerschlagt ihr den Golem und fallt sofort ohnmächtig um. Als ihr wieder zu euch kommt seid ihr wieder im Turm. "Sehr sehr gut" grummelt der alte Mann. "Du hast sehr viel Kraft in dir". (neuer Angriff für Char)
+
+(Niederlage III)
+Diese ganze Kämpferei ist einfach zu viel für euch gewesen. Der Golem stürmt auf euch zu doch bevor er euch überrennen kann, zerfällt der Golem in seine Einzelteile.
+"Nochmal!" hört ihr es nur von hinten rufen. Der Golem erscheint erneut und das Spiel beginnt von vorne (weiter zu Kampf II Elite Gegner Erdgolem LvL 1)
+
+Der Tag neigt sich seinem Ende. Ihr versorgt eure Wunden die ihr von dem harten Training mit dem alten Mann davon getragen habt. "Warum passiert das alles?" fragt ihr den Alten. "Es gibt eine uralte Prophezeihung die besagt das irgendwann ein Kind geboren wird, welches das Gleichgewicht der Mächte wieder herstellen wird. Dieses Kind bist du Connor"
+
+"Prophezeihung hin oder her. Ich will das alles nicht" entgegnet ihr dem Alten. "Keiner von uns hat eine Wahl, oder glaubst du das die Millionen von Opfern die dieser Krieg bis jetzt gefordert hat, sich ihr Schicksal ausgesucht haben? Nein, wir haben alle eine Bestimmung und deine ist es diesen Krieg ein für alle Mal zu beenden"
+
+Ihr seid viel zu erschöpft um dieser Ansprache noch etwas entgegen zu setzen. Ihr macht euer Lager bereit und legt euch schlafen.
+
+Am nächsten Morgen spürt ihr immer noch das harte Training in euren Knochen. Ihr bemerkt das ihr alleine in dem Turm seid. "Wo ist der alte Sack?" fragt ihr euch selbst während ihr euch ein Stück Brot rein quält.
+
+Der alte Mann ist nirgends zu sehen. Ihr beschließt noch eine Weile zu warten in der Hoffnung das er wieder auftaucht, doch als die Sonne am höchsten steht entschließt ihr euch aufzubrechen. Ihr setzt euren Weg fort.
+
+Die Landschaft verändert sich von grünen Wiesen hin zu verbrannter Erde. Überall sind Zeichen einer großen Schlacht zu finden. Ihr lauft an völlig zerstörten Bauernhäusern vorbei bis ihr plötzlich vor einem noch komplett intakten Haus steht.
+Was wollt ihr tun?
+
+1. Betretet das Haus
+2. Ihr lasst euch nicht beirren und lauft weiter euren Weg
+
+(Wahl 1)
+Ihr betretet das Haus und euch fällt sofort auf das hier etwas nicht stimmt. Vielleicht liegt das an dem Gnom der mitten im Raum gerade die letzten Reste des Hausbesitzers von dessen Wade schmatzt. Ihr zieht eure Waffe um dieses Ungeheuer in die Hölle zu schicken.
+
+(Kampf V)
+
+(Sieg IV)
+Der Gnom ist ein sehr hartnäckiger Genosse. Es dauert eine Zeit bis ihr ihn erschöpft und nun in einer guten Position seid ihm seinen hässlichen Kopf von seinen Schultern zu trennen. Gesagt getan und der kopflose Körper des Gnom sackt vor euch zusammen. "Was ein räudiger Bastard" denkt ihr euch während ihr das Haus durchsucht und eine Truhe findet.
+
+(Schloss knacken I)
+
+(Schloss knacken Erfolg I)
+Natürlich ist für euch so ein einfach Truhenschloß keine Herausforderung, so das ihr in handumdrehen die Truhe öffnet. In ihr befindet sich eine alte verstaubte Rüstung. Als ihr sie sauber macht stellt ihr fest das diese Rüstung von den alten Weisen der Horadrim geschmiedet worden sein muss. (erhalten von item id 12)
+
+(Schloss knacken kein Erfolg I)
+Seid Stunden nun versucht ihr dieses verdammte Schloß zu knacken...ohne Erfolg. Frustriert verlasst ihr das Haus und setzt euren Weg fort
