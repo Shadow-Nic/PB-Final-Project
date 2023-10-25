@@ -222,3 +222,18 @@ Was möchtet ihr tun?
 1. Spiel vom letzten Punkt laden
 2. Spiel beenden
 
+(ENDE Outro)
+
+Völlig kraftlos setzt ihr euch den Thron. Ihr fühlt euch als würde alle Lebenskraft aus euren Körper fließen. Plötzlich wird euch schwarz vor Augen. Als ihr wieder zu euch kommt liegt ihr an einem Feuer. "Du hast es tatsächlich geschafft, junger Grashüper". 
+
+Ihr erkennt die Stimme wieder. Es ist der Alte Mann. "Heute hast du das Gleichgewicht wieder hergestellt. Doch dein Weg ist noch nicht zu Ende. Die Mächte des Bösen schlafen nie und auch die Götter werden sich nicht damit abfinden an Macht verloren zu haben. Doch fürs erste ruh dich aus und sammel deine Kräfte. Du wirst sie brauchen!"
+
+ENDE?
+
+Vielen Dank fürs zocken
+Dieses Spiel wurde entwickelt von
+
+Daniel
+Niclas
+Hoang Long
+Stephan
