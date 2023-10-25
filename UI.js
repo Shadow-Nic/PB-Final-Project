@@ -78,7 +78,6 @@ console.log(introText3);
 console.log(introText4);
 console.log(introText5);
 
-
 const task1 = `
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |                                                                       |
@@ -94,7 +93,6 @@ const task1 = `
 `;
 
 console.log(task1);
-
 
 const fightSkeleton = `
       .-.
@@ -112,6 +110,7 @@ const fightSkeleton = `
      || ||
     ==' '==
 `;
+const skeleton = new NPC('Skeleton', 200, 10);
 console.log(fightSkeleton);
 
 const fightDragon = `
@@ -127,9 +126,10 @@ const fightDragon = `
         \ ^^--^^ __-^ /(__       
          ^^----^^    "^--v'
 `;
+const dragon = new NPC('El Craco', 1000, 20);
 console.log(fightDragon);
 
-const orc = `
+const fightorc = `
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣧⣄⣉⣉⣠⣼⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -144,6 +144,7 @@ const orc = `
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣶⣿⣿⣿⣿⣿⣿⣶⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠛⠛⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
 `;
+const orc = new NPC('Orc', 150, 10);
 
 console.log(orc);
 
@@ -164,6 +165,7 @@ const fightEartgolem = `
 ⠀⠀⠀⠀⠛⠛⠋⠀⣸⣿⣿⣿⣿⠏⠀⠀⠹⣿⣿⡿⣿⣇⠀⠙⠃⠈⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠉⠉⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀
 `;
+const golem = new NPC('Golem', 170, 10);
 
 console.log(fightEartgolem);
 
@@ -196,6 +198,7 @@ const fightOverlord = `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣦⣀⣀⣀⣀⣠⣴⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 `;
+const overlord = new NPC('Overlord', 9999, 999);
 console.log(fightOverlord);
 
 const fightGnom = `
@@ -209,7 +212,5 @@ const fightGnom = `
         | Y |
        /  |  \\
        """ """"`;
-
+const gnom = new NPC('Gnom', 100, 10);
 console.log(fightGnom);
-
-
