@@ -32,7 +32,7 @@ class NPC {
 }
 
 const player1 = new Player('Champ', 100, 100, 20);
-const npc1 = new NPC('Org', 30, 10);
+const npc1 = new NPC('Org', 3000000, 10);
 
 function printTop(player, npc) {
     console.clear();

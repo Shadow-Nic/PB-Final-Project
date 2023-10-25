@@ -32,7 +32,7 @@ class NPC {
 }
 
 const player1 = new Player('Champ', 100, 100, 20);
-const npc1 = new NPC('Org', 30, 10);
+const npc1 = new NPC('Org', 30000, 10);
 
 function printTop(player, npc) {
     console.clear();
@@ -46,7 +46,7 @@ fight(player1, npc1);
 export function fight(player, npc) {
     printTop(player, npc);
     console.log('1.Attack   2.Inventory ');
-    let Choice = readline.keyIn('Enter your choice: ', { limit: '$<1-2>' });
+    let Choice = readline.keyIn('Auswahl: ', { limit: '$<1-2>' });
 
     switch (Choice) {
         case '1':
@@ -67,11 +67,11 @@ function playerAttack(player, npc) {
         console.log(`${index + 1}. ${attack.name} - Manacost: ${attack.mpCost}`);
     });
 
-    const playerChoice = readline.keyIn('Choose your attack: ', { limit: `$<1-${player.Attacks.length}>` });
+    const playerChoice = readline.keyIn('Wähle deine Attacke: ', { limit: `$<1-${player.Attacks.length}>` });
     const selectedAttack = player.Attacks[playerChoice - 1];
 
     if (selectedAttack.mpCost > player.mp) {
-        console.log('Your mana is insufficient, choose another attack.');
+        console.log('Dein Mana reicht nicht aus, wähle einen anderen Angriff.');
 
         readline.question('Weiter...', { hideEchoBack: true, mask: '' });
         fight(player, npc);
@@ -82,7 +82,7 @@ function playerAttack(player, npc) {
         player.mp -= selectedAttack.mpCost;
 
         if (npc.hp <= 0) {
-            console.log('Player wins!');
+            console.log('Player Gewinnt!');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
             return;
@@ -97,17 +97,17 @@ function NPCAttack(player, npc) {
     console.log(`NPC attacks Player! ${npcDamage} damage`);
 
     if (player.hp <= 0) {
-        console.log('NPC wins!');
+        console.log(`${npc.name} Gewinnt!`);
         readline.question('Weiter...', { hideEchoBack: true, mask: '' });
         console.clear();
         return;
     }
-    readline.keyIn('Continue...', { limit: ' ' });
+    readline.question('Weiter...', { hideEchoBack: true, mask: '' });
     console.clear();
     fight(player, npc);
 }
 function playerUseInventory(player, npc) {
-    console.log('Choose your item:');
+    console.log('Wähle ein Item aus:');
     player.Inventory.forEach((item, index) => {
         console.log(`${index + 1}. ${item.name} - ${item.typ}: +${item.Points} - Qty: ${item.quantity} `);
     });
@@ -116,7 +116,7 @@ function playerUseInventory(player, npc) {
     const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
 
     if (playerChoice < 1 || playerChoice > player.Inventory.length + 1 || isNaN(playerChoice)) {
-        console.log('Invalid input, please select one of the items.');
+        console.log('ungültige Eingabe');
     } else {
         switch (playerChoice) {
             case '1':
