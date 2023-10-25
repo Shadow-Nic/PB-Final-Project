@@ -126,7 +126,7 @@ function playerUseInventory(player, npc) {
                     player.Inventory.splice(parseInt(playerChoice) - 1, 1);
                 }
                 console.log('Mana potion has been used.');
-                break;
+                return;
             }
             break;
         case '2':
@@ -137,7 +137,7 @@ function playerUseInventory(player, npc) {
                     player.Inventory.splice(parseInt(playerChoice) - 1, 1);
                 }
                 console.log('Health potion has been used.');
-                break;
+                return;
             }
             break;
         default:
