@@ -50,10 +50,14 @@ export function fight(player, npc) {
 
     switch (Choice) {
         case '1':
+            console.clear();
+            printTop(player, npc);
             playerAttack(player, npc);
             break;
 
         case '2':
+            console.clear();
+            printTop(player, npc);
             playerUseInventory(player, npc);
 
         default:
@@ -114,7 +118,7 @@ function playerUseInventory(player, npc) {
         console.log(`${index + 1}. ${item.name} - ${item.typ}: +${item.Points} - Qty: ${item.quantity} `);
     });
 
-    let playerChoice = readline.keyIn('Select your item: ', { limit: `$<1-${player.Inventory.length}>` });
+    let playerChoice = readline.keyIn('Select your item: ', { guide: false, limit: `$<1-${player.Inventory.length}>` });
     const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
 
     switch (playerChoice) {
