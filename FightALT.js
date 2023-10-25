@@ -32,7 +32,7 @@ class NPC {
 }
 
 const player1 = new Player('Champ', 100, 100, 20);
-const npc1 = new NPC('Org', 350, 10);
+const npc1 = new NPC('Org', 100, 10);
 
 function printTop(player, npc) {
     console.clear();
@@ -78,15 +78,16 @@ function playerAttack(player, npc) {
     } else {
         const damage = Math.floor(player.str * selectedAttack.multiplier * randomNumber());
         npc.hp -= damage;
+
+        console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
+
+        player.mp -= selectedAttack.mpCost;
         if (npc.hp <= 0) {
             console.log('Player Gewinnt!');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
             return;
         }
-        console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
-
-        player.mp -= selectedAttack.mpCost;
 
         NPCAttack(player, npc);
     }
@@ -106,6 +107,7 @@ function NPCAttack(player, npc) {
     console.clear();
     fight(player, npc);
 }
+
 function playerUseInventory(player, npc) {
     console.log('Wähle ein Item aus:');
     player.Inventory.forEach((item, index) => {
@@ -115,40 +117,32 @@ function playerUseInventory(player, npc) {
     let playerChoice = readline.keyIn('Select your item: ', { limit: `$<1-${player.Inventory.length}>` });
     const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
 
-    if (playerChoice < 1 || playerChoice > player.Inventory.length + 1 || isNaN(playerChoice)) {
-        console.log('ungültige Eingabe');
-    } else {
-        switch (playerChoice) {
-            case '1':
-                if (selectedItem.quantity > 0) {
-                    player.mp += selectedItem.Points;
-                    selectedItem.quantity--;
-                    if (selectedItem.quantity === 0) {
-                        player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-                    }
-                    console.log('Mana potion has been used.');
-                    fight(player, npc);
-                } else {
-                    console.log('No more mana potions available.');
+    switch (playerChoice) {
+        case '1':
+            if (selectedItem.quantity > 0) {
+                player.mp += selectedItem.Points;
+                selectedItem.quantity--;
+                if (selectedItem.quantity === 0) {
+                    player.Inventory.splice(parseInt(playerChoice) - 1, 1);
                 }
+                console.log('Mana potion has been used.');
                 break;
-            case '2':
-                if (selectedItem.quantity > 0) {
-                    player.hp += selectedItem.Points;
-                    selectedItem.quantity--;
-                    if (selectedItem.quantity === 0) {
-                        player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-                    }
-                    console.log('Health potion has been used.');
-                    fight(player, npc);
-                } else {
-                    console.log('No more health potions available.');
+            }
+            break;
+        case '2':
+            if (selectedItem.quantity > 0) {
+                player.hp += selectedItem.Points;
+                selectedItem.quantity--;
+                if (selectedItem.quantity === 0) {
+                    player.Inventory.splice(parseInt(playerChoice) - 1, 1);
                 }
+                console.log('Health potion has been used.');
                 break;
-            default:
-                playerUseInventory(player, npc);
-                break;
-        }
+            }
+            break;
+        default:
+            playerUseInventory(player, npc);
+            break;
     }
 
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
