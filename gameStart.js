@@ -2,16 +2,49 @@ import fs from 'fs';
 import Box from 'cli-box';
 import readline from 'readline-sync';
 import { Console } from 'console';
+import { fight } from './FightALT.js'
 
+readline.setDefaultOptions({encoding: 'utf8'});
 const jsonData = fs.readFileSync('./config.json', 'utf8');
 const fullStory = JSON.parse(jsonData);
 
-let player = {
-    hp: 100,
-    karma: 5,
-};
+console.log(fullStory.intro)
+/// tests
+
+class Player {
+    constructor(name, hp, mp, str) {
+        this.name = name;
+        this.str = str;
+        this.hp = hp;
+        this.mp = mp;
+        this.kp = 50;
+        this.Inventory = [
+            { name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
+            { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
+        ];
+        this.Attacks = [
+            { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
+            { name: 'Heavy Attack', mpCost: 10, multiplier: 2.5 },
+            { name: 'Lighting Strike', mpCost: 80, multiplier: 8 },
+        ];
+        this.equipped = [];
+    }
+}
+
+class NPC {
+    constructor(name, hp, str) {
+        this.name = name;
+        this.hp = hp;
+        this.str = str;
+        this.droptable = [];
+    }
+}
+const player = new Player('Champ', 100, 100, 20);
+const npc1 = new NPC('Org', 30, 10);
+/// ^ tests
 
 let continueStory = true;
+
 
 class StoryPage {
     constructor(id, storyText, optionIds, question) {
@@ -21,16 +54,18 @@ class StoryPage {
             this.question = question
     }
     generateText() {
-        generateBox(`
+       returnStats();
+
+        generateBox('center',100,18,breakExpression(`
         ${this.storyText}
         
         
         ${this.question}
-        `);
+        `));
 
 
         let labels = this.optionIds.map(option => option.optionText);
-        let pathOption = readline.keyInSelect(labels, '-->', { cancel: false })
+        let pathOption = readline.keyInSelect(labels, '', { guide: false,cancel: false})
         console.clear();
 
         let snippet = new Option();
@@ -49,32 +84,46 @@ class Option {
             this.nextStep = nextStep // folge der storyPage id
     }
     geneateFollowUp() {
+      
         if (this.event !== "default") {
             continueStory = false;
             eval(this.event)
             continueStory = true;       
         }
         if (this.effectText) {
-            generateBox(this.effectText);
+            returnStats();
+            generateBox('center',100,18,breakExpression(this.effectText));
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
         }
+       
         if(continueStory){
         let nextStory = generateStory(this.nextStep);
         nextStory.generateText();
         }
-
+        
     }
+}
+
+function intro(){
+    
+}
+
+export function returnStats(){
+    return  generateBox('left',20,3,` [HP: ${player.hp}][MP: ${player.mp}]
+        
+    [KP: ${player.kp}][STR: ${player.str}]
+    `);
 }
 
 function breakExpression(text) {
     //"\$1\n" is the replacement string. \$1 is a special replacement pattern that inserts the text that was matched by the first
     return text.replace(/([.?!;,"])/g, "\$1\n");
 }
-function generateBox(text) {
+export function generateBox(direction,w,h,text) {
     let storyBox = new Box({
-        w: 100,
-        h: 20,
+        w: w,
+        h: h,
         stringify: false,
         marks: {
             nw: '╭',
@@ -87,10 +136,10 @@ function generateBox(text) {
             w: '│'
         },
 
-        hAlign: 'center',
+        hAlign: direction,
         stretch: true,
         autoEOL: true,
-    }, breakExpression(text) + player.karma,
+    }, text,
     );
     console.log(storyBox.stringify());
 }
@@ -118,8 +167,7 @@ quickStory.generateText();
 // story Functions
 
 function karma(int) {
-    player.karma += int;
-
+    player.kp += int;
     
 }
 
