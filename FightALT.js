@@ -37,7 +37,7 @@ const npc1 = new NPC('Org', 350, 10);
 function printTop(player, npc) {
     console.clear();
     console.log(
-        `${player.name}         ${npc.name}\nHP: ${player.hp}         HP: ${npc.hp}\nMP: ${player.mp}          \nStr: ${player.str}            \n`
+        `${player.name}          ${npc.name}\nHP: ${player.hp}         HP: ${npc.hp}\nMP: ${player.mp}          \nStr: ${player.str}            \n`
     );
 }
 
@@ -123,6 +123,9 @@ function playerUseInventory(player, npc) {
                 if (selectedItem.quantity > 0) {
                     player.mp += selectedItem.Points;
                     selectedItem.quantity--;
+                    if (selectedItem.quantity === 0) {
+                        player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+                    }
                     console.log('Mana potion has been used.');
                     fight(player, npc);
                 } else {
@@ -133,6 +136,9 @@ function playerUseInventory(player, npc) {
                 if (selectedItem.quantity > 0) {
                     player.hp += selectedItem.Points;
                     selectedItem.quantity--;
+                    if (selectedItem.quantity === 0) {
+                        player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+                    }
                     console.log('Health potion has been used.');
                     fight(player, npc);
                 } else {
