@@ -5,23 +5,34 @@ const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier
 class Player {
     constructor(name, hp, mp, str) {
         this.name = name;
+        this.str = str;
         this.hp = hp;
         this.mp = mp;
-        this.str = str;
+        this.kp = 50;
+        this.Inventory = [
+            { name: 'Mana Potion', Points: 50 },
+            { name: 'HP Potion', Points: 100 },
+        ];
+        this.Attacks = [
+            { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
+            { name: 'Heavy Attack', mpCost: 10, multiplier: 2.5 },
+            { name: 'Lighting Strike', mpCost: 80, multiplier: 8 },
+        ];
+        this.equipped = [];
     }
 }
-const playerAttacks = [
-    { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
-    { name: 'Heavy Attack', mpCost: 10, multiplier: 2.5 },
-    { name: 'Lighting Strike', mpCost: 80, multiplier: 8 },
-];
-const playerInventory = [
-    { name: 'Mana Potion', Points: 50, typ: 1 },
-    { name: 'HP Potion', Points: 100, typ: 2 },
-];
 
-const player1 = new Player('Player 1', 1000, 100, 20);
-const npc1 = new Player('NPC', 1000, 100, 10);
+class NPC {
+    constructor(name, hp, str) {
+        this.name = name;
+        this.hp = hp;
+        this.str = str;
+        this.droptable = [];
+    }
+}
+
+const player1 = new Player('Champ', 100, 100, 20);
+const npc1 = new NPC('Org', 30, 10);
 
 function printTop(player, npc) {
     console.clear();
@@ -40,7 +51,7 @@ function fight(player, npc) {
     switch (Choice) {
         case '1':
             console.log('Player Attacken:');
-            playerAttacks.forEach((attack, index) => {
+            player.Attacks.forEach((attack, index) => {
                 console.log(`${index + 1}. ${attack.name} - Manacost: ${attack.mpCost}`);
             });
             playerAttack(player, npc);
@@ -48,7 +59,7 @@ function fight(player, npc) {
 
         case '2':
             console.log('Player Inventory:');
-            playerInventory.forEach((item, index) => {
+            player.Inventory.forEach((item, index) => {
                 console.log(`${index + 1}. ${item.name} - effect: +${item.Points}`);
             });
             playerUseInventory(player, npc);
@@ -58,11 +69,10 @@ function fight(player, npc) {
             break;
     }
 }
-
 function playerAttack(player, npc) {
     const playerChoice = parseInt(readline.question('\nWähle deine Attacke: '));
-    const selectedAttack = playerAttacks[playerChoice - 1];
-    if (playerChoice < 1 || playerChoice > playerAttacks.length + 1 || isNaN(playerChoice)) {
+    const selectedAttack = player.Attacks[playerChoice - 1];
+    if (playerChoice < 1 || playerChoice > player.Attacks.length + 1 || isNaN(playerChoice)) {
         console.log('ungültige eingabe, wähle eine der oben genannten attacken');
         playerAttack(player, npc);
     }
@@ -73,22 +83,21 @@ function playerAttack(player, npc) {
             fight(player, npc);
         }, 1000);
     }
-
     if (selectedAttack.mpCost <= player.mp) {
         let damage = Math.floor(player.str * selectedAttack.multiplier * randomNumber());
         npc.hp -= damage;
         console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
         player.mp -= selectedAttack.mpCost;
-
-        setTimeout(() => {
-            NPCAttack(player1, npc1);
-        }, 1000);
     }
-
     if (npc.hp <= 0) {
         console.log('Player gewinnt!');
-        return;
+        setTimeout(() => {
+            process.exit(0);
+        }, 1000);
     }
+    setTimeout(() => {
+        NPCAttack(player1, npc1);
+    }, 1000);
 }
 function NPCAttack(player, npc) {
     let npcDamage = Math.floor(npc.str * randomNumberNPC());
@@ -97,18 +106,19 @@ function NPCAttack(player, npc) {
 
     if (player.hp <= 0) {
         console.log('NPC wins!');
-        return;
+        setTimeout(() => {
+            process.exit(0);
+        }, 1000);
     }
     setTimeout(() => {
         console.clear();
         fight(player, npc);
     }, 1000);
 }
-
 function playerUseInventory(player, npc) {
     let playerChoice = readline.question('\nWähle dein Item: ');
-    const selectedItem = playerInventory[parseInt(playerChoice) - 1];
-    if (playerChoice < 1 || playerChoice > playerInventory.length + 1 || isNaN(playerChoice)) {
+    const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
+    if (playerChoice < 1 || playerChoice > player.Inventory.length + 1 || isNaN(playerChoice)) {
         console.log('ungültige eingabe, wähle eins der Items');
     }
 
