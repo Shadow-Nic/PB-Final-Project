@@ -32,12 +32,12 @@ class NPC {
 }
 
 const player1 = new Player('Champ', 100, 100, 20);
-const npc1 = new NPC('Org', 30000, 10);
+const npc1 = new NPC('Org', 100, 10);
 
 function printTop(player, npc) {
     console.clear();
     console.log(
-        `${player.name}         ${npc.name}\nHP: ${player.hp}         HP: ${npc.hp}\nMP: ${player.mp}          \nStr: ${player.str}            \n`
+        `${player.name}          ${npc.name}\nHP: ${player.hp}         HP: ${npc.hp}\nMP: ${player.mp}          \nStr: ${player.str}            \n`
     );
 }
 
@@ -50,10 +50,14 @@ export function fight(player, npc) {
 
     switch (Choice) {
         case '1':
+            console.clear();
+            printTop(player, npc);
             playerAttack(player, npc);
             break;
 
         case '2':
+            console.clear();
+            printTop(player, npc);
             playerUseInventory(player, npc);
 
         default:
@@ -78,9 +82,10 @@ function playerAttack(player, npc) {
     } else {
         const damage = Math.floor(player.str * selectedAttack.multiplier * randomNumber());
         npc.hp -= damage;
-        console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
-        player.mp -= selectedAttack.mpCost;
 
+        console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
+
+        player.mp -= selectedAttack.mpCost;
         if (npc.hp <= 0) {
             console.log('Player Gewinnt!');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
@@ -106,41 +111,42 @@ function NPCAttack(player, npc) {
     console.clear();
     fight(player, npc);
 }
+
 function playerUseInventory(player, npc) {
     console.log('Wähle ein Item aus:');
     player.Inventory.forEach((item, index) => {
         console.log(`${index + 1}. ${item.name} - ${item.typ}: +${item.Points} - Qty: ${item.quantity} `);
     });
 
-    let playerChoice = readline.keyIn('Select your item: ', { limit: `$<1-${player.Inventory.length}>` });
+    let playerChoice = readline.keyIn('Select your item: ', { guide: false, limit: `$<1-${player.Inventory.length}>` });
     const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
 
-    if (playerChoice < 1 || playerChoice > player.Inventory.length + 1 || isNaN(playerChoice)) {
-        console.log('ungültige Eingabe');
-    } else {
-        switch (playerChoice) {
-            case '1':
-                if (selectedItem.quantity > 0) {
-                    player.mp += selectedItem.Points;
-                    selectedItem.quantity--;
-                    console.log('Mana potion has been used.');
-                } else {
-                    console.log('No more mana potions available.');
+    switch (playerChoice) {
+        case '1':
+            if (selectedItem.quantity > 0) {
+                player.mp += selectedItem.Points;
+                selectedItem.quantity--;
+                if (selectedItem.quantity === 0) {
+                    player.Inventory.splice(parseInt(playerChoice) - 1, 1);
                 }
-                break;
-            case '2':
-                if (selectedItem.quantity > 0) {
-                    player.hp += selectedItem.Points;
-                    selectedItem.quantity--;
-                    console.log('Health potion has been used.');
-                } else {
-                    console.log('No more health potions available.');
+                console.log('Mana potion has been used.');
+                return;
+            }
+            break;
+        case '2':
+            if (selectedItem.quantity > 0) {
+                player.hp += selectedItem.Points;
+                selectedItem.quantity--;
+                if (selectedItem.quantity === 0) {
+                    player.Inventory.splice(parseInt(playerChoice) - 1, 1);
                 }
-                break;
-            default:
-                playerUseInventory(player, npc);
-                break;
-        }
+                console.log('Health potion has been used.');
+                return;
+            }
+            break;
+        default:
+            playerUseInventory(player, npc);
+            break;
     }
 
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
