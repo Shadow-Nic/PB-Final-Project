@@ -419,21 +419,21 @@
         {
             "id": 5,
             "optionText": "Schmied",
-            "event": "shop(1)",
+            "event": "shop('gear')",
             "effectText": 0,
             "nextStep": 99
         },
         {
             "id": 6,
             "optionText": "Gemischtwarenladen",
-            "event": "shop(2)",
+            "event": "shop('food')",
             "effectText": 0,
             "nextStep": 99
         },
         {
             "id": 7,
             "optionText": "Kräuter und Tränke",
-            "event": "shop(3)",
+            "event": "shop('potion')",
             "effectText": 0,
             "nextStep": 99
         },

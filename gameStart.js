@@ -8,11 +8,13 @@ import { fight } from './FightALT.js'
 
 readline.setDefaultOptions({ encoding: 'utf8' });
 const jsonData = fs.readFileSync('./story.json', 'utf8');
-const jsonData2 = fs.readFileSync('./usables.json', 'utf8');
+const itemsData = fs.readFileSync('./items.json', 'utf8');
 const mobsData = fs.readFileSync('./mobs.json', 'utf8')
 
+
+
 const fullStory = JSON.parse(jsonData);
-const itemPool = JSON.parse(jsonData2);
+const itemPool = JSON.parse(itemsData);
 const monster = JSON.parse(mobsData);
 
 
@@ -117,7 +119,7 @@ class Option {
             console.clear();
         }
         if (player.alive === 0) {
-            this.nextStep -= 1;
+            this.nextStep = this.looseStep;
             player.alive++;
             player.hp = player.maxHp;
             player.mp = player.maxMp
@@ -172,15 +174,12 @@ function karma(int) {
 function hp(int) {
     player.hp += int;
 }
-//shop(1)
-function shop(id) {
-    let shoppingAt = fullStory.shops.find(x => x.id === id)
-
-    for (let iId of shoppingAt.itemIds) {
-
-        let currentGood = itemPool.items.find(x => x.id === iId)
-        console.log(currentGood);
-    }
+shop('gear')
+function shop(good) {
+    
+    let buyableGoods = itemPool[good].filter(item => item.hide !== true);
+    console.log(buyableGoods);
+    
 
 
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
@@ -205,5 +204,5 @@ function intro() {
 
 
 
-intro();
+//intro();
 
