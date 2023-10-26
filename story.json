@@ -521,7 +521,7 @@
             "id": 18,
             "optionText": "Haus ignorieren und Weg fortsetzen",
             "event": "default",
-            "effectText": "default text",
+            "effectText": 0,
             "nextStep": 43
         },
         {
