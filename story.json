@@ -335,7 +335,7 @@
             "id": 51,
             "storyText": "Plötzlich scheint der Zwerg seine Statur zu verändern. Unter ätzen und Schreien transformiert sich der abgrundtief hässliche Zwerg in einen Drachen. 'I hau di korz u klein' brüllt er noch bevor seine Verwandlung komplett ist. Macht euch bereit für den alles entscheidenen Kampf!",
             "optionIds": [
-                18
+                19
             ],
             "question": "Macht euch kampbereit"
         },
@@ -519,10 +519,17 @@
         },
         {
             "id": 18,
+            "optionText": "Haus ignorieren und Weg fortsetzen",
+            "event": "default",
+            "effectText": "default text",
+            "nextStep": 43
+        },
+        {
+            "id": 19,
             "optionText": "Bin kampfbereit",
             "event": "battle(player,6)",
-            "effectText": "default text",
-            "nextStep": 52,
+            "effectText": "Seit Stunden kämpft ihr nun gegen den Drachen. Es scheint so das alles was ihr versucht nicht ausreicht um ihn zu besiegen. Ihr sammelt eure letzten Kräfte zusammen und bündelt diese für eine alles entscheidende Attacke. Der Drache hat keine Chance, getroffen von euren Schlag, sackt er und lauten gebrüll zusammen.",
+            "nextStep": 53,
             "looseText": "Der Kampf dauert nun schon eine Ewigkeit und eure Konzentration lässt nach. Natürlich nutzt der Drache die Gelegenheit. Als ihr auf ihn zu stürmt stößt er eine Feuersalve auf euch. Ihr spürt die Flammen auf eurer Haut. In dem selben Moment seid Drachenfutter."
         }
 
