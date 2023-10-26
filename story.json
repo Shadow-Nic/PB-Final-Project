@@ -420,7 +420,7 @@
             "optionText": "Ihr setzt unbeirrt euren Weg fort",
             "event": "default",
             "effectText": 0,
-            "nextStep": 3
+            "nextStep": 11
         },
         {
             "id": 5,
