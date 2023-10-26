@@ -2,11 +2,19 @@ import fs from 'fs';
 import Box from 'cli-box';
 import readline from 'readline-sync';
 import { Console } from 'console';
+
+import { scrollLogo } from './logo.js';
+import { generateBox, generateBoxText } from './textfunc.js';
 import { fight } from './FightALT.js'
 
+
 readline.setDefaultOptions({ encoding: 'utf8' });
-const jsonData = fs.readFileSync('./config.json', 'utf8');
+const jsonData = fs.readFileSync('./story.json', 'utf8');
+const jsonData2 = fs.readFileSync('./usables.json', 'utf8');
+
 const fullStory = JSON.parse(jsonData);
+const itemPool = JSON.parse(jsonData2);
+
 
 
 /// tests
@@ -57,21 +65,27 @@ class StoryPage {
     generateText() {
         returnStats();
 
-        generateBox('center', 100, 18, breakExpression(`
+        generateBoxText(`
         ${this.storyText}
         
         
         ${this.question}
-        `));
+        `);
 
+        if (this.optionIds.length !== 0) {
+            let labels = this.optionIds.map(option => option.optionText);
+            let pathOption = readline.keyInSelect(labels, '', { guide: false, cancel: true }) //cancel später raus
+            console.clear();
 
-        let labels = this.optionIds.map(option => option.optionText);
-        let pathOption = readline.keyInSelect(labels, '', { guide: false, cancel: false })
-        console.clear();
-
-        let snippet = new Option();
-        Object.assign(snippet, this.optionIds[pathOption])
-        snippet.geneateFollowUp();
+            let snippet = new Option();
+            Object.assign(snippet, this.optionIds[pathOption])
+            snippet.geneateFollowUp();
+        } else {
+            let sequenze = generateStory(this.id + 1);
+            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            console.clear();
+            sequenze.generateText();
+        }
 
     }
 }
@@ -86,16 +100,16 @@ class Option {
             this.nextStep = nextStep // folge der storyPage id
     }
     geneateFollowUp() {
-       
+
         if (this.event !== "default") {
             continueStory = false;
             eval(this.event)
             continueStory = true;
         }
-      
+
         if (this.effectText && continueStory) {
             returnStats();
-            generateBox('center', 100, 18, breakExpression(player.alive === 1 ? this.effectText : this.looseText));
+            generateBoxText(player.alive === 1 ? this.effectText : this.looseText);
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
         }
@@ -113,9 +127,7 @@ class Option {
     }
 }
 
-function intro() {
 
-}
 
 export function returnStats() {
     return generateBox('left', 20, 3, ` [HP: ${player.hp}][MP: ${player.mp}]
@@ -124,42 +136,16 @@ export function returnStats() {
     `);
 }
 
-function breakExpression(text) {
-    //"\$1\n" is the replacement string. \$1 is a special replacement pattern that inserts the text that was matched by the first
-    return text.replace(/([.?!;,"])/g, "\$1\n");
-}
-export function generateBox(direction, w, h, text) {
-    let storyBox = new Box({
-        w: w,
-        h: h,
-        stringify: false,
-        marks: {
-            nw: '╭',
-            n: '─',
-            ne: '╮',
-            e: '│',
-            se: '╯',
-            s: '─',
-            sw: '╰',
-            w: '│'
-        },
-
-        hAlign: direction,
-        stretch: true,
-        autoEOL: true,
-    }, text,
-    );
-    console.log(storyBox.stringify());
-}
-
 function generateStory(pageId) {
     let snippet = new StoryPage()
     Object.assign(snippet, fullStory.storyPages.find(x => x.id === pageId))
 
-    //check if optionIds are already objects or still Numbers
-    if (!isNaN(snippet.optionIds[0])) {
-        for (let [index, option] of snippet.optionIds.entries()) {
-            snippet.optionIds[index] = fullStory.options.find(x => x.id === snippet.optionIds[index])
+    if (snippet.optionIds.length !== 0) {
+        //check if optionIds are already objects or still Numbers
+        if (!isNaN(snippet.optionIds[0])) {
+            for (let [index, option] of snippet.optionIds.entries()) {
+                snippet.optionIds[index] = fullStory.options.find(x => x.id === snippet.optionIds[index])
+            }
         }
     }
     //console.log(snippet)
@@ -167,23 +153,47 @@ function generateStory(pageId) {
 }
 
 
-let quickStory = generateStory(1);
-//console.log(quickStory)
-
-quickStory.generateText();
 
 // story Functions
 
 function karma(int) {
     player.kp += int;
-
 }
-
+function hp(int) {
+    player.hp += int;
+}
+//shop(1)
 function shop(id) {
     let shoppingAt = fullStory.shops.find(x => x.id === id)
-    console.log("i have this items: " + shoppingAt.itemIds)
+
+    for (let iId of shoppingAt.itemIds) {
+
+        let currentGood = itemPool.items.find(x => x.id === iId)
+        console.log(currentGood);
+    }
+
 
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
 
 }
+
+
+function intro() {
+
+
+    scrollLogo();
+
+    setTimeout(() => {
+        readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+        console.clear();
+        let quickStory = generateStory(1);
+        quickStory.generateText();
+    }, 5000);
+
+    
+}
+
+
+
+intro()
 

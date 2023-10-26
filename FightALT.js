@@ -1,5 +1,5 @@
 import readline from 'readline-sync';
-import { generateBox, returnStats } from './gameStart.js'
+import { generateBox, returnStats } from './gameStart.js';
 
 const randomNumber = () => Math.random() * (1 - 0.5) + 0.5; // Multiplier Player attack
 const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier NPC attack
@@ -14,6 +14,7 @@ class Player {
         this.Inventory = [
             { name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
             { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
+            { name: 'Strengh Potion', typ: 'STR', Points: 5, quantity: 3 },
         ];
         this.Attacks = [
             { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
@@ -38,14 +39,19 @@ const npc1 = new NPC('Org', 100, 10);
 
 function printTop(player, npc) {
     console.clear();
-   
-        generateBox('center',20,3,`        ${npc.name}
-        HP: ${npc.hp}`)
-    
+
+    generateBox(
+        'center',
+        20,
+        3,
+        `        ${npc.name}
+        HP: ${npc.hp}`
+    );
+
     returnStats();
 }
 
-//fight(player1, npc1);
+// fight(player1, npc1);
 
 export function fight(player, npc) {
     printTop(player, npc);
@@ -54,16 +60,20 @@ export function fight(player, npc) {
 
     switch (Choice) {
         case '1':
-           
             printTop(player, npc);
             playerAttack(player, npc);
             break;
-
+        //####################################################################################
         case '2':
-            
             printTop(player, npc);
-            playerUseInventory(player, npc);
-
+            if (player.Inventory.length > 0) {
+                playerUseInventory(player, npc);
+            } else {
+                console.log('Du hast keine items im Inventar');
+                readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+                fight(player, npc);
+            }
+        //#####################################################################################
         default:
             fight(player, npc);
             break;
@@ -77,7 +87,7 @@ function playerAttack(player, npc) {
 
     const playerChoice = readline.keyIn('Wähle deine Attacke: ', { limit: `$<1-${player.Attacks.length}>` });
     const selectedAttack = player.Attacks[playerChoice - 1];
-    
+
     printTop(player, npc);
     if (selectedAttack.mpCost > player.mp) {
         console.log('Dein Mana reicht nicht aus, wähle einen anderen Angriff.');
@@ -126,30 +136,130 @@ function playerUseInventory(player, npc) {
 
     let playerChoice = readline.keyIn('Select your item: ', { limit: `$<1-${player.Inventory.length}>` });
     const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
-
+    //#####################################################################################################
     switch (playerChoice) {
         case '1':
-            if (selectedItem.quantity > 0) {
+            if (selectedItem.typ === 'MP') {
                 player.mp += selectedItem.Points;
                 selectedItem.quantity--;
-                if (selectedItem.quantity === 0) {
-                    player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-                }
-                console.log('Mana potion has been used.');
-                return;
+                console.log(`${selectedItem.name} wurde getrunken `);
             }
-            break;
-        case '2':
-            if (selectedItem.quantity > 0) {
+            if (selectedItem.typ === 'HP') {
                 player.hp += selectedItem.Points;
                 selectedItem.quantity--;
-                if (selectedItem.quantity === 0) {
-                    player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-                }
-                console.log('Health potion has been used.');
-                return;
+                console.log(`${selectedItem.name} wurde getrunken `);
             }
-            break;
+            if (selectedItem.typ === 'STR') {
+                player.str += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.quantity === 0) {
+                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+            }
+            return;
+
+        case '2':
+            if (selectedItem.typ === 'MP') {
+                player.mp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'HP') {
+                player.hp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'STR') {
+                player.str += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.quantity === 0) {
+                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+            }
+            return;
+        case '3':
+            if (selectedItem.typ === 'MP') {
+                player.mp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'HP') {
+                player.hp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'STR') {
+                player.str += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.quantity === 0) {
+                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+            }
+            return;
+        case '4':
+            if (selectedItem.typ === 'MP') {
+                player.mp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'HP') {
+                player.hp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'STR') {
+                player.str += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.quantity === 0) {
+                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+            }
+            return;
+        case '5':
+            if (selectedItem.typ === 'MP') {
+                player.mp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'HP') {
+                player.hp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'STR') {
+                player.str += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.quantity === 0) {
+                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+            }
+            return;
+        case '6':
+            if (selectedItem.typ === 'MP') {
+                player.mp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'HP') {
+                player.hp += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.typ === 'STR') {
+                player.str += selectedItem.Points;
+                selectedItem.quantity--;
+                console.log(`${selectedItem.name} wurde getrunken `);
+            }
+            if (selectedItem.quantity === 0) {
+                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+            }
+            return;
+        //####################################################################################################
         default:
             playerUseInventory(player, npc);
             break;

@@ -165,7 +165,9 @@ const fightEartgolem = `
 ⠀⠀⠀⠀⠛⠛⠋⠀⣸⣿⣿⣿⣿⠏⠀⠀⠹⣿⣿⡿⣿⣇⠀⠙⠃⠈⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠉⠉⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀
 `;
-const golem = new NPC('Golem', 170, 10);
+const golem1 = new NPC('Golem', 120, 10);
+const golem2 = new NPC('Golem', 170, 10);
+const golem3 = new NPC('Golem', 250, 10);
 
 console.log(fightEartgolem);
 
