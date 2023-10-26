@@ -453,21 +453,21 @@
         {
             "id": 9,
             "optionText": "Feuer",
-            "event": "-x hp",
+            "event": "hp(-6)",
             "effectText": "Wütend fläscht der Kobold seine Zähne, zückt seinen Dolch und springt auf euch zu. Er hinterlässt einen tiefen Schnitt an eurem linken Oberarm. Während ihr noch am begreifen seid was gerade passiert ist, zieht der Kobold fluchend von dannen",
             "nextStep": 17
         },
         {
             "id": 10,
             "optionText": "Zeit",
-            "event": "-x hp",
+            "event": "hp(-8)",
             "effectText": "Wütend fläscht der Kobold seine Zähne, zückt seinen Dolch und springt auf euch zu. Er hinterlässt einen tiefen Schnitt an eurem linken Oberarm. Während ihr noch am begreifen seid was gerade passiert ist, zieht der Kobold fluchend von dannen",
             "nextStep": 17
         },
         {
             "id": 11,
             "optionText": "Wasser",
-            "event": "+x hp",
+            "event": "hp(+6)",
             "effectText": "Der Kobold ist sichtlich erfreut das ihr sein Rätsel gelöst habt. Er springt freudig herum und lacht. Dann spricht er in einer Sprache die ihr nicht versteht einen Satz. Ihr fühlt euch plötzlich frisch und ausgeruht ",
             "nextStep": 17
         },
