@@ -36,7 +36,7 @@ class Player {
             { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
         ];
         this.Attacks = [
-            { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
+            { name: 'Normal Attack', mpCost: 0, multiplier: 0.1 },
             { name: 'Heavy Attack', mpCost: 10, multiplier: 2.5 },
             { name: 'Lighting Strike', mpCost: 80, multiplier: 8 },
         ];
@@ -110,7 +110,7 @@ class Option {
             continueStory = true;
         }
 
-        if (this.effectText && continueStory) {
+        if (this.effectText && continueStory || player.alive === 0) {
             returnStats(player);
             generateBoxText(player.alive === 1 ? this.effectText : this.looseText);
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
@@ -139,12 +139,12 @@ function battle(player, mopId){
 
 export function returnStats(cPlayer) {
 
-    let calcStr = () => cPlayer.str - cPlayer.maxStr < cPlayer.str ? ` + ${(cPlayer.str - cPlayer.maxStr)}` : '';
+    let calcStr = () =>  cPlayer.maxStr < cPlayer.str ? ` + ${(cPlayer.str - cPlayer.maxStr)}` : '';
     return generateBox('left', 40, 3, ` [HP: ${cPlayer.hp}/${cPlayer.maxHp}][MP: ${cPlayer.mp}/${cPlayer.maxMp}]  
     [KP: ${cPlayer.kp}][STR: ${cPlayer.maxStr}${calcStr()}]
     `);
 }
-//returnStats(player);
+returnStats(player);
 
 function generateStory(pageId) {
     let snippet = new StoryPage()
