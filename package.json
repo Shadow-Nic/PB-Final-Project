@@ -28,6 +28,7 @@
     "test": ""
   },
   "dependencies": {
+    "cli-box": "^6.0.10",
     "readline-sync": "^1.4.10"
   }
 }
