@@ -1,7 +1,5 @@
 import fs from 'fs';
-import Box from 'cli-box';
 import readline from 'readline-sync';
-import { Console } from 'console';
 
 import { scrollLogo } from './logo.js';
 import { generateBox, generateBoxText } from './textfunc.js';
@@ -11,9 +9,11 @@ import { fight } from './FightALT.js'
 readline.setDefaultOptions({ encoding: 'utf8' });
 const jsonData = fs.readFileSync('./story.json', 'utf8');
 const jsonData2 = fs.readFileSync('./usables.json', 'utf8');
+const mobsData = fs.readFileSync('./mobs.json', 'utf8')
 
 const fullStory = JSON.parse(jsonData);
 const itemPool = JSON.parse(jsonData2);
+const monster = JSON.parse(mobsData);
 
 
 
@@ -45,7 +45,6 @@ class NPC {
         this.name = name;
         this.hp = hp;
         this.str = str;
-        this.droptable = [];
     }
 }
 const player = new Player('Champ', 100, 100, 20);
@@ -127,7 +126,11 @@ class Option {
     }
 }
 
-
+function battle(player, mopId){
+    let newMob = new StoryPage()
+    Object.assign(newMob, monster.mobs.find(x => x.id === mopId))
+    fight(player, newMob);
+}
 
 export function returnStats() {
     return generateBox('left', 20, 3, ` [HP: ${player.hp}][MP: ${player.mp}]
