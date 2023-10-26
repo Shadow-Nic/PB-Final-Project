@@ -186,12 +186,6 @@
         },
         {
             "id": 29,
-            "storyText": "'Wir?' fragt ihr völlig durcheinander von den Informationen die euch der Alte die ganze Nacht in euren Kopf geklopft hat.",
-            "optionIds": [],
-            "question": ""
-        },
-        {
-            "id": 30,
             "storyText": "'Ja, WIR Connor, oder glaubst du wirklich unsere Wege haben sich durch Zufall gekreuzt?'",
             "optionIds": [
                 12,
@@ -200,7 +194,7 @@
             "question": "Was wollt ihr tun?"
         },
         {
-            "id": 31,
+            "id": 30,
             "storyText": "Gestärkt durch das Essen wartet ihr ab was der alte Mann nun mit euch vor hat. Nach einer Weile des Schweigens, steht er auf. 'Los komm raus lass uns dein Training beginnen' Ihr verlasst beide den Turm. Plötzlich fängt der Alte an in einer euch nicht bekannten Sprache etwas in seinen Bart zu murmeln.",
             "optionIds": [
                 14
@@ -208,7 +202,7 @@
             "question": "Macht euch kampfbereit"
         },
         {
-            "id": 32,
+            "id": 31,
             "storyText": "Der Golem setzt euch hart zu doch am Ende geht ihr siegreich aus dem Kampf hervor. Von dem Golem bleibt nix mehr als ein Haufen Erde übrig. 'Sehr gut! Gleich nochmal und diesmal mit mehr Power!' der Alte schnippt mit seinen Fingern und plötzlich steht der Golem wieder.",
             "optionIds": [
                 15
@@ -216,7 +210,7 @@
             "question": "Macht euch kampfbereit"
         },
         {
-            "id": 33,
+            "id": 32,
             "storyText": "Auch dieses Mal geht ihr als Sieger aus dem Kampf. Völlig erschöpft setzt ihr euch hin um eine Pause zu machen. Da fliegt euch plötzlich von hinten ein Kieselstein an den Kopf. 'Hab ich was von Pause gesagt' brüllt der alte Mann aus seiner Deckung. 'Los weiter gehts!' er schnippst erneut mit seinem Fingern und der Golem steht wieder auf.",
             "optionIds": [
                 16
@@ -224,44 +218,44 @@
             "question": "Macht euch kampfbereit"
         },
         {
-            "id": 34,
+            "id": 33,
             "storyText": "Auch dieses Mal geht ihr als Sieger aus dem Kampf. Völlig erschöpft setzt ihr euch hin um eine Pause zu machen. Da fliegt euch plötzlich von hinten ein Kieselstein an den Kopf. 'Hab ich was von Pause gesagt' brüllt der alte Mann aus seiner Deckung. 'Los weiter gehts!' er schnippst erneut mit seinem Fingern und der Golem steht wieder auf.",
             "optionIds": [],
             "event": "+neuerAngriff",
             "question": ""
         },
         {
-            "id": 35,
+            "id": 34,
             "storyText": "Der Tag neigt sich seinem Ende. Ihr versorgt eure Wunden die ihr von dem harten Training mit dem alten Mann davon getragen habt. 'Warum passiert das alles?' fragt ihr den Alten. 'Es gibt eine uralte Prophezeihung die besagt das irgendwann ein Kind geboren wird, welches das Gleichgewicht der Mächte wieder herstellen wird. Dieses Kind bist du Connor'.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 36,
+            "id": 35,
             "storyText": "'Prophezeihung hin oder her. Ich will das alles nicht' entgegnet ihr dem Alten. 'Keiner von uns hat eine Wahl, oder glaubst du das die Millionen von Opfern die dieser Krieg bis jetzt gefordert hat, sich ihr Schicksal ausgesucht haben? Nein, wir haben alle eine Bestimmung und deine ist es diesen Krieg ein für alle Mal zu beenden'.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 37,
+            "id": 36,
             "storyText": "Ihr seid viel zu erschöpft um dieser Ansprache noch etwas entgegen zu setzen. Ihr macht euer Lager bereit und legt euch schlafen.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 38,
+            "id": 37,
             "storyText": "Am nächsten Morgen spürt ihr immer noch das harte Training in euren Knochen. Ihr bemerkt das ihr alleine in dem Turm seid. 'Wo ist der alte Sack?' fragt ihr euch selbst während ihr euch ein Stück Brot rein quält.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 39,
+            "id": 38,
             "storyText": "Der alte Mann ist nirgends zu sehen. Ihr beschließt noch eine Weile zu warten in der Hoffnung das er wieder auftaucht, doch als die Sonne am höchsten steht entschließt ihr euch aufzubrechen. Ihr setzt euren Weg fort.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 40,
+            "id": 39,
             "storyText": "Die Landschaft verändert sich von grünen Wiesen hin zu verbrannter Erde. Überall sind Zeichen einer großen Schlacht zu finden. Ihr lauft an völlig zerstörten Bauernhäusern vorbei bis ihr plötzlich vor einem noch komplett intakten Haus steht.",
             "optionIds": [
                 17,
@@ -270,75 +264,75 @@
             "question": "Was wollt ihr tun?"
         },
         {
-            "id": 41,
+            "id": 40,
             "storyText": "Der Gnom ist ein sehr hartnäckiger Genosse. Es dauert eine Zeit bis ihr ihn erschöpft und nun in einer guten Position seid ihm seinen hässlichen Kopf von seinen Schultern zu trennen. Gesagt getan und der kopflose Körper des Gnom sackt vor euch zusammen. 'Was ein räudiger Bastard' denkt ihr euch während ihr das Haus durchsucht und eine Truhe findet..",
             "optionIds": [],
             "event": "schlossKnacken(schloss)",
             "question": ""
         },
         {
-            "id": 42,
+            "id": 41,
             "storyText": "Natürlich ist für euch so ein einfaches Truhenschloß keine Herausforderung, so das ihr in handumdrehen die Truhe öffnet. In ihr befindet sich eine alte verstaubte Rüstung. Als ihr sie sauber macht stellt ihr fest das diese Rüstung von den alten Weisen der Horadrim geschmiedet worden sein muss.",
             "optionIds": [],
             "event": "erhalt von ItemID 12",
             "question": ""
         },
         {
-            "id": 43,
+            "id": 42,
             "storyText": "Seid Stunden nun versucht ihr dieses verdammte Schloß zu knacken...ohne Erfolg. Frustriert verlasst ihr das Haus und setzt euren Weg fort.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 44,
+            "id": 43,
             "storyText": "Die Gegend in der ihr euch befindet wird immer trostloser. Ihr lauft einen Hügel hoch und seht schon in der Ferne eine Festung. Irgendetwas in euch zieht euch genau zu dieser Festung. Also macht ihr euch auf den Weg.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 45,
+            "id": 44,
             "storyText": "An der Festung angekommen, fallen euch direkt die aufgespießten Köpfe auf die die Festungsmauern zieren. Das lässt nichts gutes erahnen. Ihr zückt eure Waffe und schärft eure Sinne während ihr die Festung betretet.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 46,
+            "id": 45,
             "storyText": "Ihr lauft durch endlose Gänge vorbei an Knochen und Schädeln von gefallenen Soldaten. Es riecht nach Tod. Ein eiskalter Schauer läuft euch den Rücken herunter. Dies ist kein Ort an dem man sich gerne aufhalten möchte.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 47,
+            "id": 46,
             "storyText": "Plötzlich steht ihr vor einer massiven Holztür die verschlossen ist. Es bleibt euch nichts anderes übrig als das Schloß zu knacken oder zurück zu gehen. Mit fingerspitzen Gefühl fangt ihr an das Schloss zu knacken.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 48,
+            "id": 47,
             "storyText": "Mit Fingerspitzengefühl knackt ihr das Schloß. Die Tür öffnet sich mit einem lauten knarren. Mit gezückter Waffe betretet ihr den dahinter liegenden Raum.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 49,
+            "id": 48,
             "storyText": "Ihr Holzkopf! Ihr schafft es einfach nicht das Schloß zu knacken. Es hat den Anschein als seid ihr nur fürs grobe gut. Also nehmt ihr Anlauf und stürmt mit voller Kraft auf die Tür zu.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 50,
+            "id": 49,
             "storyText": "Mit Fingerspitzengefühl rennt ihr die Tür ein. Ihr steht mitten im Raum und zückt sicherheitshalber erst mal eure Waffe.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 51,
+            "id": 50,
             "storyText": "Vor euch befindet sich ein Thron der offensichtlich nur aus Knochen und Schädeln besteht. Auf dem Thron sitzt ein äußerst hässlicher Zwerg, der sich durch euer eindringen sichtlich gestört fühlt. ",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 52,
+            "id": 51,
             "storyText": "Plötzlich scheint der Zwerg seine Statur zu verändern. Unter ätzen und Schreien transformiert sich der abgrundtief hässliche Zwerg in einen Drachen. 'I hau di korz u klein' brüllt er noch bevor seine Verwandlung komplett ist. Macht euch bereit für den alles entscheidenen Kampf!",
             "optionIds": [
                 18
@@ -346,37 +340,37 @@
             "question": "Macht euch kampbereit"
         },
         {
-            "id": 53,
+            "id": 52,
             "storyText": "Seit Stunden kämpft ihr nun gegen den Drachen. Es scheint so das alles was ihr versucht nicht ausreicht um ihn zu besiegen. Ihr sammelt eure letzten Kräfte zusammen und bündelt diese für eine alles entscheidende Attacke. Der Drache hat keine Chance, getroffen von euren Schlag, sackt er und lauten gebrüll zusammen.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 54,
+            "id": 53,
             "storyText": "Völlig kraftlos setzt ihr euch den Thron. Ihr fühlt euch als würde alle Lebenskraft aus euren Körper fließen. Plötzlich wird euch schwarz vor Augen. Als ihr wieder zu euch kommt liegt ihr an einem Feuer. 'Du hast es tatsächlich geschafft, junger Grashüper'.",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 55,
+            "id": 54,
             "storyText": "Ihr erkennt die Stimme wieder. Es ist der Alte Mann. 'Heute hast du das Gleichgewicht wieder hergestellt. Doch dein Weg ist noch nicht zu Ende. Die Mächte des Bösen schlafen nie und auch die Götter werden sich nicht damit abfinden an Macht verloren zu haben. Doch fürs erste ruh dich aus und sammel deine Kräfte. Du wirst sie brauchen!'",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 56,
+            "id": 55,
             "storyText": "ENDE?",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 57,
+            "id": 56,
             "storyText": "Vielen Dank fürs zocken! Dieses Spiel wurde entwickelt von:",
             "optionIds": [],
             "question": ""
         },
         {
-            "id": 58,
+            "id": 57,
             "storyText": "Daniel, Niclas, Hoang Long und Stephan",
             "optionIds": [],
             "question": ""
@@ -476,23 +470,23 @@
             "optionText": "Ihr lasst euch auf das Spiel des alten Mannes eint",
             "event": "default",
             "effectText": "Ihr seid viel zu Müde um den Alten zu widersprechen. Außerdem sagt etwas in eurem inneren das man dem alten Sack vertrauen kann. Also bereitet ihr das Frühstück vor und wartet ab was der Alte mit euch vor hat.",
-            "nextStep": 31
+            "nextStep": 30
         },
         {
             "id": 13,
             "optionText": "Ihr pakt unbeirrt eure Sachen und seid im Begriff zu gehen",
             "event": "default",
             "effectText": "'Wer bist du dass du mir Befehle gebt' denkt ihr euch während ihr eure Sachen zusammen packt. Plötzlich spürt ihr einen Schlag auf euren Hinterkopf und sofort wird alles dunkel um euch herum.",
-            "nextStep": 30
+            "nextStep": 29
         },
         {
             "id": 14,
             "optionText": "Bin kampfbereit",
             "event": "fight(player,npc1)",
             "effectText": "Ihr beobachtet wie auf ein mal sich alle Steine und lose Erde in eurer Nähe an einem Punkt zu einem großen Haufen sammeln. Dieser Haufen transformiert sich plötzlich zu einem Erdgolem der mindestens drei Köpfe größer als ihr selbst seid. 'Dann zeig mal was du kannst junger Grashüpfer' ruft euch der Alte zu während er sich in Deckung begibt.",
-            "nextStep": 32,
+            "nextStep": 31,
             "looseText": "Ihr gebt alles doch der Golem scheint stärker. Ihr sackt kraftlos zusammen und wartet auf den Gnadenstoß durch den Golem. Dieser setzt zum Finalen Angriff an doch in dem Moment wo der Golem zuschlagen will, zerfällt der Golem in seine Einzelteile. 'Du musst dich mehr anstregen!!' brüllt der alte Mann. Er schnippst mit seinen Fingern und der Golem sammelt sich wieder zusammen.",
-            "looseStep": 31
+            "looseStep": 30
          
         },
         {
@@ -500,9 +494,9 @@
             "optionText": "Bin kampfbereit",
             "event": "fight(player,npc1)",
             "effectText": "",
-            "nextStep": 33,
+            "nextStep": 32,
             "looseText": "Der erste Kampf hat euch so erschöpft das ihr es nicht schafft den Golem zu bezwingen. Bevor der Golem euch zerschmettert zerfällt dieser zu Staub. 'Los noch mal von Anfang an!' brüllt der Alte und schon erwacht der Golem zu neuen Leben.",
-            "looseStep": 31
+            "looseStep": 30
          
         },
         {
@@ -510,9 +504,9 @@
             "optionText": "Bin kampfbereit",
             "event": "fight(player,npc1)",
             "effectText": "",
-            "nextStep": 34,
+            "nextStep": 33,
             "looseText": "Diese ganze Kämpferei ist einfach zu viel für euch gewesen. Der Golem stürmt auf euch zu doch bevor er euch überrennen kann, zerfällt der Golem in seine Einzelteile. 'Nochmal!' hört ihr es nur von hinten rufen. Der Golem erscheint erneut und das Spiel beginnt von vorne.",
-            "looseStep": 31
+            "looseStep": 30
          
         },
         {
@@ -520,7 +514,7 @@
             "optionText": "Betretet das Haus",
             "event": "fight(player,npc1)",
             "effectText": "Ihr betretet das Haus und euch fällt sofort auf das hier etwas nicht stimmt. Vielleicht liegt das an dem Gnom der mitten im Raum gerade die letzten Reste des Hausbesitzers von dessen Wade schmatzt. Ihr zieht eure Waffe um dieses Ungeheuer in die Hölle zu schicken.",
-            "nextStep": 41,
+            "nextStep": 40,
             "looseText": "Es hat den Anschein als hätte der Gnom noch mehr Hunger. Er überwältigt euch und schlägt euch K.O. Das letzte was ihr spürt ist ein beißender Schmerz an eurem Arm."
         },
         {
@@ -528,7 +522,7 @@
             "optionText": "Bin kampfbereit",
             "event": "fight(player,npc1)",
             "effectText": "default text",
-            "nextStep": 53,
+            "nextStep": 52,
             "looseText": "Der Kampf dauert nun schon eine Ewigkeit und eure Konzentration lässt nach. Natürlich nutzt der Drache die Gelegenheit. Als ihr auf ihn zu stürmt stößt er eine Feuersalve auf euch. Ihr spürt die Flammen auf eurer Haut. In dem selben Moment seid Drachenfutter."
         }
 
