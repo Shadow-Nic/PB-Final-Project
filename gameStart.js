@@ -174,7 +174,7 @@ function karma(int) {
 function hp(int) {
     player.hp += int;
 }
-shop('gear')
+//shop('potion')
 function shop(good) {
     
     let buyableGoods = itemPool[good].filter(item => item.hide !== true);
@@ -204,5 +204,5 @@ function intro() {
 
 
 
-//intro();
+intro();
 

@@ -1,5 +1,5 @@
 {
-    "Items": [
+    "gear": [
         {
             "id": 1,
             "name": "verostete alte Axt",
@@ -70,7 +70,8 @@
             "id": 12,
             "name": "Rüstung der Horadrim",
             "event": "hp(+20)",
-            "price": 2
+            "price": 2,
+            "hide": true
         },
         {
             "id": 13,
@@ -91,6 +92,70 @@
             "price": 2
         }
 
+    ],
+    "potion": [
+        {
+            "id": 1,
+            "name": "einfacher Lebenstrank",
+            "event": "hp(+2)",
+            "price": 2
+        },
+        {
+            "id": 2,
+            "name": "einfacher Stärketrank",
+            "event": "str(+2)",
+            "price": 2
+        },
+        {
+            "id": 3,
+            "name": "einfacher Manatrank",
+            "event": "mp(+2)",
+            "price": 2
+        },
+        {
+            "id": 4,
+            "name": "großer Lebenstrank",
+            "event": "hp(+20)",
+            "price": 2
+        },
+        {
+            "id": 5,
+            "name": "großer Stärketrank",
+            "event": "str(+20)",
+            "price": 2
+        },
+        {
+            "id": 6,
+            "name": "großer Manatrank",
+            "event": "mp(+20)",
+            "price": 2
+        }
+    ],
+    "food": [
+        {
+            "id": 1,
+            "name": "Trockenfleisch",
+            "event": "hp(+2)",
+            "price": 2
+        },
+        {
+            "id": 2,
+            "name": "Brot",
+            "event": "hp(+2)",
+            "price": 2
+        },
+        {
+            "id": 3,
+            "name": "Wasser",
+            "event": "mp(+2)",
+            "price": 2
+        },
+        {
+            "id": 4,
+            "name": "schwarz gebrannter Schnaps",
+            "event": "str(+2)",
+            "price": 2
+        }
     ]
 
 
