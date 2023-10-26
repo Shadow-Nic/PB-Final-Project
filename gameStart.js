@@ -25,6 +25,10 @@ class Player {
         this.str = str;
         this.hp = hp;
         this.mp = mp;
+        this.maxStr = 50;
+        this.maxHp = 200;
+        this.maxMp = 70;
+        
         this.kp = 50;
         this.alive = 1;
         this.Inventory = [
@@ -62,7 +66,7 @@ class StoryPage {
             this.question = question
     }
     generateText() {
-        returnStats();
+        returnStats(player);
 
         generateBoxText(`
         ${this.storyText}
@@ -107,7 +111,7 @@ class Option {
         }
 
         if (this.effectText && continueStory) {
-            returnStats();
+            returnStats(player);
             generateBoxText(player.alive === 1 ? this.effectText : this.looseText);
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
@@ -115,7 +119,8 @@ class Option {
         if (player.alive === 0) {
             this.nextStep -= 1;
             player.alive++;
-            player.hp = 100;
+            player.hp = player.maxHp;
+            player.mp = player.maxMp
         }
 
         if (continueStory) {
@@ -127,15 +132,17 @@ class Option {
 }
 
 function battle(player, mopId){
-    let newMob = new StoryPage()
+    let newMob = new NPC()
     Object.assign(newMob, monster.mobs.find(x => x.id === mopId))
     fight(player, newMob);
 }
 
-export function returnStats() {
-    return generateBox('left', 20, 3, ` [HP: ${player.hp}][MP: ${player.mp}]
-        
-    [KP: ${player.kp}][STR: ${player.str}]
+export function returnStats(cPlayer) {
+
+    let calcStr = () => cPlayer.str - cPlayer.maxstr > 0 ? `+${cPlayer.str - cPlayer.maxstr}` : '';
+
+    return generateBox('left', 40, 3, ` [HP: ${cPlayer.hp}/${cPlayer.maxHp}][MP: ${cPlayer.mp}/${cPlayer.maxMp}]  
+    [KP: ${cPlayer.kp}][STR: ${cPlayer.maxStr}${calcStr()}]
     `);
 }
 
@@ -187,7 +194,7 @@ function intro() {
     scrollLogo();
 
     setTimeout(() => {
-        readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+        player.name = readline.question('Dürfte ich euren Namen Erfragen? ');
         console.clear();
         let quickStory = generateStory(1);
         quickStory.generateText();
