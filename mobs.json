@@ -1,3 +1,41 @@
 {
-    
+    "mobs": [
+        {
+            "id": 1,
+            "name": "Gnom",
+            "hp": 100,
+            "str": 50
+        },
+        {
+            "id": 2,
+            "name": "Org",
+            "hp": 100,
+            "str": 50
+        },
+        {
+            "id": 3,
+            "name": "Erdgolem lvl 1",
+            "hp": 100,
+            "str": 50
+        },
+        {
+            "id": 4,
+            "name": "Erdgolem lvl 2",
+            "hp": 150,
+            "str": 100
+        },
+        {
+            "id": 5,
+            "name": "Erdgolem lvl 3",
+            "hp": 200,
+            "str": 150
+        },
+        {
+            "id": 6,
+            "name": "Drachen",
+            "hp": 1500,
+            "str": 100
+        }
+
+    ]
 }
