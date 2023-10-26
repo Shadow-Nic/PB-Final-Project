@@ -403,7 +403,7 @@
         {
             "id": 3,
             "optionText": "Eure Neugier siegt und ihr folgt dem Gebruell",
-            "event": "fight(player,npc1)",
+            "event": "battle(player,1)",
             "effectText": "Ihr seht eine Lichtung vor euch von der das Gebrüll her kommt. Vorsichtig versteckt ihr euch hinter einen Baum und beobachtet das Geschehen. Auf der Lichtung scheinen sich drei Trolle über ihre Beute zu streiten. Kühn und etwas leichtsinnig zückt ihr eure Waffe und stürmt auf die drei Streithähne zu.",
             "nextStep": 10,
             "looseText": "Vielleicht habt ihr euch etwas unterschätzt. Ihr streckt einen Troll nieder doch in dem Moment wo der Troll Körper zusammensackt, zieht euch der zweite Troll euch seine Keule über den Kopf. Es gibt einen dumpfen Schlag und das letzte was ihr mitbekommt ist das hämische Lachen der beiden übrig geblieben Trolle"
