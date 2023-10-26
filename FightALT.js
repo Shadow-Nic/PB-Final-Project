@@ -12,10 +12,13 @@ class Player {
         this.hp = hp;
         this.mp = mp;
         this.kp = 50;
+        this.maxStr = 50;
+        this.maxHp = 200;
+        this.maxMp = 170;
         this.Inventory = [
             { name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
             { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
-            { name: 'Strengh Potion', typ: 'STR', Points: 5, quantity: 3 },
+            { name: 'Strengh Potion', typ: 'STR', Points: 10, quantity: 99 },
         ];
         this.Attacks = [
             { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
@@ -35,7 +38,7 @@ class NPC {
     }
 }
 
-const player1 = new Player('Champ', 100, 100, 20);
+const player1 = new Player('Champ', 100, 100, 25);
 const npc1 = new NPC('Org', 100, 10);
 
 function printTop(player, npc) {
@@ -49,7 +52,7 @@ function printTop(player, npc) {
         HP: ${npc.hp}`
     );
 
-    returnStats();
+    returnStats(player);
 }
 
 // fight(player1, npc1);
@@ -140,126 +143,24 @@ function playerUseInventory(player, npc) {
     //#####################################################################################################
     switch (playerChoice) {
         case '1':
-            if (selectedItem.typ === 'MP') {
-                player.mp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'HP') {
-                player.hp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'STR') {
-                player.str += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.quantity === 0) {
-                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-            }
+            checkItem(player, selectedItem);
             return;
-
         case '2':
-            if (selectedItem.typ === 'MP') {
-                player.mp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'HP') {
-                player.hp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'STR') {
-                player.str += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.quantity === 0) {
-                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-            }
+            checkItem(player, selectedItem);
             return;
         case '3':
-            if (selectedItem.typ === 'MP') {
-                player.mp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'HP') {
-                player.hp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'STR') {
-                player.str += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.quantity === 0) {
-                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-            }
+            checkItem(player, selectedItem);
             return;
         case '4':
-            if (selectedItem.typ === 'MP') {
-                player.mp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'HP') {
-                player.hp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'STR') {
-                player.str += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.quantity === 0) {
-                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-            }
+            checkItem(player, selectedItem);
             return;
         case '5':
-            if (selectedItem.typ === 'MP') {
-                player.mp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'HP') {
-                player.hp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'STR') {
-                player.str += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.quantity === 0) {
-                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-            }
+            checkItem(player, selectedItem);
             return;
         case '6':
-            if (selectedItem.typ === 'MP') {
-                player.mp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'HP') {
-                player.hp += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.typ === 'STR') {
-                player.str += selectedItem.Points;
-                selectedItem.quantity--;
-                console.log(`${selectedItem.name} wurde getrunken `);
-            }
-            if (selectedItem.quantity === 0) {
-                player.Inventory.splice(parseInt(playerChoice) - 1, 1);
-            }
+            checkItem(player, selectedItem);
             return;
+
         //####################################################################################################
         default:
             playerUseInventory(player, npc);
@@ -268,4 +169,52 @@ function playerUseInventory(player, npc) {
 
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
     fight(player, npc);
+}
+
+function checkItem(player, selectedItem) {
+    if (selectedItem.typ === 'MP') {
+        if (player.mp === player.maxMp) {
+            console.log('Maximales Stats erreicht');
+            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            return;
+        }
+        player.mp += selectedItem.Points;
+        selectedItem.quantity--;
+        if (player.mp > player.maxMp + 1) {
+            player.mp = player.maxMp;
+        }
+        console.log(`${selectedItem.name} wurde getrunken `);
+        readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+    }
+    if (selectedItem.typ === 'HP') {
+        if (player.hp === player.maxHp) {
+            console.log('Maximales Stats erreicht');
+            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            return;
+        }
+        player.hp += selectedItem.Points;
+        selectedItem.quantity--;
+        if (player.hp > player.maxHp + 1) {
+            player.hp = player.maxHp;
+        }
+        console.log(`${selectedItem.name} wurde getrunken `);
+        readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+    }
+    if (selectedItem.typ === 'STR') {
+        if (player.str === player.maxStr * 1.5) {
+            console.log('SOLL DEIN BIZEPS PLATZEN???');
+            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            return;
+        }
+        player.str += selectedItem.Points;
+        selectedItem.quantity--;
+        if (player.str > player.maxStr * 1.5) {
+            player.str = player.maxStr;
+        }
+        console.log(`${selectedItem.name} wurde getrunken `);
+        readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+    }
+    if (selectedItem.quantity === 0) {
+        player.Inventory.splice(parseInt(playerChoice) - 1, 1);
+    }
 }
