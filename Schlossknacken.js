@@ -12,11 +12,7 @@ function schlossKnacken(schloss) {
         console.log('Das Schloss wurde erfolgreich geknackt');
     } else {
         console.log('Dietrich abgebrochen. Zugang bleibt verschlossen!');
-        if (schloss.type === 'tuer') {
-            console.log('Tür eintreten');
-        } else {
-            console.log('Dietrich abgebrochen. Truhe bleibt verschlossen.');
-        }
+        
     }
 }
 

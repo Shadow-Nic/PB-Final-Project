@@ -1,7 +1,6 @@
 import readline from 'readline-sync';
-import { returnStats } from './gameStart.js'
+import { returnStats } from './gameStart.js';
 import { generateBox } from './textfunc.js';
-
 
 const randomNumber = () => Math.random() * (1 - 0.5) + 0.5; // Multiplier Player attack
 const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier NPC attack
@@ -73,7 +72,7 @@ export function fight(player, npc) {
             } else {
                 console.log('Du hast keine items im Inventar');
                 readline.question('Weiter...', { hideEchoBack: true, mask: '' });
-                fight(player, npc);
+                return;
             }
         //#####################################################################################
         default:
