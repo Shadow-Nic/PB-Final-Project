@@ -404,7 +404,7 @@
             "id": 3,
             "optionText": "Eure Neugier siegt und ihr folgt dem Gebruell",
             "event": "battle(player,2)",
-            "effectText": "Ihr seht eine Lichtung vor euch von der das Gebrüll her kommt. Vorsichtig versteckt ihr euch hinter einen Baum und beobachtet das Geschehen. Auf der Lichtung scheinen sich drei Trolle über ihre Beute zu streiten. Kühn und etwas leichtsinnig zückt ihr eure Waffe und stürmt auf die drei Streithähne zu.",
+            "effectText": 0,
             "nextStep": 10,
             "looseText": "Vielleicht habt ihr euch etwas unterschätzt. Ihr streckt einen Troll nieder doch in dem Moment wo der Troll Körper zusammensackt, zieht euch der zweite Troll euch seine Keule über den Kopf. Es gibt einen dumpfen Schlag und das letzte was ihr mitbekommt ist das hämische Lachen der beiden übrig geblieben Trolle"
          
@@ -483,7 +483,7 @@
             "id": 14,
             "optionText": "Bin kampfbereit",
             "event": "battle(player,3)",
-            "effectText": "Ihr beobachtet wie auf ein mal sich alle Steine und lose Erde in eurer Nähe an einem Punkt zu einem großen Haufen sammeln. Dieser Haufen transformiert sich plötzlich zu einem Erdgolem der mindestens drei Köpfe größer als ihr selbst seid. 'Dann zeig mal was du kannst junger Grashüpfer' ruft euch der Alte zu während er sich in Deckung begibt.",
+            "effectText": 0,
             "nextStep": 31,
             "looseText": "Ihr gebt alles doch der Golem scheint stärker. Ihr sackt kraftlos zusammen und wartet auf den Gnadenstoß durch den Golem. Dieser setzt zum Finalen Angriff an doch in dem Moment wo der Golem zuschlagen will, zerfällt der Golem in seine Einzelteile. 'Du musst dich mehr anstregen!!' brüllt der alte Mann. Er schnippst mit seinen Fingern und der Golem sammelt sich wieder zusammen.",
             "looseStep": 30
@@ -493,7 +493,7 @@
             "id": 15,
             "optionText": "Bin kampfbereit",
             "event": "battle(player,4)",
-            "effectText": "",
+            "effectText": 0,
             "nextStep": 32,
             "looseText": "Der erste Kampf hat euch so erschöpft das ihr es nicht schafft den Golem zu bezwingen. Bevor der Golem euch zerschmettert zerfällt dieser zu Staub. 'Los noch mal von Anfang an!' brüllt der Alte und schon erwacht der Golem zu neuen Leben.",
             "looseStep": 30
@@ -503,7 +503,7 @@
             "id": 16,
             "optionText": "Bin kampfbereit",
             "event": "battle(player,5)",
-            "effectText": "",
+            "effectText": 0,
             "nextStep": 33,
             "looseText": "Diese ganze Kämpferei ist einfach zu viel für euch gewesen. Der Golem stürmt auf euch zu doch bevor er euch überrennen kann, zerfällt der Golem in seine Einzelteile. 'Nochmal!' hört ihr es nur von hinten rufen. Der Golem erscheint erneut und das Spiel beginnt von vorne.",
             "looseStep": 30
@@ -513,7 +513,7 @@
             "id": 17,
             "optionText": "Betretet das Haus",
             "event": "battle(player,1)",
-            "effectText": "Ihr betretet das Haus und euch fällt sofort auf das hier etwas nicht stimmt. Vielleicht liegt das an dem Gnom der mitten im Raum gerade die letzten Reste des Hausbesitzers von dessen Wade schmatzt. Ihr zieht eure Waffe um dieses Ungeheuer in die Hölle zu schicken.",
+            "effectText": 0,
             "nextStep": 40,
             "looseText": "Es hat den Anschein als hätte der Gnom noch mehr Hunger. Er überwältigt euch und schlägt euch K.O. Das letzte was ihr spürt ist ein beißender Schmerz an eurem Arm."
         },
@@ -528,8 +528,8 @@
             "id": 19,
             "optionText": "Bin kampfbereit",
             "event": "battle(player,6)",
-            "effectText": "Seit Stunden kämpft ihr nun gegen den Drachen. Es scheint so das alles was ihr versucht nicht ausreicht um ihn zu besiegen. Ihr sammelt eure letzten Kräfte zusammen und bündelt diese für eine alles entscheidende Attacke. Der Drache hat keine Chance, getroffen von euren Schlag, sackt er und lauten gebrüll zusammen.",
-            "nextStep": 53,
+            "effectText": 0,
+            "nextStep": 52,
             "looseText": "Der Kampf dauert nun schon eine Ewigkeit und eure Konzentration lässt nach. Natürlich nutzt der Drache die Gelegenheit. Als ihr auf ihn zu stürmt stößt er eine Feuersalve auf euch. Ihr spürt die Flammen auf eurer Haut. In dem selben Moment seid Drachenfutter."
         }
 
