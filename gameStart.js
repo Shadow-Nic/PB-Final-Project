@@ -51,7 +51,7 @@ class NPC {
         this.str = str;
     }
 }
-const player = new Player('Champ', 100, 100, 70);
+const player = new Player('Champ', 100, 100, 50);
 const npc1 = new NPC('Org', 30, 100);
 /// ^ tests
 
@@ -140,7 +140,6 @@ function battle(player, mopId){
 export function returnStats(cPlayer) {
 
     let calcStr = () => cPlayer.str - cPlayer.maxStr < cPlayer.str ? ` + ${(cPlayer.str - cPlayer.maxStr)}` : '';
-    console.log(calcStr())
     return generateBox('left', 40, 3, ` [HP: ${cPlayer.hp}/${cPlayer.maxHp}][MP: ${cPlayer.mp}/${cPlayer.maxMp}]  
     [KP: ${cPlayer.kp}][STR: ${cPlayer.maxStr}${calcStr()}]
     `);
