@@ -28,11 +28,14 @@ class Player {
 
         this.kp = 50;
         this.alive = 1;
-        this.Inventory = [];
+        this.Inventory = [
+            { name: 'einfacher Lebenstrank', typ: 'HP', Points: 50, quantity: 3 },
+            { name: 'einfacher Manatrank', typ: 'MP', Points: 30, quantity: 1 },
+            { name: 'einfacher Stärketrank', typ: 'STR', Points: 5, quantity: 1 },
+        ];
         this.Attacks = [
             { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
             { name: 'Heavy Attack', mpCost: 10, multiplier: 2 },
-            { name: 'Lighting Strike', mpCost: 50, multiplier: 5 },
         ];
         this.equipped = [];
     }
@@ -46,7 +49,7 @@ class NPC {
     }
 }
 const player = new Player('Champ', 200, 40, 50);
-const npc1 = new NPC('Org', 30, 100);
+
 /// ^ tests
 
 let continueStory = true;

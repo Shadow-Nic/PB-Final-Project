@@ -3,39 +3,8 @@ import { returnStats } from './gameStart.js';
 import { generateBox } from './textfunc.js';
 
 const randomNumber = () => Math.random() * (1.75 - 0.75) + 0.75; // Multiplier Player attack
-const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier NPC attack
+const randomNumberNPC = () => Math.random() * (1.25 - 0.75) + 0.75; // Multiplier NPC attack
 
-class Player {
-    constructor(name, hp, mp, str) {
-        this.name = name;
-        this.str = str;
-        this.hp = hp;
-        this.mp = mp;
-        this.kp = 50;
-        this.maxStr = 50;
-        this.maxHp = 200;
-        this.maxMp = 170;
-        this.Inventory = [
-            { name: 'HP Potion', typ: 'HP', Points: 50, quantity: 100 },
-            { name: 'MP Potion', typ: 'MP', Points: 30, quantity: 100 },
-            { name: 'STR Potion', typ: 'STR', Points: 50, quantity: 1 },
-        ];
-        this.Attacks = [];
-        this.equipped = [];
-    }
-}
-
-class NPC {
-    constructor(name, hp, str) {
-        this.name = name;
-        this.hp = hp;
-        this.str = str;
-        this.droptable = [];
-    }
-}
-
-const player1 = new Player('Champ', 100, 100, 25);
-const npc1 = new NPC('Org', 100, 10);
 function printTop(player, npc) {
     console.clear();
 
@@ -49,8 +18,6 @@ function printTop(player, npc) {
 
     returnStats(player);
 }
-
-// fight(player1, npc1);
 
 export function fight(player, npc) {
     printTop(player, npc);
@@ -105,6 +72,14 @@ function playerAttack(player, npc) {
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             if (player.str > player.maxStr) {
                 player.str = player.maxStr;
+            }
+            player.hp += 80;
+            if (player.hp > player.maxHp) {
+                player.hp = player.maxHp;
+            }
+            player.mp += 20;
+            if (player.mp > player.maxMp) {
+                player.mp = player.maxMp;
             }
             console.clear();
             return;
