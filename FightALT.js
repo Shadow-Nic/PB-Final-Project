@@ -15,16 +15,8 @@ class Player {
         this.maxStr = 50;
         this.maxHp = 200;
         this.maxMp = 170;
-        this.Inventory = [
-            { name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
-            { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
-            { name: 'Strengh Potion', typ: 'STR', Points: 10, quantity: 99 },
-        ];
-        this.Attacks = [
-            { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
-            { name: 'Heavy Attack', mpCost: 10, multiplier: 2.5 },
-            { name: 'Lighting Strike', mpCost: 80, multiplier: 8 },
-        ];
+        this.Inventory = [];
+        this.Attacks = [];
         this.equipped = [];
     }
 }
@@ -108,6 +100,9 @@ function playerAttack(player, npc) {
         if (npc.hp <= 0) {
             console.log('Player Gewinnt!');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            if (player.str > player.maxStr) {
+                player.str = player.maxStr;
+            }
             console.clear();
             return;
         }
@@ -143,22 +138,22 @@ function playerUseInventory(player, npc) {
     //#####################################################################################################
     switch (playerChoice) {
         case '1':
-            checkItem(player, selectedItem);
+            checkItem(player, selectedItem, playerChoice);
             return;
         case '2':
-            checkItem(player, selectedItem);
+            checkItem(player, selectedItem, playerChoice);
             return;
         case '3':
-            checkItem(player, selectedItem);
+            checkItem(player, selectedItem, playerChoice);
             return;
         case '4':
-            checkItem(player, selectedItem);
+            checkItem(player, selectedItem, playerChoice);
             return;
         case '5':
-            checkItem(player, selectedItem);
+            checkItem(player, selectedItem, playerChoice);
             return;
         case '6':
-            checkItem(player, selectedItem);
+            checkItem(player, selectedItem, playerChoice);
             return;
 
         //####################################################################################################
@@ -171,7 +166,7 @@ function playerUseInventory(player, npc) {
     fight(player, npc);
 }
 
-function checkItem(player, selectedItem) {
+function checkItem(player, selectedItem, playerChoice) {
     if (selectedItem.typ === 'MP') {
         if (player.mp === player.maxMp) {
             console.log('Maximales Stats erreicht');
@@ -209,7 +204,7 @@ function checkItem(player, selectedItem) {
         player.str += selectedItem.Points;
         selectedItem.quantity--;
         if (player.str > player.maxStr * 1.5) {
-            player.str = player.maxStr;
+            player.str = player.maxStr * 1.5;
         }
         console.log(`${selectedItem.name} wurde getrunken `);
         readline.question('Weiter...', { hideEchoBack: true, mask: '' });
