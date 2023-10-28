@@ -3,106 +3,106 @@
         {
             "id": 1,
             "name": "verostete alte Axt",
-            "event": "str(+2)",
-            "price": 2,
+            "event": "str(+7)",
+            "price": 25,
             "chance": 0.8
         },
         {
             "id": 2,
             "name": "schrottreifes Schwert",
-            "event": "str(+2)",
-            "price": 2,
+            "event": "str(+8)",
+            "price": 20,
             "chance": 0.8
         },
         {
             "id": 3,
             "name": "verotteter Zauberstab",
-            "event": "mp(+2)",
-            "price": 2,
+            "event": "mp(+10)",
+            "price": 15,
             "chance": 0.8
         },
         {
             "id": 4,
             "name": "stumpfer Dolch",
-            "event": "str(+2)",
-            "price": 2,
+            "event": "str(+6)",
+            "price": 10,
             "chance": 0.8
         },
         {
             "id": 5,
             "name": "abgebrochener Krumsäbel",
-            "event": "str(+2)",
-            "price": 2,
+            "event": "str(+9)",
+            "price": 15,
             "chance": 0.8
         },
         {
             "id": 6,
             "name": "ägyptisches Kriegschwert",
-            "event": "str(+2)",
-            "price": 2,
+            "event": "str(+10)",
+            "price": 30,
             "chance": 0.8
         },
         {
             "id": 7,
             "name": "Kriegskeule des siebten Höllenkreis",
-            "event": "str(+10)",
-            "price": 2,
+            "event": "str(+12)",
+            "price": 55,
             "chance": 0.125
         },
         {
             "id": 8,
             "name": "Zauberstab der Stroktah",
-            "event": "mp(+10)",
-            "price": 2,
+            "event": "mp(+15)",
+            "price": 45,
             "chance": 0.125
         },
         {
             "id": 9,
             "name": "wildleder Weste",
-            "event": "hp(+2)",
-            "price": 2,
+            "event": "hp(+5)",
+            "price": 10,
             "chance": 0.8
         },
         {
             "id": 10,
             "name": "geflickte Lederkappe",
-            "event": "hp(+2)",
-            "price": 2,
+            "event": "hp(+3)",
+            "price": 15,
             "chance": 0.8
         },
         {
             "id": 11,
             "name": "Bauernstiefel",
-            "event": "hp(+2)",
-            "price": 2,
+            "event": "hp(+4)",
+            "price": 15,
             "chance": 0.8
         },
         {
             "id": 12,
             "name": "Rüstung der Horadrim",
-            "event": "hp(+20)",
+            "event": "hp(+18)",
             "price": 2,
             "hide": true
         },
         {
             "id": 13,
             "name": "Kette des Lebens",
-            "event": "hp(+2)",
-            "price": 2,
+            "event": "hp(+5)",
+            "price": 20,
             "chance": 0.8
         },
         {
             "id": 14,
             "name": "einfacher Ring der Magier",
-            "event": "mp(+2)",
-            "price": 2,
+            "event": "mp(+8)",
+            "price": 12,
             "chance": 0.8
         },
         {
             "id": 15,
             "name": "Amulett der Verjüngung",
-            "event": "hp(+20)",
-            "price": 2,
+            "event": "hp(+30)",
+            "price": 25,
             "chance": 0.125
         }
 
@@ -111,38 +111,38 @@
         {
             "id": 1,
             "name": "einfacher Lebenstrank",
-            "event": "hp(+2)",
-            "price": 2
+            "event": "hp(+50)",
+            "price": 15
         },
         {
             "id": 2,
             "name": "einfacher Stärketrank",
-            "event": "str(+2)",
-            "price": 2
+            "event": "str(+5)",
+            "price": 15
         },
         {
             "id": 3,
             "name": "einfacher Manatrank",
-            "event": "mp(+2)",
-            "price": 2
+            "event": "mp(+30)",
+            "price": 15
         },
         {
             "id": 4,
             "name": "großer Lebenstrank",
-            "event": "hp(+20)",
-            "price": 2
+            "event": "hp(+120)",
+            "price": 25
         },
         {
             "id": 5,
             "name": "großer Stärketrank",
-            "event": "str(+20)",
-            "price": 2
+            "event": "str(+10)",
+            "price": 30
         },
         {
             "id": 6,
             "name": "großer Manatrank",
-            "event": "mp(+20)",
-            "price": 2
+            "event": "mp(+60)",
+            "price": 25
         }
     ],
     "food": [
@@ -150,25 +150,25 @@
             "id": 1,
             "name": "Trockenfleisch",
             "event": "hp(+2)",
-            "price": 2
+            "price": 7.50
         },
         {
             "id": 2,
             "name": "Brot",
             "event": "hp(+2)",
-            "price": 2
+            "price": 3.50
         },
         {
             "id": 3,
             "name": "Wasser",
             "event": "mp(+2)",
-            "price": 2
+            "price": 3.50
         },
         {
             "id": 4,
             "name": "schwarz gebrannter Schnaps",
             "event": "str(+2)",
-            "price": 2
+            "price": 11
         }
     ]
 
