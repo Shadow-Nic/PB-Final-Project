@@ -2,7 +2,7 @@ import readline from 'readline-sync';
 import { returnStats } from './gameStart.js';
 import { generateBox } from './textfunc.js';
 
-const randomNumber = () => Math.random() * (1 - 0.5) + 0.5; // Multiplier Player attack
+const randomNumber = () => Math.random() * (1.75 - 0.75) + 0.75; // Multiplier Player attack
 const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier NPC attack
 
 class Player {
@@ -15,7 +15,11 @@ class Player {
         this.maxStr = 50;
         this.maxHp = 200;
         this.maxMp = 170;
-        this.Inventory = [];
+        this.Inventory = [
+            { name: 'HP Potion', typ: 'HP', Points: 50, quantity: 100 },
+            { name: 'MP Potion', typ: 'MP', Points: 30, quantity: 100 },
+            { name: 'STR Potion', typ: 'STR', Points: 50, quantity: 1 },
+        ];
         this.Attacks = [];
         this.equipped = [];
     }
@@ -32,7 +36,6 @@ class NPC {
 
 const player1 = new Player('Champ', 100, 100, 25);
 const npc1 = new NPC('Org', 100, 10);
-
 function printTop(player, npc) {
     console.clear();
 

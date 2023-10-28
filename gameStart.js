@@ -3,21 +3,16 @@ import readline from 'readline-sync';
 
 import { scrollLogo } from './logo.js';
 import { generateBox, generateBoxText, generateInventoryText } from './textfunc.js';
-import { fight } from './FightALT.js'
-
+import { fight } from './FightALT.js';
 
 readline.setDefaultOptions({ encoding: 'utf8' });
 const jsonData = fs.readFileSync('./story.json', 'utf8');
 const itemsData = fs.readFileSync('./items.json', 'utf8');
-const mobsData = fs.readFileSync('./mobs.json', 'utf8')
-
-
+const mobsData = fs.readFileSync('./mobs.json', 'utf8');
 
 const fullStory = JSON.parse(jsonData);
 const itemPool = JSON.parse(itemsData);
 const monster = JSON.parse(mobsData);
-
-
 
 /// tests
 
@@ -38,9 +33,9 @@ class Player {
             { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
         ];
         this.Attacks = [
-            { name: 'Normal Attack', mpCost: 0, multiplier: 0.1 },
-            { name: 'Heavy Attack', mpCost: 10, multiplier: 2.5 },
-            { name: 'Lighting Strike', mpCost: 80, multiplier: 8 },
+            { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
+            { name: 'Heavy Attack', mpCost: 10, multiplier: 2 },
+            { name: 'Lighting Strike', mpCost: 80, multiplier: 5 },
         ];
         this.equipped = [];
     }
@@ -58,15 +53,11 @@ const npc1 = new NPC('Org', 30, 100);
 /// ^ tests
 
 let continueStory = true;
-let gold = 25;
-
+let gold = 75;
 
 class StoryPage {
     constructor(id, storyText, optionIds, question) {
-        this.id = id,
-            this.storyText = storyText,
-            this.optionIds = optionIds,
-            this.question = question
+        (this.id = id), (this.storyText = storyText), (this.optionIds = optionIds), (this.question = question);
     }
     generateText() {
         returnStats(player);
@@ -79,12 +70,12 @@ class StoryPage {
         `);
 
         if (this.optionIds.length !== 0) {
-            let labels = this.optionIds.map(option => option.optionText);
-            let pathOption = readline.keyInSelect(labels, '', { guide: false, cancel: true }) //cancel später raus
+            let labels = this.optionIds.map((option) => option.optionText);
+            let pathOption = readline.keyInSelect(labels, '', { guide: false, cancel: true }); //cancel später raus
             console.clear();
 
             let snippet = new Option();
-            Object.assign(snippet, this.optionIds[pathOption])
+            Object.assign(snippet, this.optionIds[pathOption]);
             snippet.geneateFollowUp();
         } else {
             let sequenze = generateStory(this.id + 1);
@@ -92,28 +83,25 @@ class StoryPage {
             console.clear();
             sequenze.generateText();
         }
-
     }
 }
 
-
 class Option {
     constructor(id, optionText, event, effectText, nextStep) {
-        this.id = id,
-            this.optionText = optionText, // text der aktion zb hau auf kopf benutz item 
-            this.event = event, // was passiert attack/ defend/ item use / nix / whatever 
-            this.effectText = effectText, // text was wirklich passiert bei deiner Option, konsequenzen sozusagen 
-            this.nextStep = nextStep // folge der storyPage id
+        (this.id = id),
+            (this.optionText = optionText), // text der aktion zb hau auf kopf benutz item
+            (this.event = event), // was passiert attack/ defend/ item use / nix / whatever
+            (this.effectText = effectText), // text was wirklich passiert bei deiner Option, konsequenzen sozusagen
+            (this.nextStep = nextStep); // folge der storyPage id
     }
     geneateFollowUp() {
-
-        if (this.event !== "default") {
+        if (this.event !== 'default') {
             continueStory = false;
-            eval(this.event)
+            eval(this.event);
             continueStory = true;
         }
 
-        if (this.effectText && continueStory || player.alive === 0) {
+        if ((this.effectText && continueStory) || player.alive === 0) {
             returnStats(player);
             generateBoxText(player.alive === 1 ? this.effectText : this.looseText);
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
@@ -123,49 +111,56 @@ class Option {
             this.nextStep = this.looseStep;
             player.alive++;
             player.hp = player.maxHp;
-            player.mp = player.maxMp
+            player.mp = player.maxMp;
         }
 
         if (continueStory) {
             let nextStory = generateStory(this.nextStep);
             nextStory.generateText();
         }
-
     }
 }
 
 function battle(player, mopId) {
-    let newMob = new NPC()
-    Object.assign(newMob, monster.mobs.find(x => x.id === mopId))
+    let newMob = new NPC();
+    Object.assign(
+        newMob,
+        monster.mobs.find((x) => x.id === mopId)
+    );
     fight(player, newMob);
 }
 
 export function returnStats(cPlayer) {
-
-    let calcStr = () => cPlayer.maxStr < cPlayer.str ? ` + ${(cPlayer.str - cPlayer.maxStr)}` : '';
-    return generateBox('left', 40, 3, ` [HP: ${cPlayer.hp}/${cPlayer.maxHp}][MP: ${cPlayer.mp}/${cPlayer.maxMp}]  
-    [KP: ${cPlayer.kp}][STR: ${cPlayer.maxStr}${calcStr()}]
-    `);
+    let calcStr = () => (cPlayer.maxStr < cPlayer.str ? ` + ${cPlayer.str - cPlayer.maxStr}` : '');
+    return generateBox(
+        'left',
+        40,
+        3,
+        ` [HP: ${cPlayer.hp}/${cPlayer.maxHp}][MP: ${cPlayer.mp}/${cPlayer.maxMp}]  
+    [KP: ${cPlayer.kp}][STR: ${cPlayer.maxStr}${calcStr()}]   Gold:${gold}
+    `
+    );
 }
 returnStats(player);
 
 function generateStory(pageId) {
-    let snippet = new StoryPage()
-    Object.assign(snippet, fullStory.storyPages.find(x => x.id === pageId))
+    let snippet = new StoryPage();
+    Object.assign(
+        snippet,
+        fullStory.storyPages.find((x) => x.id === pageId)
+    );
 
     if (snippet.optionIds.length !== 0) {
         //check if optionIds are already objects or still Numbers
         if (!isNaN(snippet.optionIds[0])) {
             for (let [index, option] of snippet.optionIds.entries()) {
-                snippet.optionIds[index] = fullStory.options.find(x => x.id === snippet.optionIds[index])
+                snippet.optionIds[index] = fullStory.options.find((x) => x.id === snippet.optionIds[index]);
             }
         }
     }
     //console.log(snippet)
     return snippet;
 }
-
-
 
 // story Functions
 
@@ -184,11 +179,10 @@ function str(int) {
 //shop('potion')
 
 function renderInventory() {
-
     let items = player.Inventory.map(function (item) {
         return `${item.quantity}x ${item.name} (+${item.Points} ${item.typ})`;
     }).join('\n');
-    generateInventoryText(items)
+    generateInventoryText(items);
 }
 
 function convertEval(func) {
@@ -196,23 +190,31 @@ function convertEval(func) {
     let functionName = parts[0]; // "mp"
     let value = parseInt(parts[1].replace('+', '')); // "+10"
     let desc = {
-        "mp": "Mana",
-        "str": "Stärke",
-        "hp": "Leben"
+        mp: 'Mana',
+        str: 'Stärke',
+        hp: 'Leben',
     };
 
     return [desc[functionName], functionName.toUpperCase(), value];
 }
 function shop(good) {
-
     returnStats(player);
-    console.log("Diese Sachen habe wir im Angebot:")
+    console.log('Diese Sachen habe wir im Angebot:');
 
-    let buyableGoods = itemPool[good].filter(item => item.hide !== true);
+    let buyableGoods = itemPool[good].filter((item) => item.hide !== true);
 
-    let labels = buyableGoods.map(item => item.name + ' (' + convertEval(item.event)[0] + ' +' + convertEval(item.event)[2] + ') Preis: ' + item.price + ' Gold');
-    let boughtItem = readline.keyInSelect(labels, 'was möchten sie kaufen?', { guide: false, cancel: true }) //cancel später raus
-
+    let labels = buyableGoods.map(
+        (item) =>
+            item.name +
+            ' (' +
+            convertEval(item.event)[0] +
+            ' +' +
+            convertEval(item.event)[2] +
+            ') Preis: ' +
+            item.price +
+            ' Gold'
+    );
+    let boughtItem = readline.keyInSelect(labels, 'was möchten sie kaufen?', { guide: false, cancel: true }); //cancel später raus
 
     let goody = buyableGoods[boughtItem];
 
@@ -220,14 +222,14 @@ function shop(good) {
         gold -= goody.price;
         if (good === 'gear') {
             let ev = convertEval(goody.event);
-            eval(goody.event)
+            eval(goody.event);
             player.equipped.push(goody);
             console.clear();
             generateBoxText(`Ihr habt ${goody.name} gekauft und habt nun permanent ${ev[2]} mehr ${ev[0]}!
 
-        `)
+        `);
         } else {
-            let eGoody = convertEval(goody.event)
+            let eGoody = convertEval(goody.event);
             //{ name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
 
             let item = player.Inventory.find(function (item) {
@@ -240,39 +242,27 @@ function shop(good) {
                 player.Inventory.push({ name: goody.name, typ: eGoody[1], Points: eGoody[2], quantity: 1 });
             }
             console.clear();
-            console.log("In eurem Rucksack befinden sich nun folgende Gegenstände")
+            console.log('In eurem Rucksack befinden sich nun folgende Gegenstände');
             renderInventory();
-
         }
     } else {
         console.clear();
-        generateBoxText(`Ihr habt nur ${gold} Gold ihr benötigt aber ${goody.price} Gold um ${goody.name} zu kaufen!`)
+        generateBoxText(`Ihr habt nur ${gold} Gold ihr benötigt aber ${goody.price} Gold um ${goody.name} zu kaufen!`);
     }
-
 
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
     console.clear();
-
-
 }
 
-
 function intro() {
-
-
     //scrollLogo();
 
     setTimeout(() => {
         player.name = readline.question('Dürfte ich euren Namen Erfragen? ');
         console.clear();
-        let quickStory = generateStory(11);
+        let quickStory = generateStory(1);
         quickStory.generateText();
     }, 5);
-
-
 }
 
-
-
 intro();
-
