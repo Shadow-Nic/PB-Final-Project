@@ -4,67 +4,78 @@
             "id": 1,
             "name": "verostete alte Axt",
             "event": "str(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 2,
             "name": "schrottreifes Schwert",
             "event": "str(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 3,
             "name": "verotteter Zauberstab",
             "event": "mp(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 4,
             "name": "stumpfer Dolch",
             "event": "str(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 5,
             "name": "abgebrochener Krumsäbel",
             "event": "str(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 6,
             "name": "ägyptisches Kriegschwert",
             "event": "str(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 7,
             "name": "Kriegskeule des siebten Höllenkreis",
             "event": "str(+10)",
-            "price": 2
+            "price": 2,
+            "chance": 0.125
         },
         {
             "id": 8,
             "name": "Zauberstab der Stroktah",
             "event": "mp(+10)",
-            "price": 2
+            "price": 2,
+            "chance": 0.125
         },
         {
             "id": 9,
             "name": "wildleder Weste",
             "event": "hp(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 10,
             "name": "geflickte Lederkappe",
             "event": "hp(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 11,
             "name": "Bauernstiefel",
             "event": "hp(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 12,
@@ -77,19 +88,22 @@
             "id": 13,
             "name": "Kette des Lebens",
             "event": "hp(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 14,
             "name": "einfacher Ring der Magier",
             "event": "mp(+2)",
-            "price": 2
+            "price": 2,
+            "chance": 0.8
         },
         {
             "id": 15,
             "name": "Amulett der Verjüngung",
             "event": "hp(+20)",
-            "price": 2
+            "price": 2,
+            "chance": 0.125
         }
 
     ],
