@@ -27,14 +27,14 @@
         {
             "id": 5,
             "name": "Erdgolem lvl 3",
-            "hp": 700,
-            "str": 40
+            "hp": 600,
+            "str": 35
         },
         {
             "id": 6,
             "name": "Drachen",
-            "hp": 1500,
-            "str": 60
+            "hp": 1000,
+            "str": 45
         }
 
     ]
