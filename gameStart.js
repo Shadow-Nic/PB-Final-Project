@@ -265,4 +265,8 @@ function intro() {
     }, 5);
 }
 
+function addAttack(player) {
+    player.Attacks.push({ name: 'Blitzschlag', mpCost: 50, multiplier: 5 });
+}
+
 intro();
