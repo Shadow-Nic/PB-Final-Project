@@ -28,14 +28,11 @@ class Player {
 
         this.kp = 50;
         this.alive = 1;
-        this.Inventory = [
-            { name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
-            { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
-        ];
+        this.Inventory = [];
         this.Attacks = [
             { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
             { name: 'Heavy Attack', mpCost: 10, multiplier: 2 },
-            { name: 'Lighting Strike', mpCost: 80, multiplier: 5 },
+            { name: 'Lighting Strike', mpCost: 50, multiplier: 5 },
         ];
         this.equipped = [];
     }
@@ -48,7 +45,7 @@ class NPC {
         this.str = str;
     }
 }
-const player = new Player('Champ', 100, 100, 50);
+const player = new Player('Champ', 200, 40, 50);
 const npc1 = new NPC('Org', 30, 100);
 /// ^ tests
 
