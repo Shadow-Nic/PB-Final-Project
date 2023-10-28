@@ -24,9 +24,19 @@ function splitText(text) {
     return [height(), lines.join('\n')];
   
 }
+function countInv(text){
+    let lines = text.split('\n').length;
+    const height = () => lines + 5 < 18 ? 18 : lines + 5;
+    
+    return [height(), text]
+}
 
 export function generateBoxText(text){
     generateBox('center', 100, ...splitText(text))
+}
+
+export function generateInventoryText(text){
+    generateBox('center', 100, ...countInv(text))
 }
 
 export function generateBox(direction, w, h, text) {
