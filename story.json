@@ -221,7 +221,7 @@
             "id": 33,
             "storyText": "Auch dieses Mal geht ihr als Sieger aus dem Kampf. Völlig erschöpft setzt ihr euch hin um eine Pause zu machen. Da fliegt euch plötzlich von hinten ein Kieselstein an den Kopf. 'Hab ich was von Pause gesagt' brüllt der alte Mann aus seiner Deckung. 'Los weiter gehts!' er schnippst erneut mit seinem Fingern und der Golem steht wieder auf.",
             "optionIds": [],
-            "event": "+neuerAngriff",
+            "event": "",
             "question": ""
         },
         {
