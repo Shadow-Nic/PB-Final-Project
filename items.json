@@ -112,37 +112,37 @@
             "id": 1,
             "name": "einfacher Lebenstrank",
             "event": "hp(+50)",
-            "price": 15
+            "price": 8
         },
         {
             "id": 2,
             "name": "einfacher Stärketrank",
             "event": "str(+5)",
-            "price": 15
+            "price": 10
         },
         {
             "id": 3,
             "name": "einfacher Manatrank",
             "event": "mp(+30)",
-            "price": 15
+            "price": 8
         },
         {
             "id": 4,
             "name": "großer Lebenstrank",
             "event": "hp(+120)",
-            "price": 25
+            "price": 15
         },
         {
             "id": 5,
             "name": "großer Stärketrank",
             "event": "str(+10)",
-            "price": 30
+            "price": 20
         },
         {
             "id": 6,
             "name": "großer Manatrank",
             "event": "mp(+60)",
-            "price": 25
+            "price": 15
         }
     ],
     "food": [
