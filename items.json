@@ -75,7 +75,7 @@
             "name": "Bauernstiefel",
             "event": "hp(+4)",
             "price": 15,
-            "chance": 0.861
+            "chance": 1
         },
         {
             "id": 12,
