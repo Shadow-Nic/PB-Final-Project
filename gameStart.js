@@ -100,7 +100,7 @@ class StoryPage {
             let sequenze = generateStory(this.id + 1);
             if (this.event) {
                 readline.question('Weiter...', { hideEchoBack: true, mask: '' });
-                let alsoEval = eval(this.event) // eval der func->rerturn wird abgespeichert wenn es einen return gibt, zugleich aber auch asugeführ sollte nur bei lokalen js projekten verwendet werden da es zu mächtigt ist und jeden code ausführen kann.(sicherheitslücke)
+                let alsoEval = eval(this.event) // eval der func->rerturn wird abgespeichert wenn es einen return gibt, zugleich aber auch asugeführ.Die sollte nur bei lokalen js projekten verwendet werden da es zu mächtigt ist und jeden code ausführen kann.(sicherheitslücke)
                 if (alsoEval !== undefined) {// überprüft ob custom fuction etwas returned  
                     sequenze = generateStory(alsoEval);
                 }
@@ -113,7 +113,7 @@ class StoryPage {
             }
             if (this.skipTo) {
                 sequenze = generateStory(this.skipTo);
-                readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+                
                 console.clear();
 
             }
@@ -283,7 +283,10 @@ function addEq(goody, exText = '') {
     `)
 
 }
-
+function addEqStory(goody){
+    addEq(goody);
+    readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+}
 
 function shop(good) {
 
@@ -373,15 +376,15 @@ function lootbox() {
 function intro() {
 
 
-    scrollLogo();
+    //scrollLogo();
 
     setTimeout(() => {
         console.log(" ")
-        player.name = readline.question('Dürfte ich euren Namen Erfragen? ');
+        //player.name = readline.question('Dürfte ich euren Namen Erfragen? ');
         console.clear();
-        let quickStory = generateStory(1);
+        let quickStory = generateStory(40);
         quickStory.generateText();
-    }, 5000);
+    }, 5);
 
 
 }
