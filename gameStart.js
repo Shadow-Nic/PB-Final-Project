@@ -55,7 +55,7 @@ const npc1 = new NPC('Org', 30, 100);
 /// ^ tests
 
 let continueStory = true;
-let gold = 25;
+let gold = 75;
 
 class StoryPage {
     constructor(id, storyText, optionIds, question) {
