@@ -113,7 +113,7 @@ class StoryPage {
             }
             if (this.skipTo) {
                 sequenze = generateStory(this.skipTo);
-                readline.question('Weiter 2...', { hideEchoBack: true, mask: '' });
+                readline.question('Weiter...', { hideEchoBack: true, mask: '' });
                 console.clear();
 
             }
