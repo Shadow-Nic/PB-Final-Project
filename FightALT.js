@@ -73,11 +73,11 @@ function playerAttack(player, npc) {
             if (player.str > player.maxStr) {
                 player.str = player.maxStr;
             }
-            player.hp += (player.maxHp / 100) * 25;
+            player.hp += Math.ceil((player.maxHp / 100) * 25);
             if (player.hp > player.maxHp) {
                 player.hp = player.maxHp;
             }
-            player.mp += (player.maxMp / 100) * 20;
+            player.mp += Math.ceil((player.maxMp / 100) * 20);
             if (player.mp > player.maxMp) {
                 player.mp = player.maxMp;
             }
