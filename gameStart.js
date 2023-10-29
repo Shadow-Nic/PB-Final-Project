@@ -50,7 +50,7 @@ class NPC {
         this.str = str;
     }
 }
-const player = new Player('Champ', 100, 100, 50);
+const player = new Player('Champ', 100, 15, 50);
 const npc1 = new NPC('Org', 30, 100);
 /// ^ tests
 
