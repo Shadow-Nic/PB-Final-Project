@@ -3,8 +3,8 @@
         {
             "id": 1,
             "name": "Gnom",
-            "hp": 650,
-            "str": 40
+            "hp": 550,
+            "str": 35
         },
         {
             "id": 2,
@@ -28,7 +28,7 @@
             "id": 5,
             "name": "Erdgolem lvl 3",
             "hp": 650,
-            "str": 40
+            "str": 35
         },
         {
             "id": 6,
