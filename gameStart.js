@@ -55,7 +55,7 @@ const npc1 = new NPC('Org', 30, 100);
 /// ^ tests
 
 let continueStory = true;
-let gold = 75;
+let gold = 40;
 
 class StoryPage {
     constructor(id, storyText, optionIds, question) {
@@ -164,7 +164,7 @@ export function returnStats(cPlayer) {
         40,
         3,
         ` [HP: ${cPlayer.hp}/${cPlayer.maxHp}][MP: ${cPlayer.mp}/${cPlayer.maxMp}]  
-    [KP: ${cPlayer.kp}][STR: ${cPlayer.maxStr}${calcStr()}]
+    [KP: ${cPlayer.kp}][STR: ${cPlayer.maxStr}${calcStr()}]  Gold: ${gold}
     `
     );
 }
