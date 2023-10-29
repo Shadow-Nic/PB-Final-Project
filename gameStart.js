@@ -204,7 +204,7 @@ function str(int) {
     player.maxStr += int;
 }
 function addAttack() {
-    player.Attacks.push({ name: 'Blitzschlag', mpCost: 50, multiplier: 4 });
+    player.Attacks.push({ name: 'Blitzschlag', mpCost: 40, multiplier: 4 });
 }
 //shop('potion')
 
