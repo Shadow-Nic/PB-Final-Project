@@ -123,7 +123,7 @@ function NPCAttack(player, npc) {
 }
 
 function playerUseInventory(player) {
-    let labels = player.Inventory.map((item) => `x${item.quantity} ${item.name}  (+ ${item.Points}${item.typ})`);
+    let labels = player.Inventory.map((item) => `x${item.quantity} ${item.name}  (+${item.Points} ${item.typ})`);
 
     let playerChoice = readline.keyInSelect(labels, 'Was möchtet ihr benutzen?', {
         guide: false,
