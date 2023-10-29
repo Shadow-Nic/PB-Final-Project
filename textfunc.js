@@ -22,24 +22,24 @@ function splitText(text) {
     const height = () => lines.length + 5 < 18 ? 18 : lines.length + 5;
 
     return [height(), lines.join('\n')];
-  
+
 }
-function countInv(text){
+function countInv(text) {
     let lines = text.split('\n').length;
     const height = () => lines + 5 < 18 ? 18 : lines + 5;
-    
+
     return [height(), text]
 }
 
-export function generateBoxText(text){
+export function generateBoxText(text) {
     generateBox('center', 100, ...splitText(text))
 }
 
-export function generateInventoryText(text){
+export function generateInventoryText(text) {
     generateBox('center', 100, ...countInv(text))
 }
 
-export function generateBox(direction, w, h, text) {
+export function generateBox(direction, w, h, text, returny) {
     let storyBox = new Box({
         w: w,
         h: h,
@@ -60,21 +60,37 @@ export function generateBox(direction, w, h, text) {
 
     }, text,
     );
-    console.log(storyBox.stringify());
+    if (returny) {
+        return storyBox;
+    } else { console.log(storyBox.stringify()); }
+
 }
 
-  /*
-        marks: {
-            nw: '╔',
-            n: '═',
-            ne: '╗',
-            e: '║',
-            se: '╝',
-            s: '═',
-            sw: '╚',
-            w: '║'
-        }
-    */
+export function combineBox(box1, box2) {
+    let box1Lines = box1.stringify().split('\n');
+    let box2Lines = box2.stringify().split('\n');
+
+    for (let i = 0; i < Math.max(box1Lines.length, box2Lines.length); i++) {
+        let line1 = box1Lines[i] || '';
+        let line2 = box2Lines[i] || '';
+        console.log(line1 + line2);
+    }
+
+}
+
+
+/*
+      marks: {
+          nw: '╔',
+          n: '═',
+          ne: '╗',
+          e: '║',
+          se: '╝',
+          s: '═',
+          sw: '╚',
+          w: '║'
+      }
+  */
 
 
 

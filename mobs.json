@@ -3,38 +3,38 @@
         {
             "id": 1,
             "name": "Gnom",
-            "hp": 100,
-            "str": 50
+            "hp": 500,
+            "str": 40
         },
         {
             "id": 2,
             "name": "Trolle",
-            "hp": 100,
-            "str": 50
+            "hp": 250,
+            "str": 15
         },
         {
             "id": 3,
             "name": "Erdgolem lvl 1",
-            "hp": 100,
-            "str": 50
+            "hp": 250,
+            "str": 15
         },
         {
             "id": 4,
             "name": "Erdgolem lvl 2",
-            "hp": 150,
-            "str": 100
+            "hp": 400,
+            "str": 25
         },
         {
             "id": 5,
             "name": "Erdgolem lvl 3",
-            "hp": 200,
-            "str": 150
+            "hp": 600,
+            "str": 35
         },
         {
             "id": 6,
             "name": "Drachen",
-            "hp": 1500,
-            "str": 100
+            "hp": 1000,
+            "str": 45
         }
 
     ]

@@ -3,7 +3,9 @@ import readline from 'readline-sync';
 
 import { scrollLogo } from './logo.js';
 import { generateBox, generateBoxText, generateInventoryText } from './textfunc.js';
-import { fight } from './FightALT.js'
+import { fight } from './FightALT.js';
+import { schlossKnacken } from './Schlossknacken.js';
+import { Console } from 'console';
 
 
 readline.setDefaultOptions({ encoding: 'utf8' });
@@ -14,7 +16,7 @@ const mobsData = fs.readFileSync('./mobs.json', 'utf8')
 
 
 const fullStory = JSON.parse(jsonData);
-const itemPool = JSON.parse(itemsData);
+export const itemPool = JSON.parse(itemsData);
 const monster = JSON.parse(mobsData);
 
 
@@ -34,13 +36,13 @@ class Player {
         this.kp = 50;
         this.alive = 1;
         this.Inventory = [
-            { name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
-            { name: 'HP Potion', typ: 'HP', Points: 100, quantity: 3 },
+            { name: 'einfacher Lebenstrank', typ: 'HP', Points: 50, quantity: 3 },
+            { name: 'einfacher Manatrank', typ: 'MP', Points: 30, quantity: 1 },
+            { name: 'einfacher Stärketrank', typ: 'STR', Points: 5, quantity: 1 },
         ];
         this.Attacks = [
-            { name: 'Normal Attack', mpCost: 0, multiplier: 0.1 },
-            { name: 'Heavy Attack', mpCost: 10, multiplier: 2.5 },
-            { name: 'Lighting Strike', mpCost: 80, multiplier: 8 },
+            { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
+            { name: 'Heavy Attack', mpCost: 10, multiplier: 2 },
         ];
         this.equipped = [];
     }
@@ -78,7 +80,10 @@ class StoryPage {
         ${this.question}
         `);
 
-        if (this.optionIds.length !== 0) {
+
+
+        if (this.optionIds.length !== 0) {// wenn optionen
+            //return;
             let labels = this.optionIds.map(option => option.optionText);
             let pathOption = readline.keyInSelect(labels, '', { guide: false, cancel: true }) //cancel später raus
             console.clear();
@@ -86,9 +91,28 @@ class StoryPage {
             let snippet = new Option();
             Object.assign(snippet, this.optionIds[pathOption])
             snippet.geneateFollowUp();
-        } else {
+        } else { // wenn keine optionen
             let sequenze = generateStory(this.id + 1);
-            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            if (this.event) {
+                readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+                let alsoEval = eval(this.event) // überprüft ob custom fuction etwas returned
+                if (alsoEval !== undefined) {// prüft ob eval function Step Zahlen returnt hat 
+                    sequenze = generateStory(alsoEval);
+                }
+            }
+            else {
+                if (!this.skipTo) { // wenn aktuelle story kein skipTo
+                    sequenze = generateStory(this.id + 1);// nächste id in der schlange wird genommen
+                }
+                readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            }
+            if (this.skipTo) {
+                sequenze = generateStory(this.skipTo);
+                console.clear();
+
+            }
+
+
             console.clear();
             sequenze.generateText();
         }
@@ -116,11 +140,15 @@ class Option {
         if (this.effectText && continueStory || player.alive === 0) {
             returnStats(player);
             generateBoxText(player.alive === 1 ? this.effectText : this.looseText);
-            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+            readline.question('Weiter..1.', { hideEchoBack: true, mask: '' });
             console.clear();
         }
         if (player.alive === 0) {
-            this.nextStep = this.looseStep;
+            if (this.looseStep) {
+                this.nextStep = this.looseStep;
+            } else {
+                this.nextStep -= 1;
+            }
             player.alive++;
             player.hp = player.maxHp;
             player.mp = player.maxMp
@@ -153,6 +181,7 @@ function generateStory(pageId) {
     let snippet = new StoryPage()
     Object.assign(snippet, fullStory.storyPages.find(x => x.id === pageId))
 
+
     if (snippet.optionIds.length !== 0) {
         //check if optionIds are already objects or still Numbers
         if (!isNaN(snippet.optionIds[0])) {
@@ -181,6 +210,9 @@ function mp(int) {
 function str(int) {
     player.maxStr += int;
 }
+function addAttack() {
+    player.Attacks.push({ name: 'Blitzschlag', mpCost: 50, multiplier: 5 });
+}
 //shop('potion')
 
 function renderInventory() {
@@ -203,6 +235,19 @@ function convertEval(func) {
 
     return [desc[functionName], functionName.toUpperCase(), value];
 }
+function addEq(goody, exText = '') {
+    let ev = convertEval(goody.event);
+    eval(goody.event)
+    player.equipped.push(goody);
+    console.clear();
+    generateBoxText(`Ihr habt ${goody.name} erhalten und habt nun permanent ${ev[2]} mehr ${ev[0]}!
+    ${exText}
+
+    `)
+
+}
+
+
 function shop(good) {
 
     returnStats(player);
@@ -219,13 +264,7 @@ function shop(good) {
     if (gold >= goody.price) {
         gold -= goody.price;
         if (good === 'gear') {
-            let ev = convertEval(goody.event);
-            eval(goody.event)
-            player.equipped.push(goody);
-            console.clear();
-            generateBoxText(`Ihr habt ${goody.name} gekauft und habt nun permanent ${ev[2]} mehr ${ev[0]}!
-
-        `)
+            addEq(goody);
         } else {
             let eGoody = convertEval(goody.event)
             //{ name: 'Mana Potion', typ: 'MP', Points: 50, quantity: 5 },
@@ -249,12 +288,41 @@ function shop(good) {
         generateBoxText(`Ihr habt nur ${gold} Gold ihr benötigt aber ${goody.price} Gold um ${goody.name} zu kaufen!`)
     }
 
-
     readline.question('Weiter...', { hideEchoBack: true, mask: '' });
     console.clear();
-
-
 }
+
+function loot() {
+
+    let lootTable = itemPool.gear.filter(item => item.hide !== true);
+
+    const zufallsItem = Math.random();
+    let erhaltenerGegenstand;
+    console.log(zufallsItem);
+
+    for (const item of lootTable) {
+        if (zufallsItem < item.chance) {
+            erhaltenerGegenstand = item;
+        }
+    }
+
+    return erhaltenerGegenstand;
+}
+
+function lootbox() {
+    let min = 13;
+    let max = 54;
+    let randomGold = Math.floor(Math.random() * (max - min + 1)) + min;
+    let randomItem = loot();
+
+    gold += randomGold;
+
+    console.log("Ihr öffnet eine Truhe und erhaltet")
+
+    addEq(randomItem, ` Außerdem habt ihr ${randomGold} Gold gefunden.`)
+    readline.question('Weiter...', { hideEchoBack: true, mask: '' });
+}
+
 
 
 function intro() {
@@ -265,7 +333,7 @@ function intro() {
     setTimeout(() => {
         player.name = readline.question('Dürfte ich euren Namen Erfragen? ');
         console.clear();
-        let quickStory = generateStory(11);
+        let quickStory = generateStory(1);
         quickStory.generateText();
     }, 5);
 
@@ -275,4 +343,5 @@ function intro() {
 
 
 intro();
+
 

@@ -2,36 +2,8 @@ import readline from 'readline-sync';
 import { returnStats } from './gameStart.js';
 import { generateBox } from './textfunc.js';
 
-const randomNumber = () => Math.random() * (1 - 0.5) + 0.5; // Multiplier Player attack
-const randomNumberNPC = () => Math.random() * (1.5 - 0.75) + 0.75; // Multiplier NPC attack
-
-class Player {
-    constructor(name, hp, mp, str) {
-        this.name = name;
-        this.str = str;
-        this.hp = hp;
-        this.mp = mp;
-        this.kp = 50;
-        this.maxStr = 50;
-        this.maxHp = 200;
-        this.maxMp = 170;
-        this.Inventory = [];
-        this.Attacks = [];
-        this.equipped = [];
-    }
-}
-
-class NPC {
-    constructor(name, hp, str) {
-        this.name = name;
-        this.hp = hp;
-        this.str = str;
-        this.droptable = [];
-    }
-}
-
-const player1 = new Player('Champ', 100, 100, 25);
-const npc1 = new NPC('Org', 100, 10);
+const randomNumber = () => Math.random() * (1.75 - 0.75) + 0.75; // Multiplier Player attack
+const randomNumberNPC = () => Math.random() * (1.25 - 0.75) + 0.75; // Multiplier NPC attack
 
 function printTop(player, npc) {
     console.clear();
@@ -46,8 +18,6 @@ function printTop(player, npc) {
 
     returnStats(player);
 }
-
-// fight(player1, npc1);
 
 export function fight(player, npc) {
     printTop(player, npc);
@@ -102,6 +72,14 @@ function playerAttack(player, npc) {
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             if (player.str > player.maxStr) {
                 player.str = player.maxStr;
+            }
+            player.hp += 80;
+            if (player.hp > player.maxHp) {
+                player.hp = player.maxHp;
+            }
+            player.mp += 20;
+            if (player.mp > player.maxMp) {
+                player.mp = player.maxMp;
             }
             console.clear();
             return;

@@ -221,13 +221,13 @@
             "id": 33,
             "storyText": "Auch dieses Mal geht ihr als Sieger aus dem Kampf. Völlig erschöpft setzt ihr euch hin um eine Pause zu machen. Da fliegt euch plötzlich von hinten ein Kieselstein an den Kopf. 'Hab ich was von Pause gesagt' brüllt der alte Mann aus seiner Deckung. 'Los weiter gehts!' er schnippst erneut mit seinem Fingern und der Golem steht wieder auf.",
             "optionIds": [],
-            "event": "+neuerAngriff",
             "question": ""
         },
         {
             "id": 34,
             "storyText": "Der Tag neigt sich seinem Ende. Ihr versorgt eure Wunden die ihr von dem harten Training mit dem alten Mann davon getragen habt. 'Warum passiert das alles?' fragt ihr den Alten. 'Es gibt eine uralte Prophezeihung die besagt das irgendwann ein Kind geboren wird, welches das Gleichgewicht der Mächte wieder herstellen wird. Dieses Kind bist du Connor'.",
             "optionIds": [],
+            "event": "addAttack()",
             "question": ""
         },
         {
@@ -267,15 +267,18 @@
             "id": 40,
             "storyText": "Der Gnom ist ein sehr hartnäckiger Genosse. Es dauert eine Zeit bis ihr ihn erschöpft und nun in einer guten Position seid ihm seinen hässlichen Kopf von seinen Schultern zu trennen. Gesagt getan und der kopflose Körper des Gnom sackt vor euch zusammen. 'Was ein räudiger Bastard' denkt ihr euch während ihr das Haus durchsucht und eine Truhe findet..",
             "optionIds": [],
-            "event": "schlossKnacken(schloss)",
+            "event": "schlossKnacken(player.kp,41,42)",
             "question": ""
+
         },
         {
             "id": 41,
             "storyText": "Natürlich ist für euch so ein einfaches Truhenschloß keine Herausforderung, so das ihr in handumdrehen die Truhe öffnet. In ihr befindet sich eine alte verstaubte Rüstung. Als ihr sie sauber macht stellt ihr fest das diese Rüstung von den alten Weisen der Horadrim geschmiedet worden sein muss.",
             "optionIds": [],
-            "event": "erhalt von ItemID 12",
-            "question": ""
+            "event": "addEq({id:12, name: 'haöö', event: 'hp(+18)'})",
+            "question": "",
+            "skipTo": 43
+
         },
         {
             "id": 42,
@@ -305,6 +308,7 @@
             "id": 46,
             "storyText": "Plötzlich steht ihr vor einer massiven Holztür die verschlossen ist. Es bleibt euch nichts anderes übrig als das Schloß zu knacken oder zurück zu gehen. Mit fingerspitzen Gefühl fangt ihr an das Schloss zu knacken.",
             "optionIds": [],
+            "event": "schlossKnacken(player.kp,47,48)",
             "question": ""
         },
         {
@@ -312,6 +316,7 @@
             "storyText": "Mit Fingerspitzengefühl knackt ihr das Schloß. Die Tür öffnet sich mit einem lauten knarren. Mit gezückter Waffe betretet ihr den dahinter liegenden Raum.",
             "optionIds": [],
             "question": ""
+            ,"skipTo": 50
         },
         {
             "id": 48,
