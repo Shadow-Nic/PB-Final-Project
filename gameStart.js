@@ -140,7 +140,7 @@ class Option {
         if (this.effectText && continueStory || player.alive === 0) {
             returnStats(player);
             generateBoxText(player.alive === 1 ? this.effectText : this.looseText);
-            readline.question('Weiter..1.', { hideEchoBack: true, mask: '' });
+            readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             console.clear();
         }
         if (player.alive === 0) {
