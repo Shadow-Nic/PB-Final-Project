@@ -21,7 +21,7 @@ function printTop(player, npc) {
 
 export function fight(player, npc) {
     printTop(player, npc);
-    console.log('1.Attack   2.Inventory ');
+    console.log('1.Attacken   2.Inventar ');
     let Choice = readline.keyIn('Auswahl: ', { limit: '$<1-2>' });
 
     switch (Choice) {
@@ -35,9 +35,8 @@ export function fight(player, npc) {
             if (player.Inventory.length > 0) {
                 playerUseInventory(player, npc);
             } else {
-                console.log('Du hast keine items im Inventar');
+                console.log('Ihr habt nichts in eurem Rucksack');
                 readline.question('Weiter...', { hideEchoBack: true, mask: '' });
-                return;
             }
         //#####################################################################################
         default:
@@ -46,17 +45,17 @@ export function fight(player, npc) {
     }
 }
 function playerAttack(player, npc) {
-    console.log('Player Attacks:');
+    console.log('Spieler Attacken:');
     player.Attacks.forEach((attack, index) => {
         console.log(`${index + 1}. ${attack.name} - Manacost: ${attack.mpCost}`);
     });
 
-    const playerChoice = readline.keyIn('Wähle deine Attacke: ', { limit: `$<1-${player.Attacks.length}>` });
+    const playerChoice = readline.keyIn('Wählt eine Attacke: ', { limit: `$<1-${player.Attacks.length}>` });
     const selectedAttack = player.Attacks[playerChoice - 1];
 
     printTop(player, npc);
     if (selectedAttack.mpCost > player.mp) {
-        console.log('Dein Mana reicht nicht aus, wähle einen anderen Angriff.');
+        console.log('Euer Mana reicht nicht aus, wählt einen anderen Angriff.');
 
         readline.question('Weiter...', { hideEchoBack: true, mask: '' });
         fight(player, npc);
@@ -64,11 +63,11 @@ function playerAttack(player, npc) {
         const damage = Math.floor(player.str * selectedAttack.multiplier * randomNumber());
         npc.hp -= damage;
 
-        console.log(`Player uses ${selectedAttack.name} on NPC! ${damage} damage`);
+        console.log(`Ihr fügt euren Gegner mit ${selectedAttack} einen Schaden von${damage} zu.`);
 
         player.mp -= selectedAttack.mpCost;
         if (npc.hp <= 0) {
-            console.log('Player Gewinnt!');
+            console.log('Ihr seid Siegreich!');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             if (player.str > player.maxStr) {
                 player.str = player.maxStr;
@@ -91,10 +90,10 @@ function playerAttack(player, npc) {
 function NPCAttack(player, npc) {
     let npcDamage = Math.floor(npc.str * randomNumberNPC());
     player.hp -= npcDamage;
-    console.log(`NPC attacks Player! ${npcDamage} damage`);
+    console.log(`${npc.name} greift euch an und fügt euch ${npcDamage} Schaden zu.`);
 
     if (player.hp <= 0) {
-        console.log(`${npc.name} Gewinnt!`);
+        console.log(`${npc.name} zermalmt euch!`);
         readline.question('Weiter...', { hideEchoBack: true, mask: '' });
         console.clear();
         player.alive = 0;
@@ -106,12 +105,11 @@ function NPCAttack(player, npc) {
 }
 
 function playerUseInventory(player, npc) {
-    console.log('Wähle ein Item aus:');
     player.Inventory.forEach((item, index) => {
-        console.log(`${index + 1}. ${item.name} - ${item.typ}: +${item.Points} - Qty: ${item.quantity} `);
+        console.log(`${index + 1}. ${item.name} - ${item.typ}: +${item.Points} - Anzahl: ${item.quantity} `);
     });
 
-    let playerChoice = readline.keyIn('Select your item: ', { limit: `$<1-${player.Inventory.length}>` });
+    let playerChoice = readline.keyIn('\nWählt einen Gegenstand: ', { limit: `$<1-${player.Inventory.length}>` });
     const selectedItem = player.Inventory[parseInt(playerChoice) - 1];
     //#####################################################################################################
     switch (playerChoice) {
@@ -147,7 +145,7 @@ function playerUseInventory(player, npc) {
 function checkItem(player, selectedItem, playerChoice) {
     if (selectedItem.typ === 'MP') {
         if (player.mp === player.maxMp) {
-            console.log('Maximales Stats erreicht');
+            console.log('Ihr könnt nicht mehr Mana zu euch nehmen ');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             return;
         }
@@ -161,7 +159,7 @@ function checkItem(player, selectedItem, playerChoice) {
     }
     if (selectedItem.typ === 'HP') {
         if (player.hp === player.maxHp) {
-            console.log('Maximales Stats erreicht');
+            console.log('Ihr könnt nicht mehr Leben zu euch nehmen ');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             return;
         }
@@ -175,7 +173,7 @@ function checkItem(player, selectedItem, playerChoice) {
     }
     if (selectedItem.typ === 'STR') {
         if (player.str === player.maxStr * 1.5) {
-            console.log('SOLL DEIN BIZEPS PLATZEN???');
+            console.log('SOLL EUER BIZEPS PLATZEN SIR???');
             readline.question('Weiter...', { hideEchoBack: true, mask: '' });
             return;
         }

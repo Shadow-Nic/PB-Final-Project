@@ -31,9 +31,9 @@ class Player {
         this.kp = 50;
         this.alive = 1;
         this.Inventory = [
+            { name: 'einfacher Stärketrank', typ: 'STR', Points: 5, quantity: 1 },
             { name: 'einfacher Lebenstrank', typ: 'HP', Points: 50, quantity: 3 },
             { name: 'einfacher Manatrank', typ: 'MP', Points: 30, quantity: 1 },
-            { name: 'einfacher Stärketrank', typ: 'STR', Points: 5, quantity: 1 },
         ];
         this.Attacks = [
             { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
