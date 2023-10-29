@@ -26,7 +26,7 @@ class Player {
         this.mp = mp;
         this.maxStr = 50;
         this.maxHp = 200;
-        this.maxMp = 70;
+        this.maxMp = 80;
 
         this.kp = 50;
         this.alive = 1;
@@ -37,7 +37,7 @@ class Player {
         ];
         this.Attacks = [
             { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
-            { name: 'Heavy Attack', mpCost: 15, multiplier: 2 },
+            { name: 'Heavy Attack', mpCost: 15, multiplier: 2.3 },
         ];
         this.equipped = [];
     }
