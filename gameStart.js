@@ -376,15 +376,15 @@ function lootbox() {
 function intro() {
 
 
-    //scrollLogo();
+    scrollLogo();
 
     setTimeout(() => {
         console.log(" ")
-        //player.name = readline.question('Dürfte ich euren Namen Erfragen? ');
+        player.name = readline.question('Dürfte ich euren Namen Erfragen? ');
         console.clear();
-        let quickStory = generateStory(40);
+        let quickStory = generateStory(1);
         quickStory.generateText();
-    }, 5);
+    }, 5000);
 
 
 }
