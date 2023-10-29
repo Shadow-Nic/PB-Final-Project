@@ -37,7 +37,7 @@ class Player {
         ];
         this.Attacks = [
             { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
-            { name: 'Heavy Attack', mpCost: 15, multiplier: 2.5 },
+            { name: 'Heavy Attack', mpCost: 15, multiplier: 2 },
         ];
         this.equipped = [];
     }
