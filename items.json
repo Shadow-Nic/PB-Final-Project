@@ -149,19 +149,19 @@
         {
             "id": 1,
             "name": "Trockenfleisch",
-            "event": "hp(+2)",
+            "event": "hp(+25)",
             "price": 7.50
         },
         {
             "id": 2,
             "name": "Brot",
-            "event": "hp(+2)",
+            "event": "hp(+20)",
             "price": 3.50
         },
         {
             "id": 3,
             "name": "Wasser",
-            "event": "mp(+2)",
+            "event": "mp(+15)",
             "price": 3.50
         },
         {
