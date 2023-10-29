@@ -61,21 +61,19 @@ export function generateBox(direction, w, h, text, returny) {
     }, text,
     );
     if (returny) {
-        return storyBox;
+        return storyBox.stringify();
     } else { console.log(storyBox.stringify()); }
 
 }
 
-export function combineBox(box1, box2) {
-    let box1Lines = box1.stringify().split('\n');
-    let box2Lines = box2.stringify().split('\n');
+export function combineBox() {
+    let boxes = Array.from(arguments);
+    let maxLines = Math.max(...boxes.map(box => box.split('\n').length));
 
-    for (let i = 0; i < Math.max(box1Lines.length, box2Lines.length); i++) {
-        let line1 = box1Lines[i] || '';
-        let line2 = box2Lines[i] || '';
-        console.log(line1 + line2);
+    for (let i = 0; i < maxLines; i++) {
+        let lines = boxes.map(box => box.split('\n')[i] || '');
+        console.log(lines.join(''));
     }
-
 }
 
 

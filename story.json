@@ -275,7 +275,7 @@
             "id": 41,
             "storyText": "Natürlich ist für euch so ein einfaches Truhenschloß keine Herausforderung, so das ihr in handumdrehen die Truhe öffnet. In ihr befindet sich eine alte verstaubte Rüstung. Als ihr sie sauber macht stellt ihr fest das diese Rüstung von den alten Weisen der Horadrim geschmiedet worden sein muss.",
             "optionIds": [],
-            "event": "addEq({id:12, name: 'haöö', event: 'hp(+18)'})",
+            "event": "addEq({id:12, name: 'Rüstung der Horadrim', event: 'hp(+18)'})",
             "question": "",
             "skipTo": 43
 
@@ -378,10 +378,20 @@
             "id": 57,
             "storyText": "Daniel, Niclas, Hoang Long und Stephan",
             "optionIds": [],
-            "question": ""
-        }
-        
-      
+            "question": "",
+            "event": ""
+        },
+        {
+            "id": 99,
+            "storyText": "Ihr befindet euch wieder auf dem Marktplatz",
+            "optionIds": [
+                5,
+                6,
+                7,
+                8
+            ],
+            "question": "Zu welchen Stand wollt ihr gehen?"
+        } 
     ],
     "options": [
         {
@@ -426,21 +436,21 @@
             "optionText": "Schmied",
             "event": "shop('gear')",
             "effectText": 0,
-            "nextStep": 11
+            "nextStep": 99
         },
         {
             "id": 6,
             "optionText": "Gemischtwarenladen",
             "event": "shop('food')",
             "effectText": 0,
-            "nextStep": 11
+            "nextStep": 99
         },
         {
             "id": 7,
             "optionText": "Kräuter und Tränke",
             "event": "shop('potion')",
             "effectText": 0,
-            "nextStep": 11
+            "nextStep": 99
         },
         {
             "id": 8,
@@ -537,7 +547,6 @@
             "nextStep": 52,
             "looseText": "Der Kampf dauert nun schon eine Ewigkeit und eure Konzentration lässt nach. Natürlich nutzt der Drache die Gelegenheit. Als ihr auf ihn zu stürmt stößt er eine Feuersalve auf euch. Ihr spürt die Flammen auf eurer Haut. In dem selben Moment seid Drachenfutter."
         }
-
     ],
     "shops": [
         {
