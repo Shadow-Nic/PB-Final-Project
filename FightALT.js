@@ -3,7 +3,7 @@ import { returnStats } from './gameStart.js';
 import { generateBox } from './textfunc.js';
 
 const randomNumber = () => Math.random() * (1.75 - 0.75) + 0.75; // Multiplier Player attack
-const randomNumberNPC = () => Math.random() * (1.25 - 0.75) + 0.75; // Multiplier NPC attack
+const randomNumberNPC = () => Math.random() * (1.4 - 0.75) + 0.75; // Multiplier NPC attack
 
 function printTop(player, npc) {
     console.clear();
