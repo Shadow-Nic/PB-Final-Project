@@ -63,7 +63,7 @@ function playerAttack(player, npc) {
         const damage = Math.floor(player.str * selectedAttack.multiplier * randomNumber());
         npc.hp -= damage;
 
-        console.log(`Ihr fügt euren Gegner mit ${selectedAttack} einen Schaden von${damage} zu.`);
+        console.log(`Ihr fügt euren Gegner mit ${selectedAttack.name} einen Schaden von${damage} zu.`);
 
         player.mp -= selectedAttack.mpCost;
         if (npc.hp <= 0) {
@@ -131,7 +131,18 @@ function playerUseInventory(player, npc) {
         case '6':
             checkItem(player, selectedItem, playerChoice);
             return;
-
+        case '7':
+            checkItem(player, selectedItem, playerChoice);
+            return;
+        case '8':
+            checkItem(player, selectedItem, playerChoice);
+            return;
+        case '9':
+            checkItem(player, selectedItem, playerChoice);
+            return;
+        case '10':
+            checkItem(player, selectedItem, playerChoice);
+            return;
         //####################################################################################################
         default:
             playerUseInventory(player, npc);

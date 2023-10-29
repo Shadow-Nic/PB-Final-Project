@@ -36,8 +36,8 @@ class Player {
             { name: 'einfacher Manatrank', typ: 'MP', Points: 30, quantity: 1 },
         ];
         this.Attacks = [
-            { name: 'Normal Attack', mpCost: 0, multiplier: 1 },
-            { name: 'Heavy Attack', mpCost: 15, multiplier: 2.3 },
+            { name: 'Normaler Schlag', mpCost: 0, multiplier: 1 },
+            { name: 'Schwerer Schlag', mpCost: 15, multiplier: 2.3 },
         ];
         this.equipped = [];
     }
