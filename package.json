@@ -20,7 +20,7 @@
   "author": "",
   "contributors": [],
   "scripts": {
-    "prophecys-end": "node gameStart.js",
+    "prophecysend": "node gameStart.js",
     "test": ""
   },
   "dependencies": {
