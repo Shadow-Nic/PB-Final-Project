@@ -10,9 +10,9 @@ import { Console } from 'console';
 import { abspann } from './abspann.js';
 
 readline.setDefaultOptions({ encoding: 'utf8' });
-const jsonData = fs.readFileSync('${__dirname}/story.json', 'utf8');
-const itemsData = fs.readFileSync('${__dirname}/items.json', 'utf8');
-const mobsData = fs.readFileSync('${__dirname}/mobs.json', 'utf8');
+const jsonData = fs.readFileSync('./story.json', 'utf8');
+const itemsData = fs.readFileSync('./items.json', 'utf8');
+const mobsData = fs.readFileSync('./mobs.json', 'utf8');
 
 const fullStory = JSON.parse(jsonData);
 export const itemPool = JSON.parse(itemsData);
