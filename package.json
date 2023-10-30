@@ -1,6 +1,6 @@
 {
   "name": "prophecysend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "gameStart.js",
   "type": "module",
@@ -20,7 +20,7 @@
   "author": "",
   "contributors": [],
   "scripts": {
-    "prophecys-end":"node gameStart.js",
+    "prophecys-end": "node gameStart.js",
     "test": ""
   },
   "dependencies": {
