@@ -12,9 +12,12 @@ A simple role-playing game with pen and paper influence that can be played via t
 You also solve puzzles and have to make moral decisions that influence the rest of the game.
 
 ## Getting Started
-Installing
+Installing via VS-Studiocode
 Before you can play Prophecy's End: The Battle for Balance you have to download an npm package with the following input: npm install --save cli-box
-This game is opened and played via the terminal. Enter this into the console: node gameStart.js
+This game is opened and played via the terminal. Enter this into the console: node index.js
+
+Installing via Terminal
+Enter this into the console: npx prophecysend
 
 ## License
 The copyrights belong to Niclas Basler, Daniel Wolthausen, Hoang Long and Stephan Hörichs.
@@ -34,8 +37,13 @@ Ein einfaches Rollenspiel mit Pen and Paper Einfluss, welches über das Terminal
 Außerdem löst man Rätstel und muss moralische Entscheidungen treffen die einen Einfluss auch den weiteren Spielverlauf haben.
 
 ## Anleitung
+Instalierien via VS-Studio Code
 Bevor du Prophecy's End: The Battle for Balance kannst musst du dir ein npm-package herunter laden mit folgender eingabe: npm install --save cli-box
-Dieses Spiel wird über das Terminal geöffnet und gespielt. Gebe hier für  in die Console ein: node gameStart.js
+Dieses Spiel wird über das Terminal geöffnet und gespielt. Gebe hier für  in die Console ein: node index.js
+
+Installieren via Terminal
+Gib folgenden Code in die Console ein: npx prophecysend
+
 
 ## Lizenz
 Die Urheberrechte liegen bei Niclas Basler, Daniel Wolthausen, Hoang Long und Stephan Hörichs.
