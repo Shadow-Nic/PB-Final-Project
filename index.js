@@ -21,9 +21,9 @@ const __dirname = path.dirname(__filename);
 
 readline.setDefaultOptions({ encoding: 'utf8' });
 
-const jsonData = fs.readFileSync((__dirname, './story.json'), 'utf8');
-const itemsData = fs.readFileSync((__dirname, './items.json'), 'utf8');
-const mobsData = fs.readFileSync((__dirname, './mobs.json'), 'utf8');
+const jsonData = fs.readFileSync(path.join(__dirname, './story.json'), 'utf8');
+const itemsData = fs.readFileSync(path.join(__dirname, './items.json'), 'utf8');
+const mobsData = fs.readFileSync(path.join(__dirname, './mobs.json'), 'utf8');
 
 //###################################################################
 const fullStory = JSON.parse(jsonData);
