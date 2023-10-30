@@ -17,11 +17,7 @@
   },
   "bugs": "",
   "keywords": [],
-  "author": {
-    "name": "",
-    "email": "",
-    "url": ""
-  },
+  "author": "",
   "contributors": [],
   "scripts": {
     "prophecys-end":"node gameStart.js",
