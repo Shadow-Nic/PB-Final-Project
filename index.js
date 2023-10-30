@@ -9,11 +9,20 @@ import { schlossKnacken } from './Schlossknacken.js';
 import { Console } from 'console';
 import { abspann } from './abspann.js';
 
-readline.setDefaultOptions({ encoding: 'utf8' });
-const jsonData = fs.readFileSync('./story.json', 'utf8');
-const itemsData = fs.readFileSync('./items.json', 'utf8');
-const mobsData = fs.readFileSync('./mobs.json', 'utf8');
+// readline.setDefaultOptions({ encoding: 'utf8' });
+// const jsonData = fs.readFileSync('./story.json', 'utf8');
+// const itemsData = fs.readFileSync('./items.json', 'utf8');
+// const mobsData = fs.readFileSync('./mobs.json', 'utf8');
 
+import path from 'path';
+
+readline.setDefaultOptions({ encoding: 'utf8' });
+
+const jsonData = fs.readFileSync(path.resolve(__dirname, './story.json'), 'utf8');
+const itemsData = fs.readFileSync(path.resolve(__dirname, './items.json'), 'utf8');
+const mobsData = fs.readFileSync(path.resolve(__dirname, './mobs.json'), 'utf8');
+
+//###################################################################
 const fullStory = JSON.parse(jsonData);
 export const itemPool = JSON.parse(itemsData);
 const monster = JSON.parse(mobsData);
