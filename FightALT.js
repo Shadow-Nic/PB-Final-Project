@@ -1,5 +1,5 @@
 import readline from 'readline-sync';
-import { returnStats } from './gameStart.js';
+import { returnStats } from './index.js';
 import { generateBox } from './textfunc.js';
 
 const randomNumber = () => Math.random() * (1.65 - 0.75) + 0.75; // Multiplier Player attack
