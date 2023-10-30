@@ -14,13 +14,16 @@ import { abspann } from './abspann.js';
 // const itemsData = fs.readFileSync('./items.json', 'utf8');
 // const mobsData = fs.readFileSync('./mobs.json', 'utf8');
 
+import { fileURLToPath } from 'url';
 import path from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 readline.setDefaultOptions({ encoding: 'utf8' });
 
-const jsonData = fs.readFileSync(path.resolve(__dirname, './story.json'), 'utf8');
-const itemsData = fs.readFileSync(path.resolve(__dirname, './items.json'), 'utf8');
-const mobsData = fs.readFileSync(path.resolve(__dirname, './mobs.json'), 'utf8');
+const jsonData = fs.readFileSync((__dirname, './story.json'), 'utf8');
+const itemsData = fs.readFileSync((__dirname, './items.json'), 'utf8');
+const mobsData = fs.readFileSync((__dirname, './mobs.json'), 'utf8');
 
 //###################################################################
 const fullStory = JSON.parse(jsonData);
