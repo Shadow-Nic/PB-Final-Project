@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "prophecysend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gameStart.js",
   "type": "module",
   "license": "AGPL-version-3.0",
   "private": false,
@@ -24,11 +24,14 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "",
+    "prophecys-end":"node gameStart.js",
     "test": ""
   },
   "dependencies": {
     "cli-box": "^6.0.10",
     "readline-sync": "^1.4.10"
+  },
+  "bin": {
+    "start": "./gameStart.js"
   }
 }
